@@ -433,7 +433,7 @@ export const Home: React.FC = () => {
                   Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable technology.
                 </p>
                 <p>
-                  Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Converters (OTC) and Biogas solutions that offer superior efficiency and durability.
+                  Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability.
                 </p>
                 <p>
                   Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" mission.
