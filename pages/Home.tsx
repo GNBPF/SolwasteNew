@@ -260,10 +260,10 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
       </div>
 
       {/* Footer Specs & CTA - Mobile Optimized */}
-      <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-8 xs:pb-10 sm:pb-12 md:pb-14 lg:pb-18 xl:pb-22">
-        <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-5 xs:gap-6 sm:gap-7 md:gap-8 lg:gap-10 xl:gap-12">
+      <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-8 xs:pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
+        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 xs:gap-7 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           {/* Specs Grid - Mobile Optimized */}
-          <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-10 w-full lg:w-auto ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
+          <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 w-full lg:flex-1 ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
             {slide.specs?.map((spec, idx) => (
               <div key={idx} className="flex flex-col border-l-2 xs:border-l-3 sm:border-l-4 md:border-l-[5px] border-brand-gold/60 pl-2 xs:pl-3 sm:pl-4 md:pl-5 py-1.5 xs:py-2 hover:border-brand-gold transition-colors">
                 <div className="flex items-baseline gap-0.5 xs:gap-1">
@@ -275,10 +275,10 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
             ))}
           </div>
 
-          {/* Buttons - Mobile Optimized */}
-          <div className="flex flex-col xs:flex-row gap-2.5 xs:gap-3 sm:gap-4 md:gap-5 w-full lg:w-auto mt-3 xs:mt-4 lg:mt-0 min-h-[48px] items-stretch">
-             <Link to="/contact" className="w-full xs:w-1/2 lg:w-auto flex-1 lg:flex-none group">
-                <div className={`relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[50px] sm:min-h-[54px] md:min-h-[58px] lg:min-h-[62px] rounded-lg xs:rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]' : 'bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)]'} active:scale-[0.97] hover:scale-[1.02]`}>
+          {/* Buttons - Mobile Optimized with Better Placement */}
+          <div className="flex flex-col xs:flex-row gap-3 xs:gap-3.5 sm:gap-4 md:gap-5 w-full lg:w-auto lg:flex-shrink-0">
+             <Link to="/contact" className="w-full xs:flex-1 lg:w-auto group">
+                <div className={`relative overflow-hidden w-full h-full min-h-[52px] xs:min-h-[54px] sm:min-h-[56px] md:min-h-[60px] lg:min-h-[64px] flex items-center justify-center rounded-lg xs:rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_25px_rgba(255,255,255,0.35)] hover:shadow-[0_0_35px_rgba(255,255,255,0.55)]' : 'bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_25px_rgba(255,215,0,0.35)] hover:shadow-[0_0_35px_rgba(255,215,0,0.55)]'} active:scale-[0.98] hover:scale-[1.03]`}>
                   {/* Shine effect */}
                   <div className={`absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r ${isDark ? 'from-transparent via-white/40 to-transparent' : 'from-transparent via-brand-gold/40 to-transparent'}`}></div>
                   
@@ -286,17 +286,17 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${isDark ? 'bg-white/10' : 'bg-brand-gold/10'} animate-pulse`}></div>
                   
                   {/* Button content */}
-                  <div className={`relative flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-2.5 h-full px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 ${isDark ? 'text-brand-dark' : 'text-white'}`}>
-                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wide xs:tracking-wider group-hover:tracking-widest transition-all duration-300">Order Now</span>
-                    <svg className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className={`relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 px-5 xs:px-6 sm:px-7 md:px-9 lg:px-11 ${isDark ? 'text-brand-dark' : 'text-white'}`}>
+                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 whitespace-nowrap leading-none">Order Now</span>
+                    <svg className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 flex-shrink-0 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </div>
                 </div>
             </Link>
             
-            <Link to="/owc" className="w-full xs:w-1/2 lg:w-auto flex-1 lg:flex-none group">
-                <div className={`relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[50px] sm:min-h-[54px] md:min-h-[58px] lg:min-h-[62px] rounded-lg xs:rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-white/10 hover:bg-white/20 border-2 border-white/50 hover:border-white shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]' : 'bg-white/80 hover:bg-white border-2 border-brand-olive-dark/50 hover:border-brand-olive shadow-[0_0_15px_rgba(94,121,96,0.2)] hover:shadow-[0_0_25px_rgba(94,121,96,0.4)]'} backdrop-blur-lg active:scale-[0.97] hover:scale-[1.02]`}>
+            <Link to="/owc" className="w-full xs:flex-1 lg:w-auto group">
+                <div className={`relative overflow-hidden w-full h-full min-h-[52px] xs:min-h-[54px] sm:min-h-[56px] md:min-h-[60px] lg:min-h-[64px] flex items-center justify-center rounded-lg xs:rounded-xl touch-manipulation transition-all duration-300 ${isDark ? 'bg-white/10 hover:bg-white/20 border-2 border-white/50 hover:border-white shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.45)]' : 'bg-white/80 hover:bg-white border-2 border-brand-olive-dark/50 hover:border-brand-olive shadow-[0_0_20px_rgba(94,121,96,0.25)] hover:shadow-[0_0_30px_rgba(94,121,96,0.45)]'} backdrop-blur-lg active:scale-[0.98] hover:scale-[1.03]`}>
                   {/* Shine effect */}
                   <div className={`absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r ${isDark ? 'from-transparent via-white/30 to-transparent' : 'from-transparent via-brand-olive/30 to-transparent'}`}></div>
                   
@@ -304,12 +304,12 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl ${isDark ? 'ring-2 ring-white/40' : 'ring-2 ring-brand-olive/40'}`}></div>
                   
                   {/* Button content */}
-                  <div className={`relative flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-2.5 h-full px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 ${isDark ? 'text-white' : 'text-brand-olive-dark group-hover:text-brand-olive'}`}>
-                    <svg className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className={`relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 px-5 xs:px-6 sm:px-7 md:px-9 lg:px-11 ${isDark ? 'text-white' : 'text-brand-olive-dark group-hover:text-brand-olive'}`}>
+                    <svg className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 flex-shrink-0 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wide xs:tracking-wider group-hover:tracking-widest transition-all duration-300">Tech Specs</span>
+                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 whitespace-nowrap leading-none">Tech Specs</span>
                   </div>
                 </div>
             </Link>

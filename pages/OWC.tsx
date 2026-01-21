@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 
 const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ specs }) => (
-  <div className="grid grid-cols-2 gap-y-6 gap-x-8 mt-8 text-base">
+  <div className="grid grid-cols-2 gap-y-4 sm:gap-y-5 gap-x-6 sm:gap-x-8 mt-4 sm:mt-5 md:mt-6 text-base">
     {specs.map((s, i) => (
-      <div key={i} className="flex justify-between border-b border-gray-200 pb-3">
+      <div key={i} className="flex justify-between border-b border-gray-200 pb-2 sm:pb-3">
         <span className="font-bold text-gray-600 uppercase text-xs tracking-wider">{s.label}</span>
-        <span className="font-bold text-brand-brown text-lg">{s.value}</span>
+        <span className="font-bold text-brand-brown text-base sm:text-lg">{s.value}</span>
       </div>
     ))}
   </div>
@@ -39,7 +39,7 @@ const ProductDetail: React.FC<{
   }, [images.length]);
 
   return (
-    <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-20 py-32 border-b border-gray-200 last:border-0`}>
+    <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 border-b border-gray-200 last:border-0`}>
       <div className="lg:w-1/2 w-full">
         <div className="relative group overflow-hidden bg-gray-100 rounded-sm shadow-xl">
           <AnimatePresence mode="wait">
@@ -47,7 +47,7 @@ const ProductDetail: React.FC<{
               key={currentImageIndex}
               src={images[currentImageIndex]}
               alt={`${name} - Image ${currentImageIndex + 1}`}
-              className="w-full object-cover h-[550px]"
+              className="w-full object-cover h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -75,32 +75,32 @@ const ProductDetail: React.FC<{
         </div>
       </div>
     <div className="lg:w-1/2 w-full">
-      <div className="inline-block text-brand-gold font-bold uppercase tracking-widest text-sm mb-4 border-2 border-brand-gold px-3 py-1">
+      <div className="inline-block text-brand-gold font-bold uppercase tracking-widest text-xs sm:text-sm mb-2 sm:mb-3 border-2 border-brand-gold px-3 py-1">
         {tagline}
       </div>
-      <h2 className="text-6xl font-heading font-bold text-brand-brown mb-8 uppercase">{name}</h2>
-      <p className="text-gray-800 text-xl mb-10 leading-relaxed font-normal">{description}</p>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 md:mb-5 uppercase leading-tight">{name}</h2>
+      <p className="text-gray-800 text-base sm:text-lg md:text-xl mb-5 sm:mb-6 md:mb-7 leading-relaxed font-normal">{description}</p>
       
-      <div className="mb-10">
-        <h4 className="font-heading font-bold uppercase text-brand-brown mb-6 text-base tracking-wide">Key Features</h4>
-        <ul className="space-y-4">
+      <div className="mb-5 sm:mb-6 md:mb-7">
+        <h4 className="font-heading font-bold uppercase text-brand-brown mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Key Features</h4>
+        <ul className="space-y-2 sm:space-y-3">
           {features.map((feature, i) => (
             <li key={i} className="flex items-start">
-              <Check className="text-brand-gold mr-4 mt-1 flex-shrink-0" size={20} />
-              <span className="text-gray-900 font-semibold text-lg">{feature}</span>
+              <Check className="text-brand-gold mr-3 sm:mr-4 mt-1 flex-shrink-0" size={18} />
+              <span className="text-gray-900 font-semibold text-base sm:text-lg">{feature}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="bg-brand-light p-8 border border-gray-200 rounded-sm">
-         <h4 className="font-heading font-bold uppercase text-brand-brown mb-4 text-base tracking-wide">Technical Specifications</h4>
+      <div className="bg-brand-light p-5 sm:p-6 md:p-7 lg:p-8 border border-gray-200 rounded-sm">
+         <h4 className="font-heading font-bold uppercase text-brand-brown mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Technical Specifications</h4>
          <SpecTable specs={specs} />
       </div>
 
-      <div className="mt-10 flex flex-col xs:flex-row gap-4 xs:gap-5 sm:gap-6">
-        <Link to="/contact" className="w-full xs:w-auto group">
-            <div className="relative overflow-hidden w-full h-full min-h-[56px] xs:min-h-[60px] sm:min-h-[64px] rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.6)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+      <div className="mt-5 sm:mt-6 md:mt-7 flex flex-col xs:flex-row gap-3 xs:gap-3.5 sm:gap-4">
+        <Link to="/contact" className="w-full xs:flex-1 group">
+            <div className="relative overflow-hidden w-full h-full min-h-[52px] xs:min-h-[54px] sm:min-h-[56px] md:min-h-[60px] flex items-center justify-center rounded-lg xs:rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation">
               {/* Shine effect */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
               
@@ -108,15 +108,15 @@ const ProductDetail: React.FC<{
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
               
               {/* Button content */}
-              <div className="relative flex items-center justify-center gap-2.5 h-full px-10 xs:px-12 sm:px-14 text-white">
-                <span className="text-base xs:text-lg sm:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Get Quote</span>
-                <svg className="w-5 h-5 xs:w-6 xs:h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 px-6 xs:px-7 sm:px-8 md:px-10 text-white">
+                <span className="text-sm xs:text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Get Quote</span>
+                <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
             </div>
         </Link>
-        <button className="relative overflow-hidden w-full xs:w-auto min-h-[56px] xs:min-h-[60px] sm:min-h-[64px] rounded-xl bg-white hover:bg-brand-light border-2 border-brand-olive-dark hover:border-brand-olive shadow-[0_0_15px_rgba(94,121,96,0.2)] hover:shadow-[0_0_25px_rgba(94,121,96,0.4)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation group">
+        <button className="relative overflow-hidden w-full xs:flex-1 min-h-[52px] xs:min-h-[54px] sm:min-h-[56px] md:min-h-[60px] flex items-center justify-center rounded-lg xs:rounded-xl bg-white hover:bg-brand-light border-2 border-brand-olive-dark hover:border-brand-olive shadow-[0_0_15px_rgba(94,121,96,0.2)] hover:shadow-[0_0_25px_rgba(94,121,96,0.4)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
           {/* Shine effect */}
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-olive/20 to-transparent"></div>
           
@@ -124,9 +124,9 @@ const ProductDetail: React.FC<{
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl ring-2 ring-brand-olive/30"></div>
           
           {/* Button content */}
-          <div className="relative flex items-center justify-center gap-2.5 h-full px-8 xs:px-10 sm:px-12 text-brand-olive-dark group-hover:text-brand-olive">
-            <Download size={20} className="xs:w-6 xs:h-6 group-hover:translate-y-0.5 transition-transform duration-300" />
-            <span className="text-base xs:text-lg sm:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Brochure</span>
+          <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 px-6 xs:px-7 sm:px-8 md:px-10 text-brand-olive-dark group-hover:text-brand-olive">
+            <Download size={18} className="xs:w-5 xs:h-5 sm:w-6 sm:h-6 flex-shrink-0 group-hover:translate-y-0.5 transition-transform duration-300" />
+            <span className="text-sm xs:text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Brochure</span>
           </div>
         </button>
       </div>

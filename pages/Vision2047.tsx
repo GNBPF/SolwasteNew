@@ -26,33 +26,33 @@ export const Vision2047: React.FC = () => {
         type="article"
       />
       
-      {/* HERO SECTION */}
-      <section className="relative h-screen flex flex-col items-center justify-center bg-brand-dark text-white text-center px-6">
-         <div className="absolute inset-0 z-0 opacity-40">
+      {/* HERO SECTION - Mobile Optimized */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center bg-brand-dark text-white text-center px-4 sm:px-6 py-20">
+         <div className="absolute inset-0 z-0 opacity-30 sm:opacity-40">
             <img 
                 src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=2076&auto=format&fit=crop" 
                 alt="India Skyline" 
                 className="w-full h-full object-cover grayscale"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black via-black/85 to-black sm:from-black sm:via-black/80 sm:to-black"></div>
          </div>
 
-         <div className="relative z-10 max-w-5xl">
+         <div className="relative z-10 max-w-5xl px-2 sm:px-4">
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1 }}
             >
-                <div className="flex items-center justify-center space-x-3 mb-6">
-                    <Flag className="text-brand-gold" size={32} />
-                    <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-sm md:text-base">Vision 2047</span>
-                    <Flag className="text-brand-gold" size={32} />
+                <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-4 sm:mb-5 md:mb-6">
+                    <Flag className="text-brand-gold" size={24} />
+                    <span className="text-brand-gold font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs sm:text-sm md:text-base">Vision 2047</span>
+                    <Flag className="text-brand-gold" size={24} />
                 </div>
-                <h1 className="text-6xl md:text-[8rem] font-heading font-black leading-none mb-6">
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8rem] font-heading font-black leading-tight sm:leading-none mb-4 sm:mb-5 md:mb-6">
                     ARE WE <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">REALLY FREE?</span>
                 </h1>
-                <p className="text-xl md:text-3xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
-                    In 2047, India will mark 100 years of Independence. <br/>
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed px-2">
+                    In 2047, India will mark 100 years of Independence. <br className="hidden sm:block"/>
                     But can a nation call itself free if its waste still owns us?
                 </p>
             </motion.div>
@@ -62,35 +62,35 @@ export const Vision2047: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
+            className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
          >
-            <span className="text-xs uppercase tracking-widest">Explore the Crisis</span>
-            <ChevronDown className="animate-bounce" />
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest">Explore the Crisis</span>
+            <ChevronDown size={20} className="sm:w-6 sm:h-6 animate-bounce" />
          </motion.div>
       </section>
 
-      {/* THE MIRROR */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      {/* THE MIRROR - Mobile Optimized */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center">
                 <FadeIn>
-                    <h2 className="text-5xl md:text-7xl font-heading font-bold text-brand-brown mb-8 uppercase leading-tight">
-                        Waste is a <span className="text-brand-gold underline decoration-4 underline-offset-8">Mirror</span>.
+                    <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-brand-brown mb-5 sm:mb-6 md:mb-7 lg:mb-8 uppercase leading-tight">
+                        Waste is a <span className="text-brand-gold underline decoration-2 sm:decoration-4 underline-offset-4 sm:underline-offset-8">Mirror</span>.
                     </h2>
-                    <p className="text-2xl text-gray-800 leading-relaxed font-medium border-l-4 border-brand-brown pl-6 mb-8">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 leading-relaxed font-medium border-l-2 sm:border-l-4 border-brand-brown pl-4 sm:pl-5 md:pl-6 mb-5 sm:mb-6 md:mb-7 lg:mb-8">
                         It reflects how we live, how we consume, and how responsibly we think about tomorrow.
                     </p>
-                    <p className="text-lg text-gray-700 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
                         India generates millions of tonnes of waste every year, and nearly <strong>50–60% of it is organic food waste</strong>. This isn't just inert garbage; it is a living, breathing biological hazard that we step over every single day.
                     </p>
                 </FadeIn>
                 <FadeIn delay={0.2}>
-                    <div className="relative">
-                        <div className="absolute top-4 left-4 w-full h-full border-2 border-brand-gold z-0"></div>
+                    <div className="relative mt-8 lg:mt-0">
+                        <div className="absolute top-2 left-2 sm:top-4 sm:left-4 w-full h-full border border-brand-gold sm:border-2 z-0"></div>
                         <img 
                             src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?q=80&w=1974&auto=format&fit=crop" 
                             alt="Waste Crisis" 
-                            className="relative z-10 w-full h-[500px] object-cover grayscale contrast-125"
+                            className="relative z-10 w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover grayscale contrast-125"
                         />
                     </div>
                 </FadeIn>
@@ -98,31 +98,31 @@ export const Vision2047: React.FC = () => {
         </div>
       </section>
 
-      {/* THE INVISIBLE CRISIS - DARK MODE */}
-      <section className="py-32 bg-brand-dark text-white relative overflow-hidden">
-         <div className="absolute top-0 right-0 p-64 bg-brand-gold opacity-5 blur-[150px] rounded-full"></div>
-         <div className="container mx-auto px-6 relative z-10">
+      {/* THE INVISIBLE CRISIS - DARK MODE - Mobile Optimized */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-brand-dark text-white relative overflow-hidden">
+         <div className="absolute top-0 right-0 p-32 sm:p-48 md:p-64 bg-brand-gold opacity-5 blur-[150px] rounded-full"></div>
+         <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <FadeIn>
-                <div className="text-center max-w-4xl mx-auto mb-20">
-                    <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 uppercase">The Invisible Crisis</h2>
-                    <p className="text-gray-300 text-xl">
+                <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+                    <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">The Invisible Crisis</h2>
+                    <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl">
                         When organic waste is left unattended or mixed with dry waste, it triggers a chain reaction of environmental collapse.
                     </p>
                 </div>
             </FadeIn>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7 lg:gap-8">
                 {[
-                    { icon: <Skull size={40} />, title: "Disease Vector", desc: "Becomes a breeding ground for mosquitoes, flies, and dangerous pathogens." },
-                    { icon: <CloudFog size={40} />, title: "Methane Gas", desc: "Releases methane, a greenhouse gas 25x more potent than CO2." },
-                    { icon: <Droplets size={40} />, title: "Toxic Leachate", desc: "Contaminates soil and groundwater, poisoning our water tables." },
-                    { icon: <AlertTriangle size={40} />, title: "Unlivable Spaces", desc: "Creates persistent foul odours and reduces quality of life." },
+                    { icon: <Skull size={32} className="sm:w-9 sm:h-9 md:w-10 md:h-10" />, title: "Disease Vector", desc: "Becomes a breeding ground for mosquitoes, flies, and dangerous pathogens." },
+                    { icon: <CloudFog size={32} className="sm:w-9 sm:h-9 md:w-10 md:h-10" />, title: "Methane Gas", desc: "Releases methane, a greenhouse gas 25x more potent than CO2." },
+                    { icon: <Droplets size={32} className="sm:w-9 sm:h-9 md:w-10 md:h-10" />, title: "Toxic Leachate", desc: "Contaminates soil and groundwater, poisoning our water tables." },
+                    { icon: <AlertTriangle size={32} className="sm:w-9 sm:h-9 md:w-10 md:h-10" />, title: "Unlivable Spaces", desc: "Creates persistent foul odours and reduces quality of life." },
                 ].map((item, i) => (
                     <FadeIn delay={i * 0.1} key={i}>
-                        <div className="bg-gray-900/50 border border-gray-800 p-8 hover:bg-brand-gold/10 hover:border-brand-gold transition-all duration-300 group h-full">
-                            <div className="text-gray-500 group-hover:text-brand-gold mb-6 transition-colors">{item.icon}</div>
-                            <h3 className="text-xl font-heading font-bold mb-3 uppercase">{item.title}</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                        <div className="bg-gray-900/50 border border-gray-800 p-5 sm:p-6 md:p-7 lg:p-8 hover:bg-brand-gold/10 hover:border-brand-gold transition-all duration-300 group h-full">
+                            <div className="text-gray-500 group-hover:text-brand-gold mb-4 sm:mb-5 md:mb-6 transition-colors">{item.icon}</div>
+                            <h3 className="text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3 uppercase leading-tight">{item.title}</h3>
+                            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
                         </div>
                     </FadeIn>
                 ))}
