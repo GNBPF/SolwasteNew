@@ -7,7 +7,7 @@ import { SEO } from '../components/SEO';
 
 export const Fahaka: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const fahakaImages = ["/fahaka.png", "/fahaka1.png", "/fahaka2.png"];
+  const fahakaImages = ["/fahaka.webp", "/fahaka2.webp", "/fahaka3.webp"];
 
   // Auto-rotate images
   useEffect(() => {
@@ -110,25 +110,7 @@ export const Fahaka: React.FC = () => {
             </motion.div>
          </div>
 
-         {/* Image Slideshow Indicators - Mobile Optimized */}
-         <div className="absolute bottom-6 xs:bottom-7 sm:bottom-8 md:bottom-10 lg:bottom-12 left-1/2 transform -translate-x-1/2 z-20">
-           <div className="flex justify-center gap-1.5 xs:gap-2 sm:gap-2.5">
-             {fahakaImages.map((_, idx) => (
-               <button
-                 key={idx}
-                 onClick={() => setCurrentImageIndex(idx)}
-                 className={`h-1 xs:h-1.5 sm:h-2 rounded-full transition-all duration-300 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center p-4 ${
-                   idx === currentImageIndex 
-                     ? 'w-5 xs:w-6 sm:w-8 bg-brand-gold shadow-lg shadow-brand-gold/50' 
-                     : 'w-1 xs:w-1.5 sm:w-2 bg-white/30 hover:bg-white/50'
-                 }`}
-                 aria-label={`View image ${idx + 1}`}
-               >
-                 <span className="sr-only">Indicator {idx + 1}</span>
-               </button>
-             ))}
-           </div>
-         </div>
+         
       </section>
 
       {/* The Problem / Solution - Mobile Optimized */}
