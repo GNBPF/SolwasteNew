@@ -236,10 +236,20 @@ export const Vision2047: React.FC = () => {
                   <p className="text-2xl text-gray-600 max-w-2xl mx-auto mb-12">
                       Because the future will not forgive us for the problems we had the technology to solve—but chose not to.
                   </p>
-                  <Link to="/contact">
-                    <Button className="py-6 px-16 text-xl shadow-2xl">
-                        Start Your Waste-Free Journey <ArrowRight className="ml-3" />
-                    </Button>
+                  <Link to="/contact" className="inline-block group">
+                    <div className="relative overflow-hidden min-h-[64px] xs:min-h-[68px] sm:min-h-[72px] rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_50px_rgba(255,215,0,0.7)] active:scale-[0.98] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+                      {/* Shine effect */}
+                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
+                      
+                      {/* Glow pulse */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
+                      
+                      {/* Button content */}
+                      <div className="relative flex items-center justify-center gap-3 xs:gap-3.5 sm:gap-4 h-full px-12 xs:px-14 sm:px-16 md:px-20 text-white">
+                        <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Start Your Waste-Free Journey</span>
+                        <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
                   </Link>
               </FadeIn>
           </div>

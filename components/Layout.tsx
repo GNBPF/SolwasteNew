@@ -80,65 +80,112 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group touch-manipulation">
-            <img src="/logo.png" alt="Solwaste Logo" className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain" />
+          {/* Logo - Clean design without borders */}
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group touch-manipulation">
+            <img 
+              src="/logo.png" 
+              alt="Solwaste Logo" 
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain transition-all duration-500"
+            />
             <div className="flex flex-col leading-none select-none">
-              <span className={`text-xl sm:text-2xl md:text-3xl font-heading font-bold tracking-tighter transition-colors duration-300 ${textColorClass}`}>
-                SOL<span className="text-brand-gold">WASTE</span>
+              <span className="text-xl sm:text-2xl md:text-3xl font-heading font-bold tracking-tighter transition-colors duration-500">
+                <span className={isNavTransparent ? 'text-white' : 'text-brand-brown'}>SOL</span><span className="text-brand-gold">WASTE</span>
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-12">
+          {/* Desktop Nav - Enhanced color coordination */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-12">
             
+            {/* OWC Link */}
             <Link
                 to="/owc"
-                className={`font-heading font-bold text-sm lg:text-base uppercase tracking-[0.15em] hover:text-brand-gold transition-colors duration-300 ${textColorClass}`}
+                className={`font-heading font-bold text-sm lg:text-base uppercase tracking-[0.15em] hover:text-brand-gold active:text-brand-gold transition-all duration-300 relative group ${
+                  isNavTransparent ? 'text-white' : 'text-brand-brown'
+                }`}
             >
                 OWC
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-gold group-hover:w-full transition-all duration-300"></span>
             </Link>
 
             {/* Fahaka Special Button-Link */}
              <Link
                 to="/fahaka"
-                className={`font-heading font-bold text-sm lg:text-base uppercase tracking-[0.15em] transition-all duration-300 flex items-center group ${textColorClass}`}
+                className={`font-heading font-bold text-sm lg:text-base uppercase tracking-[0.15em] transition-all duration-300 flex items-center gap-2 group ${
+                  isNavTransparent ? 'text-white' : 'text-brand-brown'
+                }`}
             >
-                <span className={`mr-2 px-2 py-0.5 text-[10px] font-bold rounded bg-brand-gold text-white badge-blink border border-brand-gold transition-all`}>NEW</span>
-                <span className="group-hover:text-brand-gold transition-colors">Fahaka</span>
+                <span className="relative px-2.5 py-1 text-[10px] font-bold rounded-md bg-brand-gold text-white badge-blink shadow-md shadow-brand-gold/30">
+                  NEW
+                </span>
+                <span className="group-hover:text-brand-gold transition-colors relative">
+                  Fahaka
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-gold group-hover:w-full transition-all duration-300"></span>
+                </span>
             </Link>
 
+            {/* Get Quote Button */}
             <Link to="/contact">
                <Button 
-                variant={isNavTransparent && isSlideDark ? 'white' : 'primary'} 
-                className="px-6 lg:px-8 py-2 lg:py-2.5 text-xs uppercase tracking-widest font-heading shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 touch-manipulation"
+                className={`min-h-[40px] px-6 lg:px-8 py-2 lg:py-2.5 text-xs lg:text-sm uppercase tracking-widest font-heading font-bold shadow-lg hover:shadow-xl active:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 touch-manipulation ${
+                  isNavTransparent 
+                    ? 'bg-brand-gold text-white border-brand-gold hover:bg-white hover:text-brand-gold hover:border-white' 
+                    : 'bg-brand-gold text-white border-brand-gold hover:bg-brand-dark hover:text-white hover:border-brand-dark'
+                }`}
                >
                 Get Quote
               </Button>
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Toggle - Enhanced touch target */}
           <button 
-            className={`md:hidden p-2 transition-colors duration-300 touch-manipulation ${textColorClass}`}
+            className={`md:hidden min-w-[44px] min-h-[44px] p-2.5 flex items-center justify-center transition-all duration-300 touch-manipulation active:scale-95 ${textColorClass} ${
+              isNavTransparent 
+                ? 'hover:bg-white/10 active:bg-white/20' 
+                : 'hover:bg-gray-100 active:bg-gray-200'
+            } rounded-lg`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Menu"
+            aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
+            aria-expanded={isMobileMenuOpen}
           >
-            {isMobileMenuOpen ? <X size={24} className="sm:w-7 sm:h-7" /> : <Menu size={24} className="sm:w-7 sm:h-7" />}
+            {isMobileMenuOpen ? <X size={24} className="xs:w-6 xs:h-6 sm:w-7 sm:h-7" /> : <Menu size={24} className="xs:w-6 xs:h-6 sm:w-7 sm:h-7" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <div className={`absolute top-full left-0 w-full bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 ease-in-out origin-top overflow-hidden ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="flex flex-col p-6 sm:p-8 space-y-5 sm:space-y-6 text-center">
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-brand-brown hover:text-brand-gold transition-colors py-2 touch-manipulation">Home</Link>
-            <Link to="/owc" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-brand-brown hover:text-brand-gold transition-colors py-2 touch-manipulation">OWC Machines</Link>
-            <Link to="/fahaka" onClick={() => setIsMobileMenuOpen(false)} className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-brand-gold bg-brand-light py-3 rounded touch-manipulation">Fahaka <span className="text-xs bg-brand-gold text-white px-1.5 py-0.5 rounded ml-1 badge-blink">NEW</span></Link>
-            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="touch-manipulation">
-                <Button className="w-full uppercase font-heading py-3 sm:py-4 text-base sm:text-lg touch-manipulation">Get Quote</Button>
+        {/* Mobile Menu - Enhanced responsive design */}
+        <div className={`md:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t-2 border-gray-100 transition-all duration-300 ease-in-out origin-top ${isMobileMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible'}`}>
+          <nav className="flex flex-col p-5 xs:p-6 sm:p-7 md:p-8 space-y-3 xs:space-y-4 sm:space-y-5" role="navigation" aria-label="Mobile navigation">
+            <Link 
+              to="/" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="min-h-[48px] flex items-center justify-center text-base xs:text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-brand-brown hover:text-brand-gold active:text-brand-gold transition-all duration-200 py-3 xs:py-3.5 px-4 rounded-lg hover:bg-brand-light/50 active:bg-brand-light active:scale-98 touch-manipulation"
+            >
+              Home
             </Link>
-          </div>
+            <Link 
+              to="/owc" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="min-h-[48px] flex items-center justify-center text-base xs:text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-brand-brown hover:text-brand-gold active:text-brand-gold transition-all duration-200 py-3 xs:py-3.5 px-4 rounded-lg hover:bg-brand-light/50 active:bg-brand-light active:scale-98 touch-manipulation"
+            >
+              OWC Machines
+            </Link>
+            <Link 
+              to="/fahaka" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="min-h-[48px] flex items-center justify-center text-base xs:text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-brand-gold bg-brand-light hover:bg-brand-gold hover:text-white active:bg-brand-gold/90 transition-all duration-200 py-3 xs:py-3.5 px-4 rounded-lg active:scale-98 touch-manipulation relative"
+            >
+              Fahaka 
+              <span className="text-[10px] xs:text-xs bg-brand-gold text-white px-2 py-1 rounded ml-2 badge-blink font-bold absolute -top-1 -right-1">NEW</span>
+            </Link>
+            <div className="pt-2">
+              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block">
+                  <Button className="w-full min-h-[52px] uppercase font-heading py-4 xs:py-4.5 sm:py-5 text-base xs:text-lg sm:text-xl font-bold shadow-lg hover:shadow-xl active:scale-98 transition-all touch-manipulation">
+                    Get Quote
+                  </Button>
+              </Link>
+            </div>
+          </nav>
         </div>
       </nav>
 

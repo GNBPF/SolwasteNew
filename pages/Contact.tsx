@@ -12,95 +12,149 @@ export const Contact: React.FC = () => {
         </div>
       </div>
 
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-16 lg:gap-20">
-            {/* Contact Info */}
+      <section className="py-10 xs:py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 md:gap-14 lg:gap-16 xl:gap-20">
+            {/* Contact Info - Enhanced responsive design */}
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-brown mb-6 sm:mb-8 md:mb-10">Contact Information</h2>
-              <div className="space-y-6 sm:space-y-8 md:space-y-10">
-                <div className="flex items-start">
-                  <div className="bg-brand-light p-3 sm:p-4 rounded text-brand-gold mr-4 sm:mr-6 flex-shrink-0">
-                    <MapPin size={24} className="sm:w-7 sm:h-7" />
+              <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-brown mb-5 xs:mb-6 sm:mb-7 md:mb-8 lg:mb-10">Contact Information</h2>
+              <div className="space-y-5 xs:space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10">
+                <div className="flex items-start gap-4 xs:gap-5 sm:gap-6 p-4 xs:p-5 sm:p-6 rounded-xl hover:bg-brand-light/50 transition-colors">
+                  <div className="bg-brand-light min-w-[48px] min-h-[48px] xs:min-w-[52px] xs:min-h-[52px] sm:min-w-[56px] sm:min-h-[56px] md:min-w-[60px] md:min-h-[60px] p-3 xs:p-3.5 sm:p-4 rounded-xl text-brand-gold flex items-center justify-center flex-shrink-0">
+                    <MapPin size={22} className="xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-brand-brown mb-2 text-lg sm:text-xl">Headquarters</h4>
-                    <p className="text-gray-800 text-base sm:text-lg leading-relaxed">
+                  <div className="flex-1">
+                    <h4 className="font-bold text-brand-brown mb-2 xs:mb-2.5 text-base xs:text-lg sm:text-xl md:text-2xl">Headquarters</h4>
+                    <p className="text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed">
                       123 Green Tech Park, Industrial Sector 4<br/>
                       New Delhi, India 110020
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="bg-brand-light p-3 sm:p-4 rounded text-brand-gold mr-4 sm:mr-6 flex-shrink-0">
-                    <Phone size={24} className="sm:w-7 sm:h-7" />
+                <div className="flex items-start gap-4 xs:gap-5 sm:gap-6 p-4 xs:p-5 sm:p-6 rounded-xl hover:bg-brand-light/50 transition-colors">
+                  <div className="bg-brand-light min-w-[48px] min-h-[48px] xs:min-w-[52px] xs:min-h-[52px] sm:min-w-[56px] sm:min-h-[56px] md:min-w-[60px] md:min-h-[60px] p-3 xs:p-3.5 sm:p-4 rounded-xl text-brand-gold flex items-center justify-center flex-shrink-0">
+                    <Phone size={22} className="xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-brand-brown mb-2 text-lg sm:text-xl">Phone</h4>
-                    <a href="tel:+919876543210" className="block text-gray-800 text-base sm:text-lg font-medium hover:text-brand-gold transition-colors touch-manipulation">+91 987 654 3210</a>
-                    <p className="text-gray-600 text-sm sm:text-base">Mon-Sat 9am to 6pm</p>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-brand-brown mb-2 xs:mb-2.5 text-base xs:text-lg sm:text-xl md:text-2xl">Phone</h4>
+                    <a href="tel:+919876543210" className="block text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl font-semibold hover:text-brand-gold transition-colors min-h-[44px] flex items-center touch-manipulation active:scale-98">+91 987 654 3210</a>
+                    <p className="text-gray-600 text-xs xs:text-sm sm:text-base md:text-lg mt-1">Mon-Sat 9am to 6pm IST</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="bg-brand-light p-3 sm:p-4 rounded text-brand-gold mr-4 sm:mr-6 flex-shrink-0">
-                    <Mail size={24} className="sm:w-7 sm:h-7" />
+                <div className="flex items-start gap-4 xs:gap-5 sm:gap-6 p-4 xs:p-5 sm:p-6 rounded-xl hover:bg-brand-light/50 transition-colors">
+                  <div className="bg-brand-light min-w-[48px] min-h-[48px] xs:min-w-[52px] xs:min-h-[52px] sm:min-w-[56px] sm:min-h-[56px] md:min-w-[60px] md:min-h-[60px] p-3 xs:p-3.5 sm:p-4 rounded-xl text-brand-gold flex items-center justify-center flex-shrink-0">
+                    <Mail size={22} className="xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-brand-brown mb-2 text-lg sm:text-xl">Email</h4>
-                    <a href="mailto:info@solwaste.co" className="block text-gray-800 text-base sm:text-lg hover:text-brand-gold transition-colors touch-manipulation break-all">info@solwaste.co</a>
-                    <a href="mailto:sales@solwaste.co" className="block text-gray-800 text-base sm:text-lg hover:text-brand-gold transition-colors touch-manipulation break-all">sales@solwaste.co</a>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-brand-brown mb-2 xs:mb-2.5 text-base xs:text-lg sm:text-xl md:text-2xl">Email</h4>
+                    <a href="mailto:info@solwaste.co" className="block text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl hover:text-brand-gold transition-colors min-h-[44px] flex items-center touch-manipulation active:scale-98 break-all font-medium">info@solwaste.co</a>
+                    <a href="mailto:sales@solwaste.co" className="block text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl hover:text-brand-gold transition-colors min-h-[44px] flex items-center touch-manipulation active:scale-98 break-all font-medium">sales@solwaste.co</a>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-10 sm:mt-12 md:mt-16 p-6 sm:p-8 md:p-10 bg-brand-light border border-gray-200 rounded">
-                <h4 className="font-bold text-brand-brown mb-3 text-base sm:text-lg uppercase tracking-wide">Service Areas</h4>
-                <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+              <div className="mt-8 xs:mt-9 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16 p-5 xs:p-6 sm:p-7 md:p-8 lg:p-10 bg-gradient-to-br from-brand-light to-white border-2 border-gray-200 rounded-xl shadow-lg">
+                <h4 className="font-bold text-brand-brown mb-3 xs:mb-3.5 sm:mb-4 text-sm xs:text-base sm:text-lg md:text-xl uppercase tracking-wider">Service Areas</h4>
+                <p className="text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed">
                   We currently serve clients across major metropolitan areas in India including Delhi NCR, Mumbai, Bangalore, Pune, and Hyderabad.
                 </p>
               </div>
             </div>
 
-            {/* Form */}
-            <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 rounded-xl shadow-2xl border border-gray-100 mt-8 lg:mt-0">
-              <h3 className="text-2xl sm:text-3xl font-bold text-brand-brown mb-6 sm:mb-8">Request a Consultation</h3>
-              <form className="space-y-6 sm:space-y-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            {/* Form - Production-level mobile optimization */}
+            <div className="bg-white p-5 xs:p-6 sm:p-7 md:p-8 lg:p-10 xl:p-12 rounded-xl shadow-2xl border-2 border-gray-100 mt-6 lg:mt-0">
+              <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-brand-brown mb-5 xs:mb-6 sm:mb-7 md:mb-8">Request a Consultation</h3>
+              <form className="space-y-5 xs:space-y-6 sm:space-y-7 md:space-y-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 xs:gap-5.5 sm:gap-6 md:gap-7 lg:gap-8">
                   <div>
-                    <label className="block text-sm sm:text-base font-bold text-gray-800 mb-2 sm:mb-3">First Name</label>
-                    <input type="text" className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-brand-light border border-gray-200 rounded text-base sm:text-lg focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all touch-manipulation" placeholder="John" />
+                    <label htmlFor="firstName" className="block text-sm xs:text-base sm:text-lg font-bold text-gray-800 mb-2 xs:mb-2.5 sm:mb-3">First Name <span className="text-red-500">*</span></label>
+                    <input 
+                      id="firstName"
+                      type="text" 
+                      required
+                      className="w-full min-h-[48px] sm:min-h-[52px] md:min-h-[56px] px-4 xs:px-4.5 sm:px-5 md:px-6 py-3.5 xs:py-4 sm:py-4.5 md:py-5 bg-brand-light border-2 border-gray-200 rounded-lg text-base xs:text-lg sm:text-xl focus:outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/20 hover:border-gray-300 transition-all duration-200 touch-manipulation" 
+                      placeholder="John" 
+                    />
                   </div>
                   <div>
-                    <label className="block text-sm sm:text-base font-bold text-gray-800 mb-2 sm:mb-3">Last Name</label>
-                    <input type="text" className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-brand-light border border-gray-200 rounded text-base sm:text-lg focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all touch-manipulation" placeholder="Doe" />
+                    <label htmlFor="lastName" className="block text-sm xs:text-base sm:text-lg font-bold text-gray-800 mb-2 xs:mb-2.5 sm:mb-3">Last Name <span className="text-red-500">*</span></label>
+                    <input 
+                      id="lastName"
+                      type="text" 
+                      required
+                      className="w-full min-h-[48px] sm:min-h-[52px] md:min-h-[56px] px-4 xs:px-4.5 sm:px-5 md:px-6 py-3.5 xs:py-4 sm:py-4.5 md:py-5 bg-brand-light border-2 border-gray-200 rounded-lg text-base xs:text-lg sm:text-xl focus:outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/20 hover:border-gray-300 transition-all duration-200 touch-manipulation" 
+                      placeholder="Doe" 
+                    />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block text-sm sm:text-base font-bold text-gray-800 mb-2 sm:mb-3">Email Address</label>
-                  <input type="email" className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-brand-light border border-gray-200 rounded text-base sm:text-lg focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all touch-manipulation" placeholder="john@company.com" />
+                  <label htmlFor="email" className="block text-sm xs:text-base sm:text-lg font-bold text-gray-800 mb-2 xs:mb-2.5 sm:mb-3">Email Address <span className="text-red-500">*</span></label>
+                  <input 
+                    id="email"
+                    type="email" 
+                    required
+                    inputMode="email"
+                    autoComplete="email"
+                    className="w-full min-h-[48px] sm:min-h-[52px] md:min-h-[56px] px-4 xs:px-4.5 sm:px-5 md:px-6 py-3.5 xs:py-4 sm:py-4.5 md:py-5 bg-brand-light border-2 border-gray-200 rounded-lg text-base xs:text-lg sm:text-xl focus:outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/20 hover:border-gray-300 transition-all duration-200 touch-manipulation" 
+                    placeholder="john@company.com" 
+                  />
                 </div>
 
                 <div>
-                   <label className="block text-sm sm:text-base font-bold text-gray-800 mb-2 sm:mb-3">Organization Type</label>
-                   <select className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-brand-light border border-gray-200 rounded text-base sm:text-lg focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all touch-manipulation appearance-none bg-no-repeat bg-right pr-10" style={{backgroundImage: "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\")", backgroundPosition: "right 0.5rem center", backgroundSize: "1.5em 1.5em"}}>
-                     <option>Corporate Office</option>
-                     <option>Residential Society</option>
-                     <option>Educational Institution</option>
-                     <option>Municipality</option>
-                     <option>Other</option>
-                   </select>
+                   <label htmlFor="orgType" className="block text-sm xs:text-base sm:text-lg font-bold text-gray-800 mb-2 xs:mb-2.5 sm:mb-3">Organization Type <span className="text-red-500">*</span></label>
+                   <div className="relative">
+                     <select 
+                       id="orgType"
+                       required
+                       className="w-full min-h-[48px] sm:min-h-[52px] md:min-h-[56px] px-4 xs:px-4.5 sm:px-5 md:px-6 py-3.5 xs:py-4 sm:py-4.5 md:py-5 bg-brand-light border-2 border-gray-200 rounded-lg text-base xs:text-lg sm:text-xl focus:outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/20 hover:border-gray-300 transition-all duration-200 touch-manipulation appearance-none cursor-pointer"
+                       style={{backgroundImage: "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\")", backgroundPosition: "right 1rem center", backgroundSize: "1.5em 1.5em", backgroundRepeat: "no-repeat", paddingRight: "3rem"}}
+                     >
+                       <option value="">Select organization type</option>
+                       <option>Corporate Office</option>
+                       <option>Residential Society</option>
+                       <option>Educational Institution</option>
+                       <option>Municipality</option>
+                       <option>Hotel/Restaurant</option>
+                       <option>Hospital</option>
+                       <option>Other</option>
+                     </select>
+                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm sm:text-base font-bold text-gray-800 mb-2 sm:mb-3">Message</label>
-                  <textarea rows={5} className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-brand-light border border-gray-200 rounded text-base sm:text-lg focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all resize-y touch-manipulation" placeholder="Tell us about your waste management needs..."></textarea>
+                  <label htmlFor="message" className="block text-sm xs:text-base sm:text-lg font-bold text-gray-800 mb-2 xs:mb-2.5 sm:mb-3">Message <span className="text-red-500">*</span></label>
+                  <textarea 
+                    id="message"
+                    required
+                    rows={5} 
+                    className="w-full min-h-[120px] sm:min-h-[140px] px-4 xs:px-4.5 sm:px-5 md:px-6 py-3.5 xs:py-4 sm:py-4.5 md:py-5 bg-brand-light border-2 border-gray-200 rounded-lg text-base xs:text-lg sm:text-xl focus:outline-none focus:border-brand-gold focus:ring-4 focus:ring-brand-gold/20 hover:border-gray-300 transition-all duration-200 resize-y touch-manipulation" 
+                    placeholder="Tell us about your waste management needs..."
+                  ></textarea>
                 </div>
 
-                <Button className="w-full py-4 sm:py-5 text-lg sm:text-xl touch-manipulation">Send Message</Button>
-                <p className="text-xs sm:text-sm text-center text-gray-500 mt-4 sm:mt-6">We respect your privacy. No spam.</p>
+                <button type="submit" className="relative overflow-hidden w-full min-h-[52px] xs:min-h-[56px] sm:min-h-[60px] md:min-h-[64px] rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.6)] active:scale-[0.98] hover:scale-[1.01] transition-all duration-300 touch-manipulation group">
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
+                  
+                  {/* Glow pulse */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
+                  
+                  {/* Button content */}
+                  <div className="relative flex items-center justify-center gap-2.5 xs:gap-3 sm:gap-3.5 h-full px-6 xs:px-7 sm:px-8 text-white">
+                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Send Message</span>
+                    <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                  </div>
+                </button>
+                <p className="text-xs xs:text-sm sm:text-base text-center text-gray-500 mt-3 xs:mt-4 sm:mt-5">
+                  <span className="inline-flex items-center gap-2">
+                    🔒 We respect your privacy. No spam.
+                  </span>
+                </p>
               </form>
             </div>
           </div>

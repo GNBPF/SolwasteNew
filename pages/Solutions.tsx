@@ -53,13 +53,37 @@ const ProductDetail: React.FC<{
          <SpecTable specs={specs} />
       </div>
 
-      <div className="mt-10 flex gap-6">
-        <Link to="/contact">
-            <Button className="px-10 py-4 text-lg">Get Quote</Button>
+      <div className="mt-10 flex flex-col xs:flex-row gap-4 xs:gap-5 sm:gap-6">
+        <Link to="/contact" className="w-full xs:w-auto group">
+            <div className="relative overflow-hidden w-full h-full min-h-[56px] xs:min-h-[60px] sm:min-h-[64px] rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.6)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+              {/* Shine effect */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
+              
+              {/* Glow pulse */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
+              
+              {/* Button content */}
+              <div className="relative flex items-center justify-center gap-2.5 h-full px-10 xs:px-12 sm:px-14 text-white">
+                <span className="text-base xs:text-lg sm:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Get Quote</span>
+                <svg className="w-5 h-5 xs:w-6 xs:h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+            </div>
         </Link>
-        <Button variant="outline" className="px-8 py-4 text-lg flex items-center gap-3">
-            <Download size={20} /> Brochure
-        </Button>
+        <button className="relative overflow-hidden w-full xs:w-auto min-h-[56px] xs:min-h-[60px] sm:min-h-[64px] rounded-xl bg-white hover:bg-brand-light border-2 border-brand-olive-dark hover:border-brand-olive shadow-[0_0_15px_rgba(94,121,96,0.2)] hover:shadow-[0_0_25px_rgba(94,121,96,0.4)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation group">
+          {/* Shine effect */}
+          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-olive/20 to-transparent"></div>
+          
+          {/* Animated border glow */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl ring-2 ring-brand-olive/30"></div>
+          
+          {/* Button content */}
+          <div className="relative flex items-center justify-center gap-2.5 h-full px-8 xs:px-10 sm:px-12 text-brand-olive-dark group-hover:text-brand-olive">
+            <Download size={20} className="xs:w-6 xs:h-6 group-hover:translate-y-0.5 transition-transform duration-300" />
+            <span className="text-base xs:text-lg sm:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Brochure</span>
+          </div>
+        </button>
       </div>
     </div>
   </div>

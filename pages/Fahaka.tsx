@@ -62,15 +62,39 @@ export const Fahaka: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
-                    <Link to="/contact" className="w-full sm:w-auto">
-                        <Button className="w-full sm:w-auto bg-brand-gold border-brand-gold text-white hover:bg-white hover:text-brand-gold px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl touch-manipulation">
-                            Request Private Demo
-                        </Button>
+                    <Link to="/contact" className="w-full sm:w-auto group">
+                        <div className="relative overflow-hidden w-full h-full min-h-[54px] xs:min-h-[58px] sm:min-h-[62px] md:min-h-[66px] rounded-xl bg-gradient-to-r from-brand-gold via-yellow-500 to-brand-gold hover:from-yellow-500 hover:via-brand-gold hover:to-yellow-500 shadow-[0_0_25px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.7)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+                          {/* Shine effect */}
+                          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+                          
+                          {/* Glow pulse */}
+                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/20 animate-pulse"></div>
+                          
+                          {/* Button content */}
+                          <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 h-full px-8 sm:px-10 md:px-12 text-white">
+                            <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                            <span className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Request Private Demo</span>
+                          </div>
+                        </div>
                     </Link>
-                    <Link to="/contact" className="w-full sm:w-auto">
-                        <Button variant="outline" className="w-full sm:w-auto border-gray-500 text-gray-300 hover:border-white hover:text-white px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl touch-manipulation">
-                            Download Whitepaper
-                        </Button>
+                    <Link to="/contact" className="w-full sm:w-auto group">
+                        <div className="relative overflow-hidden w-full h-full min-h-[54px] xs:min-h-[58px] sm:min-h-[62px] md:min-h-[66px] rounded-xl bg-transparent border-2 border-gray-500 hover:border-white backdrop-blur-lg shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+                          {/* Shine effect */}
+                          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                          
+                          {/* Animated border glow */}
+                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl ring-2 ring-white/30"></div>
+                          
+                          {/* Button content */}
+                          <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 h-full px-8 sm:px-10 md:px-12 text-gray-300 group-hover:text-white">
+                            <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            <span className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Download Whitepaper</span>
+                          </div>
+                        </div>
                     </Link>
                 </div>
             </motion.div>
@@ -311,8 +335,8 @@ export const Fahaka: React.FC = () => {
           </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden">
+      {/* CTA - Enhanced responsive design */}
+      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 overflow-hidden">
           {/* Background Image with Premium Black to Gold Fade */}
           <div className="absolute inset-0 z-0">
             <img 
@@ -323,15 +347,29 @@ export const Fahaka: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-brand-gold/85 to-black/80"></div>
           </div>
           
-          <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-black text-white mb-6 sm:mb-8 uppercase leading-tight drop-shadow-2xl">Ready to deploy Fahaka?</h2>
-              <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14 font-medium px-4 drop-shadow-lg">
+          <div className="container mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-12 text-center relative z-10">
+              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-black text-white mb-5 xs:mb-6 sm:mb-7 md:mb-8 lg:mb-10 uppercase leading-tight drop-shadow-2xl px-2">
+                Ready to deploy Fahaka?
+              </h2>
+              <p className="text-white text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-4xl mx-auto mb-8 xs:mb-9 sm:mb-10 md:mb-12 lg:mb-14 font-medium px-4 sm:px-6 md:px-8 drop-shadow-lg leading-relaxed">
                   This technology is currently available for pilot programs in select municipalities and large townships.
               </p>
-              <Link to="/contact" className="inline-block">
-                <Button variant="white" className="py-4 sm:py-5 md:py-6 px-10 sm:px-12 md:px-14 text-base sm:text-lg md:text-xl font-bold uppercase touch-manipulation">
-                    Schedule Consultation
-                </Button>
+              <Link to="/contact" className="inline-block w-full xs:w-auto group">
+                <div className="relative overflow-hidden w-full h-full min-h-[52px] xs:min-h-[56px] sm:min-h-[60px] md:min-h-[64px] lg:min-h-[68px] rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)] active:scale-[0.98] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+                  
+                  {/* Glow pulse */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
+                  
+                  {/* Button content */}
+                  <div className="relative flex items-center justify-center gap-2.5 xs:gap-3 sm:gap-3.5 md:gap-4 h-full px-8 xs:px-10 sm:px-12 md:px-14 lg:px-16 xl:px-20 text-brand-dark">
+                    <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Schedule Consultation</span>
+                  </div>
+                </div>
               </Link>
           </div>
       </section>
