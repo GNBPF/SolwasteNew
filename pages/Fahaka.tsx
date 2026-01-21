@@ -28,7 +28,7 @@ export const Fahaka: React.FC = () => {
       />
       
       {/* Hero Section with Image Slideshow - Mobile Optimized */}
-      <section className="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col items-center justify-center text-center overflow-hidden px-3 xs:px-4 sm:px-6">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-3 xs:px-4 sm:px-6">
          {/* Background Image Slideshow - Mobile Optimized */}
          <div className="absolute inset-0 z-0">
            <AnimatePresence mode="wait">
@@ -72,8 +72,8 @@ export const Fahaka: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 xs:gap-3.5 sm:gap-4 md:gap-5 justify-center px-3 xs:px-4">
-                    <Link to="/contact" className="w-full sm:w-auto group">
-                        <div className="relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[50px] sm:min-h-[54px] md:min-h-[58px] lg:min-h-[62px] rounded-lg xs:rounded-xl bg-gradient-to-r from-brand-gold via-yellow-500 to-brand-gold hover:from-yellow-500 hover:via-brand-gold hover:to-yellow-500 shadow-[0_0_25px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.7)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+                    <Link to="/contact" className="w-full sm:flex-1 group">
+                        <div className="relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[50px] sm:min-h-[54px] md:min-h-[58px] lg:min-h-[62px] flex items-center justify-center rounded-lg xs:rounded-xl bg-gradient-to-r from-brand-gold via-yellow-500 to-brand-gold hover:from-yellow-500 hover:via-brand-gold hover:to-yellow-500 shadow-[0_0_25px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.7)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation">
                           {/* Shine effect */}
                           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
                           
@@ -81,16 +81,16 @@ export const Fahaka: React.FC = () => {
                           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/20 animate-pulse"></div>
                           
                           {/* Button content */}
-                          <div className="relative flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-2.5 h-full px-5 xs:px-6 sm:px-8 md:px-10 text-white">
-                            <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 px-5 xs:px-6 sm:px-8 md:px-10 text-white">
+                            <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                             </svg>
-                            <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wide xs:tracking-wider group-hover:tracking-widest transition-all duration-300">Request Private Demo</span>
+                            <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Request Private Demo</span>
                           </div>
                         </div>
                     </Link>
-                    <Link to="/contact" className="w-full sm:w-auto group">
-                        <div className="relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[50px] sm:min-h-[54px] md:min-h-[58px] lg:min-h-[62px] rounded-lg xs:rounded-xl bg-transparent border-2 border-gray-500 hover:border-white backdrop-blur-lg shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+                    <Link to="/contact" className="w-full sm:flex-1 group">
+                        <div className="relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[50px] sm:min-h-[54px] md:min-h-[58px] lg:min-h-[62px] flex items-center justify-center rounded-lg xs:rounded-xl bg-transparent border-2 border-gray-500 hover:border-white backdrop-blur-lg shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation">
                           {/* Shine effect */}
                           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                           
@@ -98,11 +98,11 @@ export const Fahaka: React.FC = () => {
                           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl ring-2 ring-white/30"></div>
                           
                           {/* Button content */}
-                          <div className="relative flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-2.5 h-full px-5 xs:px-6 sm:px-8 md:px-10 text-gray-300 group-hover:text-white">
-                            <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 px-5 xs:px-6 sm:px-8 md:px-10 text-gray-300 group-hover:text-white">
+                            <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 flex-shrink-0 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
-                            <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wide xs:tracking-wider group-hover:tracking-widest transition-all duration-300">Download Whitepaper</span>
+                            <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Download Whitepaper</span>
                           </div>
                         </div>
                     </Link>
@@ -351,7 +351,7 @@ export const Fahaka: React.FC = () => {
                   This technology is currently available for pilot programs in select municipalities and large townships.
               </p>
               <Link to="/contact" className="inline-block w-full xs:w-auto group">
-                <div className="relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[52px] sm:min-h-[56px] md:min-h-[60px] lg:min-h-[64px] xl:min-h-[68px] rounded-lg xs:rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)] active:scale-[0.98] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+                <div className="relative overflow-hidden w-full h-full min-h-[48px] xs:min-h-[52px] sm:min-h-[56px] md:min-h-[60px] lg:min-h-[64px] xl:min-h-[68px] flex items-center justify-center rounded-lg xs:rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation">
                   {/* Shine effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
                   
@@ -359,11 +359,11 @@ export const Fahaka: React.FC = () => {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
                   
                   {/* Button content */}
-                  <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 md:gap-3.5 lg:gap-4 h-full px-6 xs:px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-20 text-brand-dark">
-                    <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3 md:gap-3.5 lg:gap-4 px-6 xs:px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-20 text-brand-dark">
+                    <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 flex-shrink-0 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase tracking-wide xs:tracking-wider group-hover:tracking-widest transition-all duration-300">Schedule Consultation</span>
+                    <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Schedule Consultation</span>
                   </div>
                 </div>
               </Link>

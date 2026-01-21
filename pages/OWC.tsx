@@ -145,7 +145,7 @@ export const OWC: React.FC = () => {
         type="product"
       />
       {/* Header */}
-      <div className="bg-brand-dark text-white py-32 relative overflow-hidden">
+      <div className="bg-brand-dark text-white min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-brand-gold-dark/30 z-0"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 uppercase">Organic Waste Composters</h1>

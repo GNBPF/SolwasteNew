@@ -45,7 +45,7 @@ export const Careers: React.FC = () => {
         type="website"
       />
       {/* Hero */}
-      <section className="bg-brand-dark text-white py-32 relative overflow-hidden">
+      <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
         
@@ -70,7 +70,7 @@ export const Careers: React.FC = () => {
                     We're not just managing waste. We're redesigning how cities think about it. 
                     If sustainability excites you, climate action matters to you, and you want real-world exposure (not just certificates), you're in the right place.
                 </p>
-                <button onClick={() => document.getElementById('roles')?.scrollIntoView({ behavior: 'smooth'})} className="relative overflow-hidden min-h-[56px] xs:min-h-[60px] sm:min-h-[64px] rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation group">
+                <button onClick={() => document.getElementById('roles')?.scrollIntoView({ behavior: 'smooth'})} className="relative overflow-hidden min-h-[56px] xs:min-h-[60px] sm:min-h-[64px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                   {/* Shine effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                   
@@ -78,9 +78,9 @@ export const Careers: React.FC = () => {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
                   
                   {/* Button content */}
-                  <div className="relative flex items-center justify-center gap-2.5 h-full px-10 xs:px-12 sm:px-14 text-brand-dark">
-                    <span className="text-base xs:text-lg sm:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">View Open Roles</span>
-                    <svg className="w-5 h-5 xs:w-6 xs:h-6 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="relative flex items-center justify-center gap-2.5 px-10 xs:px-12 sm:px-14 text-brand-dark">
+                    <span className="text-base xs:text-lg sm:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">View Open Roles</span>
+                    <svg className="w-5 h-5 xs:w-6 xs:h-6 flex-shrink-0 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
@@ -157,7 +157,7 @@ export const Careers: React.FC = () => {
                       <h3 className="text-2xl font-heading font-bold mb-2">Don't see your role?</h3>
                       <p className="text-gray-400">We are always looking for exceptional talent. Pitch us your role.</p>
                   </div>
-                  <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden min-h-[52px] xs:min-h-[56px] rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation group">
+                  <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden min-h-[52px] xs:min-h-[56px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                     {/* Shine effect */}
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                     
@@ -165,9 +165,9 @@ export const Careers: React.FC = () => {
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
                     
                     {/* Button content */}
-                    <div className="relative flex items-center justify-center gap-2 h-full px-8 xs:px-10 text-brand-dark">
-                      <span className="text-base xs:text-lg font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Apply Now</span>
-                      <svg className="w-5 h-5 xs:w-6 xs:h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="relative flex items-center justify-center gap-2 px-8 xs:px-10 text-brand-dark">
+                      <span className="text-base xs:text-lg font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">Apply Now</span>
+                      <svg className="w-5 h-5 xs:w-6 xs:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </div>
@@ -206,7 +206,7 @@ export const Careers: React.FC = () => {
                           <p className="text-white/90 text-lg mb-10 font-medium">
                               Ready to make a difference? Apply now and start your journey with Solwaste.
                           </p>
-                          <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden w-full min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)] active:scale-[0.98] hover:scale-[1.01] transition-all duration-300 touch-manipulation group">
+                          <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden w-full min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.7)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                             {/* Shine effect */}
                             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
                             
@@ -214,9 +214,9 @@ export const Careers: React.FC = () => {
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
                             
                             {/* Button content */}
-                            <div className="relative flex items-center justify-center gap-2.5 h-full px-8 text-brand-dark">
-                              <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-widest group-hover:tracking-[0.3em] transition-all duration-300">Apply Now</span>
-                              <svg className="w-6 h-6 xs:w-7 xs:h-7 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="relative flex items-center justify-center gap-2.5 px-8 text-brand-dark">
+                              <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-widest group-hover:tracking-[0.3em] transition-all duration-300 leading-none">Apply Now</span>
+                              <svg className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                               </svg>
                             </div>

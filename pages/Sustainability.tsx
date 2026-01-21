@@ -38,7 +38,7 @@ export const Sustainability: React.FC = () => {
         type="article"
       />
       {/* Header */}
-      <div className="bg-gray-50 pt-40 pb-20 border-b border-gray-200">
+      <div className="bg-gray-50 min-h-screen flex items-center border-b border-gray-200">
         <div className="container mx-auto px-6">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

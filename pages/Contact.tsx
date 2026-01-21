@@ -12,7 +12,7 @@ export const Contact: React.FC = () => {
         keywords="contact solwaste, waste management quote, composter price, OWC enquiry, waste management consultation, composting machine dealers, India waste solutions"
         type="website"
       />
-       <div className="bg-brand-dark text-white py-16 sm:py-20 md:py-24">
+       <div className="bg-brand-dark text-white min-h-screen flex items-center justify-center">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight">GET IN TOUCH</h1>
           <p className="text-gray-300 mt-4 sm:mt-6 text-base sm:text-lg md:text-xl px-4">Start your journey towards zero waste today.</p>
@@ -142,7 +142,7 @@ export const Contact: React.FC = () => {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="relative overflow-hidden w-full min-h-[52px] xs:min-h-[56px] sm:min-h-[60px] md:min-h-[64px] rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.6)] active:scale-[0.98] hover:scale-[1.01] transition-all duration-300 touch-manipulation group">
+                <button type="submit" className="relative overflow-hidden w-full min-h-[52px] xs:min-h-[56px] sm:min-h-[60px] md:min-h-[64px] flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                   {/* Shine effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
                   
@@ -150,9 +150,9 @@ export const Contact: React.FC = () => {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
                   
                   {/* Button content */}
-                  <div className="relative flex items-center justify-center gap-2.5 xs:gap-3 sm:gap-3.5 h-full px-6 xs:px-7 sm:px-8 text-white">
-                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Send Message</span>
-                    <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="relative flex items-center justify-center gap-2.5 xs:gap-3 sm:gap-3.5 px-6 xs:px-7 sm:px-8 text-white">
+                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">Send Message</span>
+                    <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>
                   </div>

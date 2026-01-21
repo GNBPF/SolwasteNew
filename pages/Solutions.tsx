@@ -145,7 +145,7 @@ export const Solutions: React.FC = () => {
         type="website"
       />
       {/* Header - Mobile Optimized */}
-      <div className="bg-brand-dark text-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
+      <div className="bg-brand-dark text-white min-h-screen flex items-center justify-center">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">Product Catalog</h1>
           <p className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl font-light">German Engineering. Indian Tenacity. World Class Results.</p>

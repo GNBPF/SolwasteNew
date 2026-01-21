@@ -21,7 +21,7 @@ export const About: React.FC = () => {
         type="website"
       />
       {/* Header - Mobile Optimized */}
-      <div className="bg-brand-dark text-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative overflow-hidden">
+      <div className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
