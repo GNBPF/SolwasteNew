@@ -4,6 +4,7 @@ import { Button } from '../components/ui/Button';
 import { ChevronLeft, ChevronRight, Zap, ShieldCheck, Recycle, Target, Globe, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PartnersSection from '../components/PartnersSection';
+import { SEO } from '../components/SEO';
 
 // Slide type definition
 type Slide = {
@@ -384,6 +385,12 @@ export const Home: React.FC = () => {
 
   return (
     <>
+      <SEO 
+        title="Home - Leading Organic Waste Management Solutions"
+        description="Solwaste offers advanced organic waste composters for societies, hotels, industries & municipalities. EcoLoop, CompoGen, CyberSoil & Fahaka - SWM Rules 2016 compliant. Transform waste into valuable compost with German engineering."
+        keywords="organic waste management India, composting machines, waste to compost, EcoLoop waste composter, CompoGen industrial composter, CyberSoil residential composter, Fahaka waste processor, sustainable waste solutions, zero waste technology, SWM Rules 2016"
+        type="website"
+      />
       {/* FULL SCREEN SLIDER SECTION */}
       <section className="relative h-screen overflow-hidden bg-black">
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
@@ -476,11 +483,11 @@ export const Home: React.FC = () => {
                           <div className="text-xs xs:text-sm sm:text-base text-brand-gold font-bold uppercase tracking-wider">Legal Compliance</div>
                       </div>
                   </div>
-                  <Link to="/contact" className="block xs:inline-block">
+                  <a href="https://quark-cornflower-fe8.notion.site/2ef846625722805685eafe2642f29e0e?pvs=105" target="_blank" rel="noopener noreferrer" className="block xs:inline-block">
                      <Button className="w-full xs:w-auto min-h-[48px] sm:min-h-[52px] md:min-h-[56px] bg-brand-gold text-white border-brand-gold hover:bg-white hover:text-brand-gold py-3.5 xs:py-4 sm:py-4.5 md:py-5 px-6 xs:px-7 sm:px-8 md:px-10 lg:px-12 text-sm xs:text-base sm:text-lg font-bold uppercase tracking-wider md:tracking-widest touch-manipulation active:scale-95 transition-transform">
                         Get Compliance Audit
                      </Button>
-                  </Link>
+                  </a>
                </div>
                
                <div className="grid grid-cols-1 gap-4 xs:gap-4.5 sm:gap-5 md:gap-6 mt-6 lg:mt-0">

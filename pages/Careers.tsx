@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Heart, Globe, Users, Zap, Layers, ChevronRight } from 'lucide-react';
 import { Button } from '../components/ui/Button';
+import { SEO } from '../components/SEO';
 
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
   <motion.div 
@@ -37,6 +38,12 @@ export const Careers: React.FC = () => {
 
   return (
     <div className="bg-white pt-20">
+      <SEO 
+        title="Careers at Solwaste - Join India's Leading Waste Management Team"
+        description="Join Solwaste's mission to transform India's waste management. Open positions in sustainability research, operations, sales, marketing, technology & more. Build a cleaner future with us. Apply now!"
+        keywords="solwaste careers, waste management jobs, sustainability jobs India, environmental careers, green technology jobs, composting industry jobs, cleantech careers India"
+        type="website"
+      />
       {/* Hero */}
       <section className="bg-brand-dark text-white py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>

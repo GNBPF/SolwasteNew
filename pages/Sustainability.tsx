@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Eye, Leaf, Scale, Building2, Truck, Lightbulb, Users, FileText, RefreshCw, Mail, Phone, MapPin } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 const Section: React.FC<{ number: string; title: string; children: React.ReactNode; icon: React.ReactNode }> = ({ number, title, children, icon }) => (
   <motion.div 
@@ -30,6 +31,12 @@ const Section: React.FC<{ number: string; title: string; children: React.ReactNo
 export const Sustainability: React.FC = () => {
   return (
     <div className="bg-white">
+      <SEO 
+        title="Sustainability Report - Environmental Impact & ESG Goals"
+        description="Solwaste's commitment to sustainability. Carbon footprint reduction, circular economy principles, ESG goals, environmental impact metrics. Building a zero-waste future for India through innovation."
+        keywords="sustainability report, environmental impact, ESG goals, circular economy, carbon footprint reduction, zero waste, sustainable practices, green technology, climate action India"
+        type="article"
+      />
       {/* Header */}
       <div className="bg-gray-50 pt-40 pb-20 border-b border-gray-200">
         <div className="container mx-auto px-6">

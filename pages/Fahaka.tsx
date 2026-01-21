@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Recycle, ShieldCheck, Flame, Layers } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 export const Fahaka: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -19,6 +20,12 @@ export const Fahaka: React.FC = () => {
 
   return (
     <div className="pt-16 sm:pt-20 bg-brand-dark text-white min-h-screen">
+      <SEO 
+        title="Fahaka - Universal Waste Decomposer | Food, Plastic & Sanitary Waste"
+        description="Revolutionary Fahaka technology processes food waste, plastic bottles & sanitary waste into sterile resources. Plasma pyrolysis technology, 850°C thermal decomposition, zero landfill. The future of waste management."
+        keywords="Fahaka waste processor, universal waste decomposer, plasma pyrolysis, plastic waste management, sanitary waste disposal, biomedical waste, mixed waste processing, thermal decomposition, zero landfill, advanced waste technology"
+        type="product"
+      />
       
       {/* Hero Section with Image Slideshow */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col items-center justify-center text-center overflow-hidden px-4 sm:px-6">

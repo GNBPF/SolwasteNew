@@ -1,10 +1,17 @@
 import React from 'react';
 import { Button } from '../components/ui/Button';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const Contact: React.FC = () => {
   return (
     <div className="pt-16 sm:pt-20">
+      <SEO 
+        title="Contact Us - Get Quote for Waste Management Solutions"
+        description="Contact Solwaste for organic waste management solutions. Request consultation for EcoLoop, CompoGen, CyberSoil or Fahaka. Serving Delhi NCR, Mumbai, Bangalore, Pune, Hyderabad. Call +91-987-654-3210"
+        keywords="contact solwaste, waste management quote, composter price, OWC enquiry, waste management consultation, composting machine dealers, India waste solutions"
+        type="website"
+      />
        <div className="bg-brand-dark text-white py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight">GET IN TOUCH</h1>
@@ -26,8 +33,9 @@ export const Contact: React.FC = () => {
                   <div className="flex-1">
                     <h4 className="font-bold text-brand-brown mb-2 xs:mb-2.5 text-base xs:text-lg sm:text-xl md:text-2xl">Headquarters</h4>
                     <p className="text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed">
-                      123 Green Tech Park, Industrial Sector 4<br/>
-                      New Delhi, India 110020
+                      Worli, 1st floor, 264-265,<br/>
+                      Dr. Annie Besant Road,<br/>
+                      Worli, Mumbai, MH 400025
                     </p>
                   </div>
                 </div>
@@ -38,7 +46,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-brand-brown mb-2 xs:mb-2.5 text-base xs:text-lg sm:text-xl md:text-2xl">Phone</h4>
-                    <a href="tel:+919876543210" className="block text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl font-semibold hover:text-brand-gold transition-colors min-h-[44px] flex items-center touch-manipulation active:scale-98">+91 987 654 3210</a>
+                    <a href="tel:+919429691308" className="block text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl font-semibold hover:text-brand-gold transition-colors min-h-[44px] flex items-center touch-manipulation active:scale-98">+91-9429691308</a>
                     <p className="text-gray-600 text-xs xs:text-sm sm:text-base md:text-lg mt-1">Mon-Sat 9am to 6pm IST</p>
                   </div>
                 </div>
@@ -49,8 +57,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-brand-brown mb-2 xs:mb-2.5 text-base xs:text-lg sm:text-xl md:text-2xl">Email</h4>
-                    <a href="mailto:info@solwaste.co" className="block text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl hover:text-brand-gold transition-colors min-h-[44px] flex items-center touch-manipulation active:scale-98 break-all font-medium">info@solwaste.co</a>
-                    <a href="mailto:sales@solwaste.co" className="block text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl hover:text-brand-gold transition-colors min-h-[44px] flex items-center touch-manipulation active:scale-98 break-all font-medium">sales@solwaste.co</a>
+                    <a href="mailto:hello@solwaste.co" className="block text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl hover:text-brand-gold transition-colors min-h-[44px] flex items-center touch-manipulation active:scale-98 break-all font-medium">hello@solwaste.co</a>
                   </div>
                 </div>
               </div>

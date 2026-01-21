@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, MapPin, Factory, BarChart, Clock, Filter, CheckCircle2, AlertCircle } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 const projects = [
   { id: 1, client: "Indira Gandhi Centre for Atomic Research", location: "Kalpakkam, Tamil Nadu", capacity: "1 TPD", type: "MSW", status: "Installed" },
@@ -52,6 +53,12 @@ export const CaseStudies: React.FC = () => {
 
   return (
     <div className="pt-20 bg-gray-50 min-h-screen">
+      <SEO 
+        title="Case Studies - 500+ Successful Waste Management Installations"
+        description="Explore Solwaste's case studies across India. 500+ installations in ONGC, Adani, government municipalities, hospitals, hotels & societies. View project details, capacity & impact. Real results from real clients."
+        keywords="solwaste case studies, waste management projects India, OWC installations, composting success stories, client testimonials, municipal waste projects, industrial composting installations, hotel waste management"
+        type="article"
+      />
       
       {/* Header */}
       <section className="bg-brand-dark text-white py-24 relative overflow-hidden">

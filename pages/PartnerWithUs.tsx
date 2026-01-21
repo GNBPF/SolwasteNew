@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Box, DollarSign, BookOpen, ShieldCheck, TrendingUp, UserPlus, Phone, Rocket } from 'lucide-react';
 import { Button } from '../components/ui/Button';
+import { SEO } from '../components/SEO';
 
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
   <motion.div 
@@ -38,6 +39,12 @@ const Step: React.FC<{ number: string; title: string; text: string }> = ({ numbe
 export const PartnerWithUs: React.FC = () => {
   return (
     <div className="pt-20 bg-white">
+      <SEO 
+        title="Partner with Us - Become a Solwaste Authorized Dealer"
+        description="Join Solwaste's partner network. Become authorized dealer for organic waste composters. Attractive margins, marketing support, training programs. Expand your green business with India's leading waste management brand."
+        keywords="solwaste partnership, composting machine dealership, OWC dealership India, waste management franchise, green business opportunity, authorized dealer, composting equipment distributor"
+        type="website"
+      />
       
       {/* Hero Section */}
       <section className="bg-brand-dark text-white py-32 relative overflow-hidden">

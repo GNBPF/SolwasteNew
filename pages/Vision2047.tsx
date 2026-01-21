@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Flag, AlertTriangle, CloudFog, Droplets, Skull, Settings, ChevronDown, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const FadeIn: React.FC<{ children: React.ReactNode, delay?: number }> = ({ children, delay = 0 }) => (
   <motion.div
@@ -18,6 +19,12 @@ const FadeIn: React.FC<{ children: React.ReactNode, delay?: number }> = ({ child
 export const Vision2047: React.FC = () => {
   return (
     <div className="bg-white overflow-hidden">
+      <SEO 
+        title="Vision 2047 - Building a Zero-Waste India by 2047"
+        description="Solwaste's vision for India@100. Achieving zero landfills, 100% waste processing, decentralized waste management across all 4000+ cities. Join the mission for a waste-free independent India by 2047."
+        keywords="Vision 2047, zero waste India, waste management vision, India@100, zero landfill, sustainable India 2047, waste-free cities, environmental mission, climate goals India"
+        type="article"
+      />
       
       {/* HERO SECTION */}
       <section className="relative h-screen flex flex-col items-center justify-center bg-brand-dark text-white text-center px-6">

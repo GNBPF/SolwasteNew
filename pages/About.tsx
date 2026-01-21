@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Globe, Award, Users, ChevronRight } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
   <div className="bg-brand-light p-8 border-l-4 border-gray-200 hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300">
@@ -13,6 +14,12 @@ const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = (
 export const About: React.FC = () => {
   return (
     <div className="">
+      <SEO 
+        title="About Us - Leading Waste Management Company in India"
+        description="Solwaste is India's leading provider of organic waste management solutions. German engineering meets Indian innovation. SWM Rules 2016 compliant, 5-year warranty, serving 500+ clients across India since inception."
+        keywords="about solwaste, waste management company India, organic waste solutions, composting technology, sustainable waste management, environmental solutions, green technology India"
+        type="website"
+      />
       {/* Header */}
       <div className="bg-brand-dark text-white py-32 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">

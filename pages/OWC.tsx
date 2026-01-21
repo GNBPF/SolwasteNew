@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, Download } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ specs }) => (
   <div className="grid grid-cols-2 gap-y-6 gap-x-8 mt-8 text-base">
@@ -18,17 +20,60 @@ const ProductDetail: React.FC<{
   name: string; 
   tagline: string;
   description: string;
-  image: string;
+  images: string[];
   features: string[];
   specs: {label: string, value: string}[];
   reversed?: boolean;
-}> = ({ name, tagline, description, image, features, specs, reversed }) => (
-  <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-20 py-32 border-b border-gray-200 last:border-0`}>
-    <div className="lg:w-1/2 w-full">
-      <div className="relative group overflow-hidden bg-gray-100 rounded-sm shadow-xl">
-        <img src={image} alt={name} className="w-full object-cover h-[550px] hover:scale-105 transition-transform duration-700" />
+}> = ({ name, tagline, description, images, features, specs, reversed }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-rotate images if multiple images exist
+  useEffect(() => {
+    if (images.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      }, 3000); // Change image every 3 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [images.length]);
+
+  return (
+    <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-20 py-32 border-b border-gray-200 last:border-0`}>
+      <div className="lg:w-1/2 w-full">
+        <div className="relative group overflow-hidden bg-gray-100 rounded-sm shadow-xl">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentImageIndex}
+              src={images[currentImageIndex]}
+              alt={`${name} - Image ${currentImageIndex + 1}`}
+              className="w-full object-cover h-[550px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            />
+          </AnimatePresence>
+          
+          {/* Image indicators */}
+          {images.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImageIndex(idx)}
+                  className={`rounded-full transition-all duration-300 ${
+                    idx === currentImageIndex
+                      ? 'h-2.5 w-10 bg-brand-gold shadow-lg shadow-brand-gold/50'
+                      : 'h-2.5 w-2.5 bg-white/60 hover:bg-white/80'
+                  }`}
+                  aria-label={`View image ${idx + 1}`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
     <div className="lg:w-1/2 w-full">
       <div className="inline-block text-brand-gold font-bold uppercase tracking-widest text-sm mb-4 border-2 border-brand-gold px-3 py-1">
         {tagline}
@@ -86,12 +131,19 @@ const ProductDetail: React.FC<{
         </button>
       </div>
     </div>
-  </div>
-);
+    </div>
+  );
+};
 
 export const OWC: React.FC = () => {
   return (
     <div className="pt-20">
+      <SEO 
+        title="Organic Waste Composters (OWC) - EcoLoop, CompoGen, CyberSoil"
+        description="Industrial & residential organic waste composters. EcoLoop for societies & hotels (50kg-1000kg), CompoGen for industries (1.5-50 tons), CyberSoil for homes (2-10kg). German engineering, SWM 2016 compliant, 5-year warranty."
+        keywords="organic waste composter, OWC machine, EcoLoop composter, CompoGen industrial composter, CyberSoil home composter, waste management machine, composting technology, aerobic digestion, zero odor composter, HEPA filtration"
+        type="product"
+      />
       {/* Header */}
       <div className="bg-brand-dark text-white py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-brand-gold-dark/30 z-0"></div>
@@ -108,7 +160,7 @@ export const OWC: React.FC = () => {
           name="CompoGen™"
           tagline="Industrial & Municipal"
           description="The CompoGen series is built for the heavy lifting. Designed for municipal corporations and large industrial parks, it uses high-torque German geared motors to crush and compost massive volumes of organic waste."
-          image="/compogen.png"
+          images={["/compogen.webp", "/compogen2.webp"]}
           features={[
             "Fully PLC Controlled with Cloud BMS Integration",
             "High-Torque German Geared Motors",
@@ -128,7 +180,7 @@ export const OWC: React.FC = () => {
           name="EcoLoop™"
           tagline="Societies & Hotels"
           description="A zero-maintenance workhorse designed for residential societies, hotels, and resorts. The EcoLoop ensures that waste management doesn't impact the aesthetics or air quality of your premises."
-          image="/ecoloop.png"
+          images={["/ecoloop.webp", "/ecoloop2.webp", "/ecoloop3.webp"]}
           reversed
           features={[
             "Zero Odor & Pest Free Operation",
@@ -149,7 +201,7 @@ export const OWC: React.FC = () => {
           name="CyberSoil™"
           tagline="Residential & VP Cabins"
           description="Sustainability meets luxury. CyberSoil brings advanced solar dehydration technology into a form factor that fits under a dishwasher. Perfect for luxury apartments and executive offices."
-          image="/cybersoil.png"
+          images={["/cybersoil.webp", "/cybersoil2.webp"]}
           features={[
             "Advanced Solar Dehydration Technology",
             "Compact Under-Counter Dimensions",

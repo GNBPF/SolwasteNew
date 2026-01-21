@@ -1,0 +1,13 @@
+# robots.txt for Solwaste
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://solwaste.co/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 0
+
+# Disallow admin/private paths (if any)
+# Disallow: /admin/
+# Disallow: /private/
