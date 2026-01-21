@@ -26,7 +26,7 @@ const slides: Slide[] = [
     title: "EcoLoop™",
     subtitle: "The Workhorse",
     description: "Designed for Gated Communities and Hotels. Handles 50-1000kg/day with Zero-Maintenance HEPA filtration. No smells, no pests.",
-    image: "/ecoloop.png", // Single optimized image instead of slideshow
+    image: "/ecoloop.webp", // Single optimized image instead of slideshow
     isDark: false, // Navbar should be Dark
     badge: "Societies & Hotels",
     specs: [

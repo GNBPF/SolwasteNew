@@ -245,13 +245,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           </div>
           
           {/* Bottom Bar */}
-          <div className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs sm:text-sm font-medium gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm font-medium gap-4">
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-               <a href="#" className="hover:text-white transition-colors touch-manipulation py-1">Privacy Policy</a>
-               <a href="#" className="hover:text-white transition-colors touch-manipulation py-1">Accessibility Statement</a>
-               <a href="#" className="hover:text-white transition-colors touch-manipulation py-1">Sitemap</a>
+               <a href="#" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Privacy Policy</a>
+               <a href="#" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Accessibility Statement</a>
+               <a href="#" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Sitemap</a>
             </div>
-            <div className="tracking-wide text-center">
+            <div className="tracking-wide text-center text-gray-400">
                &copy; 2026 Solwaste. All rights reserved.
             </div>
           </div>
