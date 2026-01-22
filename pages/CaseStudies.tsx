@@ -63,7 +63,7 @@ export const CaseStudies: React.FC = () => {
       {/* Header */}
       <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574607383476-f2c7115853f2?q=80&w=1972&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/8 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
         
         <div className="container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

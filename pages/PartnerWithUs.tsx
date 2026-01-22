@@ -49,7 +49,7 @@ export const PartnerWithUs: React.FC = () => {
       {/* Hero Section */}
       <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/8 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
         
         <div className="container mx-auto px-6 relative z-10">
             <motion.div

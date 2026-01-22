@@ -46,8 +46,8 @@ export const Fahaka: React.FC = () => {
                transition={{ duration: 0.8 }}
              />
            </AnimatePresence>
-           {/* Premium white fade overlay - Subtle and elegant */}
-           <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-white/8 to-white/20 md:from-white/12 md:via-white/6 md:to-white/15"></div>
+           {/* Premium white fade overlay */}
+           <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
          </div>
          
          <div className="relative z-20 max-w-5xl px-3 xs:px-4">
@@ -59,14 +59,14 @@ export const Fahaka: React.FC = () => {
                 <div className="inline-block border border-brand-gold/50 bg-brand-gold/10 backdrop-blur-md rounded-full px-3 xs:px-4 sm:px-6 md:px-8 py-1 xs:py-1.5 sm:py-2 text-brand-gold font-bold uppercase tracking-widest text-[9px] xs:text-[10px] sm:text-xs md:text-sm mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 shadow-[0_0_20px_rgba(190,215,84,0.3)]">
                     Solwaste Innovation Lab
                 </div>
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[9rem] font-heading font-black text-white mb-2 xs:mb-3 sm:mb-4 tracking-tighter leading-[1.1] xs:leading-none drop-shadow-2xl">
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[9rem] font-heading font-black text-white mb-2 xs:mb-3 sm:mb-4 tracking-tighter leading-[1.1] xs:leading-none" style={{ textShadow: '0 4px 25px rgba(0,0,0,0.6), 0 8px 40px rgba(0,0,0,0.4)' }}>
                     FAHAKA
                 </h1>
-                <p className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-heading font-bold text-gray-300 mb-5 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12 uppercase tracking-wide drop-shadow-lg">
+                <p className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-heading font-bold text-gray-300 mb-5 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12 uppercase tracking-wide" style={{ textShadow: '0 3px 20px rgba(0,0,0,0.5), 0 6px 30px rgba(0,0,0,0.3)' }}>
                     The Universal Decomposer
                 </p>
                 
-                <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-200 max-w-4xl mx-auto mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 leading-relaxed font-normal px-3 xs:px-4 drop-shadow-md">
+                <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-200 max-w-4xl mx-auto mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 leading-relaxed font-normal px-3 xs:px-4" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5), 0 4px 25px rgba(0,0,0,0.3)' }}>
                     Traditional composters fail at contamination. Fahaka thrives on it. <br className="hidden sm:block"/>
                     The world's first unified processor for <span className="text-white font-bold">Food, Plastics, and Sanitary Waste</span>.
                 </p>
@@ -301,7 +301,7 @@ export const Fahaka: React.FC = () => {
               className="w-full h-full object-cover object-center opacity-30 sm:opacity-40"
               style={{ objectPosition: 'center center' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/18 via-white/10 to-white/18 md:from-white/15 md:via-white/8 md:to-white/15"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
           </div>
           
           <div className="container mx-auto px-3 xs:px-4 sm:px-6 relative z-10">
@@ -340,7 +340,7 @@ export const Fahaka: React.FC = () => {
               className="w-full h-full object-cover object-center"
               style={{ objectPosition: 'center center' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-brand-gold/20 to-white/15 md:from-white/12 md:via-brand-gold/18 md:to-white/12"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-brand-gold/30 to-white/40"></div>
           </div>
           
           <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 text-center relative z-10">

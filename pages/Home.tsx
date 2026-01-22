@@ -94,7 +94,7 @@ const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = (
 const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
   // State for image slideshow (for slides with multiple images)
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  
   // Auto-rotate images if multiple images exist
   useEffect(() => {
     if (slide.images && slide.images.length > 1) {
@@ -102,7 +102,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
       const interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % imageCount);
       }, 3000); // Change image every 3 seconds
-
+      
       return () => clearInterval(interval);
     }
   }, [slide.images]);
@@ -133,8 +133,8 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
               />
             </AnimatePresence>
           )}
-          {/* Premium white fade overlay for elegant look - Subtle */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/20 to-white/34 md:from-white/12 md:via-white/6 md:to-white/15"></div>
+          {/* Premium white fade overlay for elegant look */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
         </div>
 
         {/* Content - Better mobile spacing */}
@@ -157,7 +157,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
                Breaking the barriers of organic waste. <br className="hidden sm:block"/>
                Processing <span className="font-bold text-white">Food, Plastics, and Sanitary Waste</span> into sterile resources.
              </p>
-
+             
              <Link to="/fahaka">
                <Button className="bg-brand-gold text-white border-brand-gold hover:bg-white hover:text-brand-gold py-3 sm:py-4 px-8 sm:px-12 text-base sm:text-lg lg:text-xl shadow-2xl shadow-brand-gold/20 w-full sm:w-auto touch-manipulation">
                  Explore Fahaka
@@ -200,7 +200,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
 
   // Get the current image (either from images array or single image)
   const currentImage = slide.images ? slide.images[currentImageIndex] : slide.image;
-
+  
   console.log('Current slide:', slide.id, 'Current image:', currentImage); // Debug log
 
   const backgroundClass = currentImage ? 'bg-transparent' : (isDark ? 'bg-brand-dark' : 'bg-white');
@@ -211,10 +211,10 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
        <div className="absolute inset-0 z-0">
         {currentImage && (
           <AnimatePresence mode="wait">
-            <motion.img
+            <motion.img 
               key={currentImage}
-              src={currentImage}
-              alt={slide.title}
+              src={currentImage} 
+              alt={slide.title} 
               className="w-full h-full object-cover object-center"
               style={{
                 objectPosition: 'center center'
@@ -228,10 +228,10 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
             />
           </AnimatePresence>
         )}
-        {/* Premium white fade overlay - Subtle and elegant */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/12 via-white/5 to-white/15 md:from-white/10 md:via-white/4 md:to-white/12"></div>
+        {/* Premium white fade overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
         {/* Light tinted overlay */}
-        <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-white/8 via-transparent to-white/12' : 'bg-gradient-to-b from-white/10 via-transparent to-white/15'}`}></div>
+        <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-white/18 via-transparent to-white/22' : 'bg-gradient-to-b from-white/22 via-transparent to-white/28'}`}></div>
       </div>
 
       {/* Header Content - Mobile Optimized Spacing */}
@@ -247,13 +247,13 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
               {slide.badge}
             </span>
           )}
-          <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold ${textColor} mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.1] xs:leading-[1.15] sm:leading-tight shadow-sm px-1 xs:px-2 md:px-4`}>
+          <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold ${textColor} mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.1] xs:leading-[1.15] sm:leading-tight px-1 xs:px-2 md:px-4`} style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 4px 30px rgba(0,0,0,0.3)' }}>
             {slide.title}
           </h1>
-          <h2 className={`text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest ${subColor} mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 opacity-90 px-1 xs:px-2 md:px-4 leading-snug`}>
+          <h2 className={`text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest ${subColor} mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 opacity-90 px-1 xs:px-2 md:px-4 leading-snug`} style={{ textShadow: '0 2px 15px rgba(0,0,0,0.4), 0 4px 25px rgba(0,0,0,0.2)' }}>
             {slide.subtitle}
           </h2>
-          <p className={`text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl ${descColor} max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold drop-shadow-md px-3 xs:px-4 sm:px-6 md:px-8`}>
+          <p className={`text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl ${descColor} max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold px-3 xs:px-4 sm:px-6 md:px-8`} style={{ textShadow: '0 2px 12px rgba(0,0,0,0.4), 0 3px 20px rgba(0,0,0,0.2)' }}>
             {slide.description}
           </p>
         </motion.div>
@@ -266,11 +266,11 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
           <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 w-full lg:flex-1 ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
             {slide.specs?.map((spec, idx) => (
               <div key={idx} className="flex flex-col border-l-2 xs:border-l-3 sm:border-l-4 md:border-l-[5px] border-brand-gold/60 pl-2 xs:pl-3 sm:pl-4 md:pl-5 py-1.5 xs:py-2 hover:border-brand-gold transition-colors">
-                <div className="flex items-baseline gap-0.5 xs:gap-1">
+                <div className="flex items-baseline gap-0.5 xs:gap-1" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 3px 15px rgba(0,0,0,0.2)' }}>
                    <span className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-none">{spec.value}</span>
                    {spec.unit && <span className="text-[10px] xs:text-xs sm:text-sm md:text-base font-bold text-brand-gold">{spec.unit}</span>}
                 </div>
-                <span className={`text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest mt-1 xs:mt-1.5 sm:mt-2 ${hasBackgroundImage ? 'text-gray-300' : (isDark ? 'text-gray-300' : 'text-gray-600')}`}>{spec.label}</span>
+                <span className={`text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest mt-1 xs:mt-1.5 sm:mt-2 ${hasBackgroundImage ? 'text-gray-300' : (isDark ? 'text-gray-300' : 'text-gray-600')}`} style={{ textShadow: '0 1px 8px rgba(0,0,0,0.3), 0 2px 12px rgba(0,0,0,0.2)' }}>{spec.label}</span>
               </div>
             ))}
           </div>
@@ -324,7 +324,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
                 key={idx}
                 onClick={() => setCurrentImageIndex(idx)}
                 className={`rounded-full transition-all duration-300 ease-in-out touch-manipulation min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 active:scale-90 ${
-                  idx === currentImageIndex
+                  idx === currentImageIndex 
                     ? 'scale-110'
                     : 'scale-100 hover:scale-105'
                 }`}

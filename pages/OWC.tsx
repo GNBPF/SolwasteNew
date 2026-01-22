@@ -154,11 +154,11 @@ export const OWC: React.FC = () => {
             className="w-full h-full object-cover object-center"
           />
           {/* Premium white fade overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-white/8 to-white/18"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 uppercase">Organic Waste Composters</h1>
-          <p className="text-gray-300 max-w-3xl mx-auto text-xl md:text-2xl font-light">High-performance composting solutions for every scale. From compact residential units to massive industrial processors.</p>
+          <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 uppercase" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.6), 0 6px 35px rgba(0,0,0,0.4)' }}>Organic Waste Composters</h1>
+          <p className="text-gray-300 max-w-3xl mx-auto text-xl md:text-2xl font-light" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5), 0 4px 25px rgba(0,0,0,0.3)' }}>High-performance composting solutions for every scale. From compact residential units to massive industrial processors.</p>
         </div>
       </div>
 
