@@ -34,7 +34,7 @@ export const Vision2047: React.FC = () => {
                 alt="India Skyline" 
                 className="w-full h-full object-cover grayscale"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-black/85 to-black sm:from-black sm:via-black/80 sm:to-black"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-white/10 to-white/15 sm:from-white/12 sm:via-white/8 sm:to-white/12"></div>
          </div>
 
          <div className="relative z-10 max-w-5xl px-2 sm:px-4">

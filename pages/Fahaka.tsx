@@ -46,8 +46,8 @@ export const Fahaka: React.FC = () => {
                transition={{ duration: 0.8 }}
              />
            </AnimatePresence>
-           {/* Premium black fade overlay - Stronger on mobile */}
-           <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85 md:from-black/70 md:via-black/50 md:to-black/80"></div>
+           {/* Premium white fade overlay - Subtle and elegant */}
+           <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-white/8 to-white/20 md:from-white/12 md:via-white/6 md:to-white/15"></div>
          </div>
          
          <div className="relative z-20 max-w-5xl px-3 xs:px-4">
@@ -248,7 +248,7 @@ export const Fahaka: React.FC = () => {
                             ></div>
                             
                             {/* Gradient Overlay for readability */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/95 via-brand-gold/90 to-brand-dark/95"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/95 via-brand-gold/90 to-white/15"></div>
                             
                             {/* Elegant glow effect */}
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/20 via-transparent to-brand-gold/30 blur-xl"></div>
@@ -301,7 +301,7 @@ export const Fahaka: React.FC = () => {
               className="w-full h-full object-cover object-center opacity-30 sm:opacity-40"
               style={{ objectPosition: 'center center' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/97 via-black/93 to-black/97 md:from-black/95 md:via-black/90 md:to-black/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/18 via-white/10 to-white/18 md:from-white/15 md:via-white/8 md:to-white/15"></div>
           </div>
           
           <div className="container mx-auto px-3 xs:px-4 sm:px-6 relative z-10">
@@ -340,7 +340,7 @@ export const Fahaka: React.FC = () => {
               className="w-full h-full object-cover object-center"
               style={{ objectPosition: 'center center' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-brand-gold/88 to-black/85 md:from-black/80 md:via-brand-gold/85 md:to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-brand-gold/20 to-white/15 md:from-white/12 md:via-brand-gold/18 md:to-white/12"></div>
           </div>
           
           <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 text-center relative z-10">

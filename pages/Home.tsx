@@ -133,8 +133,8 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
               />
             </AnimatePresence>
           )}
-          {/* Premium black fade overlay for text readability - Stronger on mobile */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 md:from-black/60 md:via-black/40 md:to-black/70"></div>
+          {/* Premium white fade overlay for elegant look - Subtle */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/20 to-white/34 md:from-white/12 md:via-white/6 md:to-white/15"></div>
         </div>
 
         {/* Content - Better mobile spacing */}
@@ -228,10 +228,10 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
             />
           </AnimatePresence>
         )}
-        {/* Adaptive overlay - Stronger on mobile for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50 md:from-black/30 md:via-black/10 md:to-black/40"></div>
+        {/* Premium white fade overlay - Subtle and elegant */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/12 via-white/5 to-white/15 md:from-white/10 md:via-white/4 md:to-white/12"></div>
         {/* Light tinted overlay */}
-        <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-brand-dark/20 via-transparent to-brand-dark/30' : 'bg-gradient-to-b from-white/20 via-transparent to-white/30'}`}></div>
+        <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-white/8 via-transparent to-white/12' : 'bg-gradient-to-b from-white/10 via-transparent to-white/15'}`}></div>
       </div>
 
       {/* Header Content - Mobile Optimized Spacing */}
@@ -432,7 +432,7 @@ export const Home: React.FC = () => {
         <div className="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 md:left-6 lg:left-8 z-20 hidden sm:block">
             <button 
                 onClick={() => paginate(-1)} 
-                className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-black/20 touch-manipulation"
+                className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-white/10 touch-manipulation"
                 aria-label="Previous slide"
             >
                 <ChevronLeft size={28} className="md:w-8 md:h-8 lg:w-10 lg:h-10 group-hover:-translate-x-1 transition-transform duration-200" />
@@ -441,7 +441,7 @@ export const Home: React.FC = () => {
         <div className="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 md:right-6 lg:right-8 z-20 hidden sm:block">
             <button 
                 onClick={() => paginate(1)} 
-                className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-black/20 touch-manipulation"
+                className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-white/10 touch-manipulation"
                 aria-label="Next slide"
             >
                 <ChevronRight size={28} className="md:w-8 md:h-8 lg:w-10 lg:h-10 group-hover:translate-x-1 transition-transform duration-200" />

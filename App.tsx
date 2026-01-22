@@ -5,11 +5,15 @@ import { Home } from './pages/Home';
 import { OWC } from './pages/OWC';
 import { Fahaka } from './pages/Fahaka';
 import { Contact } from './pages/Contact';
+import { About } from './pages/About';
 import { Vision2047 } from './pages/Vision2047';
 import { Sustainability } from './pages/Sustainability';
 import { Careers } from './pages/Careers';
 import { PartnerWithUs } from './pages/PartnerWithUs';
 import { CaseStudies } from './pages/CaseStudies';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import AccessibilityStatement from './pages/AccessibilityStatement';
+import Sitemap from './pages/Sitemap';
 
 const App: React.FC = () => {
   return (
@@ -20,11 +24,15 @@ const App: React.FC = () => {
           <Route path="/owc" element={<OWC />} />
           <Route path="/fahaka" element={<Fahaka />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           <Route path="/vision-2047" element={<Vision2047 />} />
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/partner" element={<PartnerWithUs />} />
           <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/accessibility-statement" element={<AccessibilityStatement />} />
+          <Route path="/sitemap" element={<Sitemap />} />
         </Routes>
       </Layout>
     </Router>

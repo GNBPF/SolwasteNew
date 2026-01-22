@@ -301,9 +301,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm font-medium gap-4">
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-               <a href="#" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Privacy Policy</a>
-               <a href="#" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Accessibility Statement</a>
-               <a href="#" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Sitemap</a>
+               <Link to="/privacy-policy" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Privacy Policy</Link>
+               <Link to="/accessibility-statement" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Accessibility Statement</Link>
+               <Link to="/sitemap" className="hover:text-brand-gold transition-colors touch-manipulation py-1">Sitemap</Link>
             </div>
             <div className="tracking-wide text-center text-gray-400">
                &copy; 2026 Solwaste. All rights reserved.

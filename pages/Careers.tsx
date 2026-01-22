@@ -47,7 +47,7 @@ export const Careers: React.FC = () => {
       {/* Hero */}
       <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/8 to-transparent"></div>
         
         <div className="container mx-auto px-6 relative z-10">
             <motion.div
@@ -56,7 +56,7 @@ export const Careers: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="max-w-4xl"
             >
-                <div className="inline-block border border-brand-gold px-4 py-1 text-sm font-bold text-brand-gold uppercase tracking-widest mb-6 bg-black/50 backdrop-blur-md rounded-full">
+                <div className="inline-block border border-brand-gold px-4 py-1 text-sm font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white/10 backdrop-blur-md rounded-full">
                     We Are Hiring
                 </div>
                 <h1 className="text-6xl md:text-8xl font-heading font-black mb-6 uppercase leading-none">

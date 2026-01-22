@@ -46,20 +46,12 @@
     </image:image>
   </url>
 
-  <!-- Solutions/Product Catalog Page -->
-  <url>
-    <loc>https://solwaste.co/#/solutions</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- About Page -->
   <url>
     <loc>https://solwaste.co/#/about</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
   <!-- Contact Page -->
@@ -108,6 +100,30 @@
     <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Privacy Policy Page -->
+  <url>
+    <loc>https://solwaste.co/#/privacy-policy</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Accessibility Statement Page -->
+  <url>
+    <loc>https://solwaste.co/#/accessibility-statement</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Sitemap Page -->
+  <url>
+    <loc>https://solwaste.co/#/sitemap</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
