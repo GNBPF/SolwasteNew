@@ -229,7 +229,7 @@ const SlideContent: React.FC<{ slide: Slide }> = ({ slide }) => {
           </AnimatePresence>
         )}
         {/* Premium white fade overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
         {/* Light tinted overlay */}
         <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-white/18 via-transparent to-white/22' : 'bg-gradient-to-b from-white/22 via-transparent to-white/28'}`}></div>
       </div>

@@ -47,7 +47,7 @@ const ProductDetail: React.FC<{
               key={currentImageIndex}
               src={images[currentImageIndex]}
               alt={`${name} - Image ${currentImageIndex + 1}`}
-              className="w-full object-cover h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px]"
+              className="w-full h-full"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -75,9 +75,6 @@ const ProductDetail: React.FC<{
         </div>
       </div>
     <div className="lg:w-1/2 w-full">
-      <div className="inline-block text-brand-gold font-bold uppercase tracking-widest text-xs sm:text-sm mb-2 sm:mb-3 border-2 border-brand-gold px-3 py-1">
-        {tagline}
-      </div>
       <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 md:mb-5 uppercase leading-tight">{name}</h2>
       <p className="text-gray-800 text-base sm:text-lg md:text-xl mb-5 sm:mb-6 md:mb-7 leading-relaxed font-normal">{description}</p>
       
@@ -96,39 +93,6 @@ const ProductDetail: React.FC<{
       <div className="bg-brand-light p-5 sm:p-6 md:p-7 lg:p-8 border border-gray-200 rounded-sm">
          <h4 className="font-heading font-bold uppercase text-brand-brown mb-3 sm:mb-4 text-sm sm:text-base tracking-wide">Technical Specifications</h4>
          <SpecTable specs={specs} />
-      </div>
-
-      <div className="mt-5 sm:mt-6 md:mt-7 flex flex-col xs:flex-row gap-3 xs:gap-3.5 sm:gap-4">
-        <Link to="/contact" className="w-full xs:flex-1 group">
-            <div className="relative overflow-hidden w-full h-full min-h-[52px] xs:min-h-[54px] sm:min-h-[56px] md:min-h-[60px] flex items-center justify-center rounded-lg xs:rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation">
-              {/* Shine effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
-              
-              {/* Glow pulse */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
-              
-              {/* Button content */}
-              <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 px-6 xs:px-7 sm:px-8 md:px-10 text-white">
-                <span className="text-sm xs:text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Get Quote</span>
-                <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </div>
-            </div>
-        </Link>
-        <button className="relative overflow-hidden w-full xs:flex-1 min-h-[52px] xs:min-h-[54px] sm:min-h-[56px] md:min-h-[60px] flex items-center justify-center rounded-lg xs:rounded-xl bg-white hover:bg-brand-light border-2 border-brand-olive-dark hover:border-brand-olive shadow-[0_0_15px_rgba(94,121,96,0.2)] hover:shadow-[0_0_25px_rgba(94,121,96,0.4)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
-          {/* Shine effect */}
-          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-olive/20 to-transparent"></div>
-          
-          {/* Animated border glow */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl ring-2 ring-brand-olive/30"></div>
-          
-          {/* Button content */}
-          <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 px-6 xs:px-7 sm:px-8 md:px-10 text-brand-olive-dark group-hover:text-brand-olive">
-            <Download size={18} className="xs:w-5 xs:h-5 sm:w-6 sm:h-6 flex-shrink-0 group-hover:translate-y-0.5 transition-transform duration-300" />
-            <span className="text-sm xs:text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Brochure</span>
-          </div>
-        </button>
       </div>
     </div>
     </div>
@@ -154,7 +118,7 @@ export const OWC: React.FC = () => {
             className="w-full h-full object-cover object-center"
           />
           {/* Premium white fade overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 uppercase" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.6), 0 6px 35px rgba(0,0,0,0.4)' }}>Organic Waste Composters</h1>
@@ -163,27 +127,27 @@ export const OWC: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-6">
-        
-        {/* CompoGen */}
+
+        {/* CyberSoil */}
         <ProductDetail 
-          name="CompoGen™"
-          tagline="Industrial & Municipal"
-          description="The CompoGen series is built for the heavy lifting. Designed for municipal corporations and large industrial parks, it uses high-torque German geared motors to crush and compost massive volumes of organic waste."
-          images={["/compogen.webp", "/compogen2.webp"]}
+          name="CyberSoil™"
+          tagline="Residential & VP Cabins"
+          description="Sustainability meets luxury. CyberSoil brings advanced solar dehydration technology into a form factor that fits under a dishwasher. Perfect for luxury apartments and executive offices."
+          images={["/cybersoil.webp", "/cybersoil2.webp"]}
           features={[
-            "Fully PLC Controlled with Cloud BMS Integration",
-            "High-Torque German Geared Motors",
-            "Emergency Stop & Overload Protection Systems",
-            "5-Year Chassis Warranty"
+            "Advanced Solar Dehydration Technology",
+            "Compact Under-Counter Dimensions",
+            "Plug & Play Installation",
+            "Dry Sterile Biomass Output"
           ]}
           specs={[
-            { label: "Capacity", value: "1.5 Ton - 50 Ton" },
-            { label: "Power", value: "3 Phase / 415V" },
-            { label: "Body", value: "Heavy Duty MS/SS" },
-            { label: "Process", value: "Aerobic Digestion" }
+            { label: "Capacity", value: "2 kg - 10 kg" },
+            { label: "Power", value: "0.5 kWh/day" },
+            { label: "Dimensions", value: "Standard Dishwasher Size" },
+            { label: "Noise", value: "Silent" }
           ]}
         />
-
+        
         {/* EcoLoop */}
         <ProductDetail 
           name="EcoLoop™"
@@ -205,23 +169,23 @@ export const OWC: React.FC = () => {
           ]}
         />
 
-        {/* CyberSoil */}
+        {/* CompoGen */}
         <ProductDetail 
-          name="CyberSoil™"
-          tagline="Residential & VP Cabins"
-          description="Sustainability meets luxury. CyberSoil brings advanced solar dehydration technology into a form factor that fits under a dishwasher. Perfect for luxury apartments and executive offices."
-          images={["/cybersoil.webp", "/cybersoil2.webp"]}
+          name="CompoGen™"
+          tagline="Industrial & Municipal"
+          description="The CompoGen series is built for the heavy lifting. Designed for municipal corporations and large industrial parks, it uses high-torque German geared motors to crush and compost massive volumes of organic waste."
+          images={["/compogen.webp", "/compogen2.webp"]}
           features={[
-            "Advanced Solar Dehydration Technology",
-            "Compact Under-Counter Dimensions",
-            "Plug & Play Installation",
-            "Dry Sterile Biomass Output"
+            "Fully PLC Controlled with Cloud BMS Integration",
+            "High-Torque German Geared Motors",
+            "Emergency Stop & Overload Protection Systems",
+            "5-Year Chassis Warranty"
           ]}
           specs={[
-            { label: "Capacity", value: "2 kg - 10 kg" },
-            { label: "Power", value: "0.5 kWh/day" },
-            { label: "Dimensions", value: "Standard Dishwasher Size" },
-            { label: "Noise", value: "Silent" }
+            { label: "Capacity", value: "1.5 Ton - 50 Ton" },
+            { label: "Power", value: "3 Phase / 415V" },
+            { label: "Body", value: "Heavy Duty MS/SS" },
+            { label: "Process", value: "Aerobic Digestion" }
           ]}
         />
       </div>

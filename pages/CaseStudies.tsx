@@ -27,7 +27,7 @@ const projects = [
 ];
 
 const StatCard: React.FC<{ value: string; label: string; icon: React.ReactNode }> = ({ value, label, icon }) => (
-    <div className="bg-white/10 backdrop-blur-md border border-white/10 p-6 flex items-center space-x-4">
+    <div className="bg-black/10 backdrop-blur-md border border-white/10 p-6 flex items-center space-x-4">
         <div className="bg-brand-gold p-3 text-white rounded-full">
             {icon}
         </div>
