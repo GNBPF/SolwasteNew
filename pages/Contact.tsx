@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../components/ui/Button';
-import { MapPin, Phone, Mail, Clock } from '../components/Icons';
+import { MapPin, Phone, Mail, Clock, Send } from '../components/Icons';
 import { SEO } from '../components/SEO';
 
 export const Contact: React.FC = () => {
@@ -152,9 +152,7 @@ export const Contact: React.FC = () => {
                   {/* Button content */}
                   <div className="relative flex items-center justify-center gap-2.5 xs:gap-3 sm:gap-3.5 px-6 xs:px-7 sm:px-8 text-white">
                     <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">Send Message</span>
-                    <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                    </svg>
+                    <Send className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                   </div>
                 </button>
                 <p className="text-xs xs:text-sm sm:text-base text-center text-gray-500 mt-3 xs:mt-4 sm:mt-5">

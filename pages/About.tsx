@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Globe, Award, Users, ChevronRight } from '../components/Icons';
+import { Target, Globe, Award, Users, ChevronRight, Building2, Hospital, Building, Store } from '../components/Icons';
 import { SEO } from '../components/SEO';
 
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
@@ -106,13 +106,13 @@ export const About: React.FC = () => {
            
            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
              {[
-               { icon: <div className="font-black text-xl sm:text-2xl">🏨</div>, label: "Hotels & Resorts", desc: "Hospitality Industry" },
-               { icon: <div className="font-black text-xl sm:text-2xl">🏢</div>, label: "Corporate & IT Parks", desc: "Tech Parks & SEZs" },
-               { icon: <div className="font-black text-xl sm:text-2xl">🏥</div>, label: "Hospitals & Institutions", desc: "Healthcare & Education" },
-               { icon: <div className="font-black text-xl sm:text-2xl">🏛️</div>, label: "Malls & Municipalities", desc: "Commercial & Government" },
+               { icon: <Building2 size={32} className="sm:w-9 sm:h-9" />, label: "Hotels & Resorts", desc: "Hospitality Industry" },
+               { icon: <Building size={32} className="sm:w-9 sm:h-9" />, label: "Corporate & IT Parks", desc: "Tech Parks & SEZs" },
+               { icon: <Hospital size={32} className="sm:w-9 sm:h-9" />, label: "Hospitals & Institutions", desc: "Healthcare & Education" },
+               { icon: <Store size={32} className="sm:w-9 sm:h-9" />, label: "Malls & Municipalities", desc: "Commercial & Government" },
              ].map((client, idx) => (
                <div key={idx} className="p-5 sm:p-6 md:p-7 lg:p-8 bg-white border-b-4 border-transparent hover:border-brand-gold shadow-sm hover:shadow-xl transition-all group">
-                 <div className="mb-4 sm:mb-5 md:mb-6 text-brand-brown group-hover:text-brand-gold transition-colors flex justify-center bg-brand-light w-14 h-14 sm:w-16 sm:h-16 rounded-full items-center mx-auto">{client.icon}</div>
+                 <div className="mb-4 sm:mb-5 md:mb-6 text-brand-brown group-hover:text-brand-gold transition-colors flex justify-center items-center mx-auto">{client.icon}</div>
                  <h4 className="font-heading font-bold text-base sm:text-lg md:text-xl text-brand-brown text-center mb-1.5 sm:mb-2 uppercase leading-tight">{client.label}</h4>
                  <p className="text-center text-gray-600 text-xs sm:text-sm">{client.desc}</p>
                </div>

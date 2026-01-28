@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Flag, AlertTriangle, CloudFog, Droplets, Skull, Settings, ChevronDown, ArrowRight } from '../components/Icons';
+import { Flag, AlertTriangle, CloudFog, Droplets, Skull, Settings, ChevronDown, ArrowRight, CheckCircle } from '../components/Icons';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';

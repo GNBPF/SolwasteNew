@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Recycle, ShieldCheck, Flame, Layers } from '../components/Icons';
+import { Zap, Recycle, ShieldCheck, Flame, Layers, ArrowRight, Check, X, AlertTriangle, Apple, Bottle, Heart, Pill } from '../components/Icons';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
@@ -73,182 +73,393 @@ export const Fahaka: React.FC = () => {
          
       </section>
 
-      {/* The Problem / Solution - Mobile Optimized */}
-      <section className="py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-brand-dark">
-        <div className="container mx-auto px-3 xs:px-4 sm:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 xs:gap-7 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-start">
-                {/* Left Column - Why Fahaka - Mobile Optimized */}
-                <div className="lg:col-span-2">
-                    <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 text-white leading-tight">Why Fahaka?</h2>
-                    <p className="text-gray-300 text-sm xs:text-base sm:text-lg md:text-xl mb-4 xs:mb-5 sm:mb-6 leading-relaxed font-normal">
-                        In real-world scenarios, segregation is never 100%. A single plastic wrapper or sanitary napkin can jam traditional composters or contaminate the output manure.
-                    </p>
-                    <p className="text-gray-300 text-sm xs:text-base sm:text-lg md:text-xl mb-6 xs:mb-7 sm:mb-8 leading-relaxed font-normal">
-                        Fahaka uses a proprietary <strong>Multi-Stage Thermal Decomposition</strong> process. It doesn't just compost; it breaks down molecular bonds.
-                    </p>
-                    <ul className="space-y-3 xs:space-y-3.5 sm:space-y-4 md:space-y-5">
-                        {[
-                            "Accepts Mixed Waste Streams", 
-                            "Sterilizes Pathogens at High Temp", 
-                            "Reduces Volume by 95%", 
-                            "Zero Landfill Output"
-                        ].map((item, i) => (
-                            <li key={i} className="flex items-center text-sm xs:text-base sm:text-lg md:text-xl text-white font-medium">
-                                <Zap className="text-brand-gold mr-2 xs:mr-3 sm:mr-4 w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 flex-shrink-0" /> {item}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+      {/* The Problem / Solution - ENHANCED MODERN DESIGN */}
+      <section className="relative py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-32 overflow-hidden">
+        {/* Modern Gradient Mesh Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950/30 to-slate-950"></div>
+        
+        {/* Animated Gradient Orbs */}
+        <motion.div 
+          className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
+          animate={{ 
+            y: [0, 100, 0],
+            x: [0, 50, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-teal-500/20 rounded-full blur-3xl"
+          animate={{ 
+            y: [0, -100, 0],
+            x: [0, -50, 0],
+            scale: [1, 1.3, 1]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        />
+        
+        <div className="container mx-auto px-3 xs:px-4 sm:px-6 relative z-10">
+            {/* Header with Modern Typography */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center max-w-4xl mx-auto mb-12 sm:mb-16 lg:mb-20"
+            >
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20">
+                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                <span className="text-purple-300 text-xs sm:text-sm font-medium uppercase tracking-wider">The Problem & Solution</span>
+              </div>
+              <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black mb-4 sm:mb-6 text-white leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-100 to-white">
+                Why Fahaka?
+              </h2>
+              <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                Traditional systems fail at contamination. Fahaka is engineered to thrive on it.
+              </p>
+            </motion.div>
 
-                {/* Right Column - Process Flow - Mobile Optimized */}
-                <div className="lg:col-span-3 mt-6 xs:mt-7 sm:mt-8 lg:mt-0">
-                <div className="relative p-3 xs:p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto lg:mx-0">
-                    {/* Elegant background glows */}
-                    <div className="absolute -top-20 -right-20 w-96 h-96 bg-brand-gold/10 blur-[120px] rounded-full"></div>
-                    <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-brand-gold/5 blur-[100px] rounded-full"></div>
-                    
-                    <div className="relative z-10 space-y-5 xs:space-y-6 sm:space-y-8">
-                        {/* INPUT SECTION - Mobile Optimized */}
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="relative"
-                        >
-                            <div className="flex items-center justify-between mb-3 xs:mb-4 sm:mb-5">
-                                <h3 className="text-gray-400 uppercase text-xs xs:text-sm font-medium tracking-wider">Mixed Waste Input</h3>
-                                <span className="text-red-400/80 text-[10px] xs:text-xs italic">Contaminated Stream</span>
-                            </div>
-                            
-                            {/* Waste Type Cards with Unsplash backgrounds - Mobile Optimized */}
-                            <div className="flex flex-row justify-center gap-3 xs:gap-3.5 sm:gap-4 md:gap-5 lg:gap-6">
-                                {[
-                                    { 
-                                        label: "Food Waste", 
-                                        image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&q=80",
-                                        overlay: "from-green-900/90 via-green-900/80 to-green-800/70"
-                                    },
-                                    { 
-                                        label: "Plastics", 
-                                        image: "https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=400&q=80",
-                                        overlay: "from-blue-900/90 via-blue-900/80 to-blue-800/70"
-                                    },
-                                    { 
-                                        label: "Sanitary", 
-                                        image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=400&q=80",
-                                        overlay: "from-purple-900/90 via-purple-900/80 to-purple-800/70"
-                                    },
-                                    {
-                                        label: "Biochemical",
-                                        image: "https://images.unsplash.com/photo-1582719478250-3c46f6d4c73e?w=400&q=80",
-                                        overlay: "from-red-900/90 via-red-900/80 to-red-800/70"
-                                    }
-                                ].map((item, idx) => (
-                                    <motion.div 
-                                        key={idx} 
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: idx * 0.1, duration: 0.5 }}
-                                        className="relative w-24 h-28 xs:w-28 xs:h-32 sm:w-32 sm:h-36 md:w-36 md:h-40 rounded-xl xs:rounded-2xl overflow-hidden group hover:scale-105 transition-all duration-500 cursor-pointer shadow-xl"
-                                    >
-                                        {/* Background Image */}
-                                        <div 
-                                            className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
-                                            style={{ backgroundImage: `url('${item.image}')` }}
-                                        ></div>
-                                        
-                                        {/* Gradient Overlay */}
-                                        <div className={`absolute inset-0 bg-gradient-to-br ${item.overlay}`}></div>
-                                        
-                                        {/* Content */}
-                                        <div className="relative z-10 h-full flex flex-col items-center justify-center p-2 xs:p-3 sm:p-4 text-center">
-                                            <div className="text-white text-[10px] xs:text-xs sm:text-sm font-light tracking-wide drop-shadow-md">{item.label}</div>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-
-                        {/* PROCESS INDICATOR - More artistic - Mobile Optimized */}
-                        <motion.div 
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="flex flex-col items-center py-3 xs:py-4"
-                        >
-                            <div className="relative mb-2 xs:mb-3">
-                                <div className="absolute inset-0 bg-brand-gold/20 blur-2xl opacity-60 animate-pulse"></div>
-                                <Flame size={40} className="xs:w-11 xs:h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 text-brand-gold relative z-10 drop-shadow-[0_0_15px_rgba(190,215,84,0.5)]" />
-                        </div>
-                            <div className="flex flex-col items-center space-y-1 xs:space-y-1.5">
-                                <p className="text-brand-gold/90 text-[10px] xs:text-xs sm:text-sm font-light tracking-widest">Thermal Decomposition</p>
-                                <div className="flex space-x-1 xs:space-x-1.5">
-                                    {[...Array(5)].map((_, i) => (
-                                        <div 
-                                            key={i} 
-                                            className="w-1 h-1 bg-brand-gold/60 rounded-full animate-pulse"
-                                            style={{ animationDelay: `${i * 0.2}s` }}
-                                        ></div>
-                                    ))}
-                        </div>
-                                <p className="text-gray-500/80 text-[10px] xs:text-xs font-light italic">150°C - 300°C</p>
-                            </div>
-                        </motion.div>
-
-                        {/* OUTPUT SECTION - Premium look with compost background - Mobile Optimized */}
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="relative overflow-hidden rounded-2xl xs:rounded-3xl"
-                        >
-                            {/* Background Image - Compost/Bio-coal */}
-                            <div 
-                                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=800&q=80')" }}
-                            ></div>
-                            
-                            {/* Gradient Overlay for readability */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/95 via-brand-gold/90 to-white/15"></div>
-                            
-                            {/* Elegant glow effect */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/20 via-transparent to-brand-gold/30 blur-xl"></div>
-                            
-                            <div className="relative z-10 backdrop-blur-sm p-4 xs:p-5 sm:p-6 md:p-8">
-                                <div className="flex items-center justify-between mb-3 xs:mb-4 sm:mb-5">
-                                    <h3 className="text-white uppercase text-xs xs:text-sm font-medium tracking-wider drop-shadow-md">Clean Output</h3>
-                                    <span className="text-white/90 text-[10px] xs:text-xs italic drop-shadow-md">95% Reduction</span>
-                                </div>
-                                
-                                <div className="text-center space-y-2 xs:space-y-3">
-                                    <div className="flex items-center justify-center space-x-2 xs:space-x-3">
-                                        <ShieldCheck className="text-white drop-shadow-lg w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11" />
-                                        <div>
-                                            <h4 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-md">
-                                                Sterile Inert Ash
-                                            </h4>
-                                            <p className="text-white/90 text-[10px] xs:text-xs sm:text-sm font-light mt-0.5 xs:mt-1 drop-shadow">Premium Bio-Coal</p>
-                                        </div>
-                                    </div>
-                                    
-                                    {/* Elegant feature tags */}
-                                    <div className="flex flex-wrap justify-center gap-1.5 xs:gap-2 sm:gap-3 pt-2 xs:pt-3">
-                                        {["Pathogen-Free", "Zero Landfill", "Odorless"].map((tag, idx) => (
-                                            <span 
-                                                key={idx} 
-                                                className="text-white/90 text-[10px] xs:text-xs font-light tracking-wider px-2 xs:px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white/20 backdrop-blur-sm drop-shadow-md"
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                            </div>
-                            </div>
-                        </motion.div>
-                        </div>
+            {/* Two-Column Bento Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+              
+              {/* Left: Problem Statement Card */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative group"
+              >
+                {/* Glassmorphism Card */}
+                <div className="relative p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-purple-500/30 transition-all duration-500 overflow-hidden">
+                  {/* Corner Accent */}
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Icon Badge */}
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center backdrop-blur-sm border border-red-500/20">
+                        <AlertTriangle className="w-6 h-6 text-red-400" />
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">The Reality</h3>
                     </div>
+
+                    {/* Content */}
+                    <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-6 leading-relaxed">
+                      In real-world scenarios, <span className="text-white font-semibold">segregation is never 100%</span>. A single plastic wrapper or sanitary napkin can jam traditional composters or contaminate the output manure.
+                    </p>
+
+                    {/* Stats Grid */}
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      {[
+                        { value: "15-30%", label: "Typical Contamination" },
+                        { value: "100%", label: "Batch Rejection Rate" }
+                      ].map((stat, i) => (
+                        <div key={i} className="p-4 rounded-xl bg-red-500/5 border border-red-500/10">
+                          <div className="text-2xl font-bold text-red-400 mb-1">{stat.value}</div>
+                          <div className="text-xs text-gray-400">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Problem List */}
+                    <ul className="space-y-3">
+                      {[
+                        "System shutdown on contamination",
+                        "Rejected batches become landfill",
+                        "Manure quality compromised",
+                        "High maintenance costs"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start text-sm text-gray-400">
+                          <X className="w-4 h-4 text-red-400 mr-3 mt-0.5 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
+              </motion.div>
+
+              {/* Right: Fahaka Solution Card */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative group"
+              >
+                {/* Glassmorphism Card */}
+                <div className="relative p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-pink-500/5 backdrop-blur-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 overflow-hidden">
+                  {/* Corner Accent */}
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Icon Badge */}
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center backdrop-blur-sm border border-purple-500/30">
+                        <Zap className="w-6 h-6 text-purple-400" />
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">Fahaka Solution</h3>
+                    </div>
+
+                    {/* Content */}
+                    <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-6 leading-relaxed">
+                      Proprietary <span className="text-purple-400 font-semibold">Multi-Stage Thermal Decomposition</span>. We don't just compost—we break down molecular bonds.
+                    </p>
+
+                    {/* Feature Cards */}
+                    <div className="grid grid-cols-2 gap-3 mb-6">
+                      {[
+                        { icon: Recycle, label: "Mixed Waste", sub: "No sorting needed" },
+                        { icon: Flame, label: "High Temp", sub: "Pathogen-free" },
+                        { icon: Layers, label: "95% Less", sub: "Volume reduction" },
+                        { icon: ShieldCheck, label: "Zero Landfill", sub: "Clean output" }
+                      ].map((item, i) => (
+                        <motion.div
+                          key={i}
+                          whileHover={{ scale: 1.05, y: -5 }}
+                          className="p-4 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/5 border border-purple-500/20 hover:border-purple-500/40 transition-all cursor-pointer"
+                        >
+                          <item.icon className="w-6 h-6 text-purple-400 mb-2" />
+                          <div className="text-xs font-semibold text-white mb-1">{item.label}</div>
+                          <div className="text-[10px] text-gray-400">{item.sub}</div>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {/* Benefit List */}
+                    <ul className="space-y-3">
+                      {[
+                        "Accepts mixed waste streams",
+                        "Sterilizes at molecular level",
+                        "Reduces volume by 95%",
+                        "Zero landfill output"
+                      ].map((item, i) => (
+                        <motion.li 
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.1 }}
+                          className="flex items-start text-sm text-gray-300"
+                        >
+                          <div className="w-5 h-5 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                            <Check className="w-3 h-3 text-purple-400" />
+                          </div>
+                          <span>{item}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
             </div>
+
+            {/* Process Flow Visualization - REDESIGNED */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-12 sm:mt-16 lg:mt-20"
+            >
+              {/* Section Header */}
+              <div className="text-center mb-8 sm:mb-12">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
+                  The Process
+                </h3>
+                <p className="text-gray-400 text-sm sm:text-base">From contaminated input to sterile output</p>
+              </div>
+
+              {/* Horizontal Process Flow */}
+              <div className="relative">
+                {/* Connection Line */}
+                <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent transform -translate-y-1/2 hidden lg:block"></div>
+                
+                {/* Process Steps */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                  {/* Step 1: Input */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="relative group"
+                  >
+                    <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 hover:border-purple-500/30 transition-all duration-300">
+                      {/* Step Number */}
+                      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                        01
+                      </div>
+                      
+                      {/* Icon Grid */}
+                      <div className="grid grid-cols-2 gap-2 mb-4">
+                        {[
+                          { icon: Apple, color: "from-green-500/30 to-emerald-500/20", borderColor: "border-green-500/30" },
+                          { icon: Bottle, color: "from-blue-500/30 to-cyan-500/20", borderColor: "border-blue-500/30" },
+                          { icon: Heart, color: "from-pink-500/30 to-rose-500/20", borderColor: "border-pink-500/30" },
+                          { icon: Pill, color: "from-red-500/30 to-orange-500/20", borderColor: "border-red-500/30" }
+                        ].map((item, i) => (
+                          <motion.div 
+                            key={i}
+                            whileHover={{ scale: 1.1, rotate: 5 }}
+                            className={`aspect-square rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center border ${item.borderColor} group cursor-pointer`}
+                          >
+                            <item.icon className="w-6 h-6 text-white/80 group-hover:text-white transition-colors" />
+                          </motion.div>
+                        ))}
+                      </div>
+                      
+                      <h4 className="text-lg font-bold text-white mb-2">Mixed Input</h4>
+                      <p className="text-xs text-gray-400 leading-relaxed">Food, plastics, sanitary & biochemical waste together</p>
+                      
+                      {/* Badge */}
+                      <div className="mt-4 inline-flex items-center px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-medium">
+                        Contaminated
+                      </div>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 text-purple-500/50">
+                      <ArrowRight className="w-6 h-6" />
+                    </div>
+                  </motion.div>
+
+                  {/* Step 2: Thermal Process */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="relative group"
+                  >
+                    <div className="relative p-6 rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/5 backdrop-blur-sm border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+                      {/* Step Number */}
+                      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                        02
+                      </div>
+                      
+                      {/* Animated Icon */}
+                      <div className="mb-4 flex justify-center">
+                        <div className="relative">
+                          <motion.div
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                            className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center"
+                          >
+                            <Flame className="w-10 h-10 text-orange-400" />
+                          </motion.div>
+                          <motion.div
+                            animate={{ opacity: [0.5, 1, 0.5] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                            className="absolute inset-0 rounded-full bg-orange-500/20 blur-xl"
+                          />
+                        </div>
+                      </div>
+                      
+                      <h4 className="text-lg font-bold text-white mb-2">Thermal Break</h4>
+                      <p className="text-xs text-gray-400 leading-relaxed mb-3">High-temperature molecular decomposition</p>
+                      
+                      {/* Temp Display */}
+                      <div className="p-2 rounded-lg bg-orange-500/10 text-center border border-orange-500/20">
+                        <div className="text-2xl font-bold text-orange-400">150-300°C</div>
+                        <div className="text-[10px] text-gray-400">Controlled Heat</div>
+                      </div>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 text-purple-500/50">
+                      <ArrowRight className="w-6 h-6" />
+                    </div>
+                  </motion.div>
+
+                  {/* Step 3: Sterilization */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                    className="relative group"
+                  >
+                    <div className="relative p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/5 backdrop-blur-sm border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
+                      {/* Step Number */}
+                      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                        03
+                      </div>
+                      
+                      {/* Icon */}
+                      <div className="mb-4 flex justify-center">
+                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
+                          <ShieldCheck className="w-10 h-10 text-blue-400" />
+                        </div>
+                      </div>
+                      
+                      <h4 className="text-lg font-bold text-white mb-2">Sterilization</h4>
+                      <p className="text-xs text-gray-400 leading-relaxed mb-3">Medical-grade pathogen elimination</p>
+                      
+                      {/* Stats */}
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center text-xs">
+                          <span className="text-gray-400">Pathogen Kill</span>
+                          <span className="text-blue-400 font-bold">Log 6</span>
+                        </div>
+                        <div className="flex justify-between items-center text-xs">
+                          <span className="text-gray-400">Safety</span>
+                          <span className="text-blue-400 font-bold">Medical Grade</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Arrow */}
+                    <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 text-purple-500/50">
+                      <ArrowRight className="w-6 h-6" />
+                    </div>
+                  </motion.div>
+
+                  {/* Step 4: Output */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                    className="relative group"
+                  >
+                    <div className="relative p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/5 backdrop-blur-sm border border-green-500/20 hover:border-green-500/40 transition-all duration-300 overflow-hidden">
+                      {/* Step Number */}
+                      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                        04
+                      </div>
+                      
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 blur-2xl"></div>
+                      
+                      {/* Icon */}
+                      <div className="relative mb-4 flex justify-center">
+                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
+                          <Recycle className="w-10 h-10 text-green-400" />
+                        </div>
+                      </div>
+                      
+                      <h4 className="text-lg font-bold text-white mb-2">Clean Output</h4>
+                      <p className="text-xs text-gray-400 leading-relaxed mb-3">Sterile inert ash—premium bio-coal</p>
+                      
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {["Pathogen-Free", "Odorless", "95% Less"].map((tag, i) => (
+                          <span key={i} className="px-2 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-medium">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      {/* Badge */}
+                      <div className="mt-4 inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-medium">
+                        ✓ Zero Landfill
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
         </div>
       </section>
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import * as Feather from 'react-feather';
+import * as LucideIcons from 'lucide-react';
 
 type AnyIcon = React.ComponentType<any> | undefined;
 
 function getIcon(name: string): AnyIcon {
-  // Prefer Feather, otherwise undefined
-  return (Feather as any)[name];
+  // Use Lucide React icons
+  return (LucideIcons as any)[name];
 }
 
 function make(name: string) {
@@ -64,6 +64,9 @@ export const Eye = make('Eye');
 export const Leaf = make('Leaf');
 export const Scale = make('Scale');
 export const Building2 = make('Building2');
+export const Building = make('Building');
+export const Hospital = make('Hospital');
+export const Store = make('Store');
 export const Truck = make('Truck');
 export const Lightbulb = make('Lightbulb');
 export const FileText = make('FileText');
@@ -74,5 +77,10 @@ export const BarChart = make('BarChart');
 export const Filter = make('Filter');
 export const CheckCircle2 = make('CheckCircle2');
 export const AlertCircle = make('AlertCircle');
+export const Send = make('Send');
+export const ZoomIn = make('ZoomIn');
+export const Apple = make('Apple');
+export const Bottle = make('Bottle');
+export const Pill = make('Pill');
 
 export default {} as any;

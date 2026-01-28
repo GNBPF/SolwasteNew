@@ -81,9 +81,7 @@ export const PartnerWithUs: React.FC = () => {
                   {/* Button content */}
                   <div className="relative flex items-center justify-center gap-2.5 px-10 xs:px-12 sm:px-14 text-brand-dark">
                     <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">Apply Now</span>
-                    <svg className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                   </div>
                 </button>
             </motion.div>
@@ -212,9 +210,7 @@ export const PartnerWithUs: React.FC = () => {
                           {/* Button content */}
                           <div className="relative flex items-center justify-center gap-2.5 px-8 text-white">
                             <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-widest group-hover:tracking-[0.3em] transition-all duration-300 leading-none">Apply Now</span>
-                            <svg className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
+                            <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                           </div>
                         </button>
                         <p className="text-center text-sm text-gray-500 mt-4">

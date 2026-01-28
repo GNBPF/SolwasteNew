@@ -81,7 +81,7 @@ button:focus{outline:none}
 }
 .glass-card:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(12,17,23,0.22); }
 
-.glass-logo{ padding: 18px; border-radius: 12px; background: rgba(255,255,255,0.02); display:flex; align-items:center; justify-content:center; }
+.glass-logo{ padding: 18px; border-radius: 12px; background: rgba(255,255,255,0.02); display:flex; align-items:center; justify-content:center; border: none; }
 
 /* Animated ambient blobs background for hero or sections */
 .ambient-blobs{

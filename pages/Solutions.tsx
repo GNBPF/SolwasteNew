@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check, ArrowRight, Download, Sliders, Battery } from '../components/Icons';
+import { Check, ArrowRight, Download, Sliders, Battery, FileText } from '../components/Icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
@@ -110,9 +110,7 @@ const ProductDetail: React.FC<{
               {/* Button content */}
               <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 px-6 xs:px-7 sm:px-8 md:px-10 text-white">
                 <span className="text-sm xs:text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Get Quote</span>
-                <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+                <FileText className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
               </div>
             </div>
         </Link>

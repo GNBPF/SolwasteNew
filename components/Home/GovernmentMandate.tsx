@@ -48,7 +48,7 @@ export const GovernmentMandate: React.FC = () => {
                   Legal Authority
                 </span>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 uppercase leading-tight">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-black mb-6 uppercase leading-tight">
                 Government <br/>
                 <span className="text-brand-gold">Mandate Ready</span>
               </h2>
@@ -104,8 +104,10 @@ export const GovernmentMandate: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
-              <div className="h-96 bg-gradient-to-br from-brand-gold/20 via-brand-olive/20 to-brand-dark bg-cover bg-center" 
-                   style={{ backgroundImage: "url('/ecoloop.webp')" }} 
+              <img 
+                src="/about.webp" 
+                alt="Government Mandate Compliance"
+                className="h-96 w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent" />
             </div>
