@@ -3,18 +3,16 @@ import { motion } from 'framer-motion';
 import { CheckCircle, Box, DollarSign, BookOpen, ShieldCheck, TrendingUp, UserPlus, Phone, Rocket } from '../components/Icons';
 import { Button } from '../components/ui/Button';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="bg-gray-50 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300 group"
-  >
-    <div className="text-gray-400 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
-    <h3 className="text-xl font-heading font-bold text-brand-brown mb-3 uppercase">{title}</h3>
-    <p className="text-gray-700 text-base leading-relaxed">{text}</p>
-  </motion.div>
+  <StaggerItem>
+    <div className="bg-gray-50 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300 group">
+      <div className="text-gray-400 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
+      <h3 className="text-xl font-heading font-bold text-brand-brown mb-3 uppercase">{title}</h3>
+      <p className="text-gray-700 text-base leading-relaxed">{text}</p>
+    </div>
+  </StaggerItem>
 );
 
 const PersonaTag: React.FC<{ label: string }> = ({ label }) => (
@@ -52,12 +50,7 @@ export const PartnerWithUs: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
         
         <div className="container mx-auto px-6 relative z-10">
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="max-w-4xl"
-            >
+            <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
                 <div className="inline-block border border-brand-gold px-4 py-1 text-sm font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white/10 backdrop-blur-md rounded-full">
                     Join The Movement
                 </div>
@@ -84,7 +77,7 @@ export const PartnerWithUs: React.FC = () => {
                     <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                   </div>
                 </button>
-            </motion.div>
+            </ScrollReveal>
         </div>
       </section>
 

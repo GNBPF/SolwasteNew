@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Clock, Recycle, Target } from 'lucide-react';
 import { GlassCard } from '../ui/AnimatedComponents';
+import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const ImpactStats: React.FC = () => {
   const stats = [
@@ -20,25 +21,19 @@ export const ImpactStats: React.FC = () => {
       }}></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.4 }}>
           <h2 className="text-4xl font-heading font-bold text-brand-dark mb-4 uppercase">
             Our <span className="text-brand-gold">Impact</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Real results from our installations across India
           </p>
-        </motion.div>
+        </ScrollReveal>
         
         <motion.div 
           className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-6xl mx-auto" 
-          initial={{ opacity: 0, y: 30 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          transition={{ delay: 0.2 }} 
+          initial={{ opacity: 0 }} 
+          whileInView={{ opacity: 1 }} 
           viewport={{ once: true }}
         >
           {stats.map((stat, i) => (

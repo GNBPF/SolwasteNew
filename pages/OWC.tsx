@@ -4,18 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ specs }) => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
+  <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6" staggerDelay={0.08} viewport={{ once: true, amount: 0.15 }}>
     {specs.map((s, i) => (
-      <motion.div 
-        key={i}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: i * 0.1 }}
-        className="relative group"
-      >
+      <StaggerItem key={i}>
+        <div className="relative group">
         <div className="bg-white border-2 border-gray-100 rounded-xl p-5 sm:p-6 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300">
           {/* Decorative corner accent */}
           <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-brand-gold/10 to-transparent rounded-tr-xl rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -33,9 +28,10 @@ const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ spec
           {/* Bottom accent line */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold to-brand-gold/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-xl" />
         </div>
-      </motion.div>
+      </div>
+      </StaggerItem>
     ))}
-  </div>
+  </StaggerContainer>
 );
 
 const ProductDetail: React.FC<{ 

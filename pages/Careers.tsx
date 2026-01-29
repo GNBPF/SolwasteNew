@@ -3,22 +3,21 @@ import { motion } from 'framer-motion';
 import { Briefcase, Heart, Globe, Users, Zap, Layers, ChevronRight, ChevronDown, ArrowRight } from '../components/Icons';
 import { Button } from '../components/ui/Button';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="bg-gray-50 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300 group"
-  >
-    <div className="text-gray-400 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
-    <h3 className="text-xl font-heading font-bold text-brand-brown mb-3 uppercase">{title}</h3>
-    <p className="text-gray-700 text-base leading-relaxed">{text}</p>
-  </motion.div>
+  <StaggerItem>
+    <div className="bg-gray-50 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300 group">
+      <div className="text-gray-400 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
+      <h3 className="text-xl font-heading font-bold text-brand-brown mb-3 uppercase">{title}</h3>
+      <p className="text-gray-700 text-base leading-relaxed">{text}</p>
+    </div>
+  </StaggerItem>
 );
 
 const Step: React.FC<{ number: string; title: string; text: string }> = ({ number, title, text }) => (
-    <div className="flex items-start space-x-6">
+    <StaggerItem>
+      <div className="flex items-start space-x-6">
         <div className="flex-shrink-0 w-12 h-12 bg-brand-gold text-white flex items-center justify-center font-heading font-bold text-xl rounded-full shadow-lg">
             {number}
         </div>
@@ -26,7 +25,8 @@ const Step: React.FC<{ number: string; title: string; text: string }> = ({ numbe
             <h4 className="text-xl font-heading font-bold text-brand-brown mb-2">{title}</h4>
             <p className="text-gray-700 font-medium">{text}</p>
         </div>
-    </div>
+      </div>
+    </StaggerItem>
 );
 
 export const Careers: React.FC = () => {
@@ -97,7 +97,7 @@ export const Careers: React.FC = () => {
                   </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.08} viewport={{ once: true, amount: 0.15 }}>
                   <BenefitCard 
                     icon={<Globe size={32}/>}
                     title="Real projects, real impact"
@@ -128,29 +128,33 @@ export const Careers: React.FC = () => {
                     title="Growth mindset culture"
                     text="We value hustle, curiosity, and grit. Top performers move fast here."
                   />
-              </div>
+              </StaggerContainer>
           </div>
       </section>
 
       {/* Roles */}
       <section id="roles" className="py-24 bg-gray-50 border-y border-gray-200">
           <div className="container mx-auto px-6">
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-brown mb-12 uppercase">Open Roles</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.5 }}>
+                <h2 className="text-4xl md:text-5xl font-heading font-bold text-brand-brown mb-12 uppercase">Open Roles</h2>
+              </ScrollReveal>
+              <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06} viewport={{ once: true, amount: 0.1 }}>
                   {roles.map((role, idx) => (
-                      <a 
-                        key={idx} 
-                        href="https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white p-6 border border-gray-200 flex justify-between items-center group hover:border-brand-gold transition-all cursor-pointer shadow-sm hover:shadow-md"
-                      >
-                          <span className="font-heading font-bold text-lg text-brand-brown group-hover:text-brand-gold transition-colors">{role}</span>
-                          <ChevronRight className="text-gray-300 group-hover:text-brand-gold transition-colors" />
-                      </a>
+                      <StaggerItem key={idx}>
+                        <a 
+                          href="https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white p-6 border border-gray-200 flex justify-between items-center group hover:border-brand-gold transition-all cursor-pointer shadow-sm hover:shadow-md"
+                        >
+                            <span className="font-heading font-bold text-lg text-brand-brown group-hover:text-brand-gold transition-colors">{role}</span>
+                            <ChevronRight className="text-gray-300 group-hover:text-brand-gold transition-colors" />
+                        </a>
+                      </StaggerItem>
                   ))}
-              </div>
-               <div className="mt-12 p-8 bg-brand-dark text-white rounded-sm flex flex-col md:flex-row items-center justify-between shadow-xl">
+              </StaggerContainer>
+               <ScrollReveal variant="scaleIn" delay={0.3} viewport={{ once: true, amount: 0.8 }}>
+                 <div className="mt-12 p-8 bg-brand-dark text-white rounded-sm flex flex-col md:flex-row items-center justify-between shadow-xl">
                   <div className="mb-6 md:mb-0">
                       <h3 className="text-2xl font-heading font-bold mb-2">Don't see your role?</h3>
                       <p className="text-gray-400">We are always looking for exceptional talent. Pitch us your role.</p>
@@ -169,6 +173,7 @@ export const Careers: React.FC = () => {
                     </div>
                   </button>
               </div>
+               </ScrollReveal>
           </div>
       </section>
 

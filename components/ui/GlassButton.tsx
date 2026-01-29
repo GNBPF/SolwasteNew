@@ -12,6 +12,7 @@ interface GlassButtonProps {
   className?: string;
   href?: string;
   glow?: boolean;
+  asChild?: boolean; // New prop to indicate if it's wrapped in Link
 }
 
 export const GlassButton: React.FC<GlassButtonProps> = ({
@@ -23,15 +24,16 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
   onClick,
   className = '',
   href,
-  glow = false
+  glow = false,
+  asChild = false
 }) => {
-  const baseStyles = 'relative inline-flex items-center justify-center gap-3 font-bold uppercase tracking-wider transition-all duration-500 group overflow-hidden';
+  const baseStyles = 'relative inline-flex items-center justify-center gap-3 font-bold uppercase tracking-wider transition-all duration-500 group overflow-hidden cursor-pointer select-none';
   
   const sizeStyles = {
-    sm: 'px-4 py-2 text-xs rounded-lg',
-    md: 'px-6 py-3 text-sm rounded-xl',
-    lg: 'px-8 py-4 text-base rounded-xl',
-    xl: 'px-10 py-5 text-lg rounded-2xl'
+    sm: 'px-4 py-2 text-xs rounded-lg min-h-[40px] touch-manipulation',
+    md: 'px-6 py-3 text-sm rounded-xl min-h-[48px] touch-manipulation',
+    lg: 'px-8 py-4 text-base rounded-xl min-h-[56px] touch-manipulation',
+    xl: 'px-10 py-5 text-lg rounded-2xl min-h-[64px] touch-manipulation'
   };
 
   const variantStyles = {
@@ -88,6 +90,20 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
   );
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${glowStyles} ${className}`;
+
+  // If used as child of Link component, render as div
+  if (asChild) {
+    return (
+      <motion.div
+        className={combinedClasses}
+        whileHover={{ scale: 1.05, y: -2 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+      >
+        {buttonContent}
+      </motion.div>
+    );
+  }
 
   if (href) {
     return (

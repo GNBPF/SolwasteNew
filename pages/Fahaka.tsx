@@ -4,6 +4,7 @@ import { Zap, Recycle, ShieldCheck, Flame, Layers, ArrowRight, Check, X, AlertTr
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 export const Fahaka: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -116,12 +117,8 @@ export const Fahaka: React.FC = () => {
         
         <div className="container mx-auto px-3 xs:px-4 sm:px-6 relative z-10">
             {/* Header with Modern Typography */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center max-w-4xl mx-auto mb-12 sm:mb-16 lg:mb-20"
-            >
+            <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
+            <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16 lg:mb-20">
               <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20">
                 <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
                 <span className="text-purple-300 text-xs sm:text-sm font-medium uppercase tracking-wider">The Problem & Solution</span>
@@ -132,19 +129,14 @@ export const Fahaka: React.FC = () => {
               <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
                 Traditional systems fail at contamination. Fahaka is engineered to thrive on it.
               </p>
-            </motion.div>
+            </div>
+            </ScrollReveal>
 
             {/* Two-Column Bento Grid Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
               
               {/* Left: Problem Statement Card */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative group"
-              >
+              <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.25 }}>
                 {/* Glassmorphism Card */}
                 <div className="relative p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-purple-500/30 transition-all duration-500 overflow-hidden">
                   {/* Corner Accent */}
@@ -193,16 +185,10 @@ export const Fahaka: React.FC = () => {
                     </ul>
                   </div>
                 </div>
-              </motion.div>
+              </ScrollReveal>
 
               {/* Right: Fahaka Solution Card */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative group"
-              >
+              <ScrollReveal variant="fadeInRight" delay={0.2} viewport={{ once: true, amount: 0.25 }}>
                 {/* Glassmorphism Card */}
                 <div className="relative p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-pink-500/5 backdrop-blur-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 overflow-hidden">
                   {/* Corner Accent */}
@@ -267,7 +253,7 @@ export const Fahaka: React.FC = () => {
                     </ul>
                   </div>
                 </div>
-              </motion.div>
+              </ScrollReveal>
             </div>
 
             {/* Process Flow Visualization - REDESIGNED */}

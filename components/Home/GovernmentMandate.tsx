@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Building2, Scale, Leaf, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { GlassCard } from '../ui/AnimatedComponents';
+import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const GovernmentMandate: React.FC = () => {
   return (
@@ -34,7 +35,7 @@ export const GovernmentMandate: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
               <div className="flex items-center gap-3 mb-6">
                 <motion.div 
                   className="h-1 bg-brand-gold"
@@ -48,21 +49,21 @@ export const GovernmentMandate: React.FC = () => {
                   Legal Authority
                 </span>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 uppercase leading-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.3)]">
-                Government <br/>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 uppercase leading-tight">
+                <span className="text-brand-dark drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">Government</span> <br/>
                 <span className="text-brand-gold drop-shadow-[0_2px_15px_rgba(212,175,55,0.5)]">Mandate Ready</span>
               </h2>
               <p className="text-white text-lg max-w-2xl leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(255,255,255,0.2)]">
                 100% Compliant with SWM Rules 2016 & NGT Orders. Don't risk penalties. Install a Solwaste system today.
               </p>
-            </motion.div>
+            </ScrollReveal>
 
             <motion.div 
               className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8" 
               initial={{ opacity: 0, y: 20 }} 
               whileInView={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.6, delay: 0.3 }} 
-              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }} 
+              viewport={{ once: true, amount: 0.3 }}
             >
               {[
                 { label: 'SWM 2016', icon: Building2 }, 
@@ -95,34 +96,6 @@ export const GovernmentMandate: React.FC = () => {
               ))}
             </motion.div>
           </div>
-
-          <motion.div 
-            className="hidden lg:block relative"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
-              <img 
-                src="/about.webp" 
-                alt="Government Mandate Compliance"
-                className="h-96 w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent" />
-            </div>
-            
-            {/* Floating badge */}
-            <motion.div
-              className="absolute -bottom-6 -right-6 bg-white/10 backdrop-blur-xl border-2 border-brand-gold/50 px-6 py-4 rounded-2xl shadow-xl"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              <div className="text-brand-gold font-bold text-sm uppercase tracking-wider">
-                500+ Installations
-              </div>
-            </motion.div>
-          </motion.div>
         </div>
       </div>
     </section>

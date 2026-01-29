@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, MapPin, Factory, BarChart, Clock, Filter, CheckCircle2, AlertCircle } from '../components/Icons';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 const projects = [
   { id: 1, client: "Indira Gandhi Centre for Atomic Research", location: "Kalpakkam, Tamil Nadu", capacity: "1 TPD", type: "MSW", status: "Installed" },
@@ -27,7 +28,8 @@ const projects = [
 ];
 
 const StatCard: React.FC<{ value: string; label: string; icon: React.ReactNode }> = ({ value, label, icon }) => (
-    <div className="bg-black/10 backdrop-blur-md border border-white/10 p-6 flex items-center space-x-4">
+    <StaggerItem>
+      <div className="bg-black/10 backdrop-blur-md border border-white/10 p-6 flex items-center space-x-4">
         <div className="bg-brand-gold p-3 text-white rounded-full">
             {icon}
         </div>
@@ -35,7 +37,8 @@ const StatCard: React.FC<{ value: string; label: string; icon: React.ReactNode }
             <div className="text-3xl font-heading font-bold text-white">{value}</div>
             <div className="text-gray-200 text-sm uppercase tracking-wider font-medium">{label}</div>
         </div>
-    </div>
+      </div>
+    </StaggerItem>
 );
 
 export const CaseStudies: React.FC = () => {
@@ -83,12 +86,12 @@ export const CaseStudies: React.FC = () => {
                     </p>
                 </motion.div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.1} viewport={{ once: true, amount: 0.3 }}>
                     <StatCard value="20" label="Total Installations" icon={<CheckCircle2 />} />
                     <StatCard value="8.3" label="TPD Capacity" icon={<BarChart />} />
                     <StatCard value="10" label="States Covered" icon={<MapPin />} />
                     <StatCard value="3" label="Upcoming Projects" icon={<Clock />} />
-                </div>
+                </StaggerContainer>
             </div>
         </div>
       </section>
@@ -96,7 +99,8 @@ export const CaseStudies: React.FC = () => {
       {/* Filter & Grid */}
       <section className="py-20">
           <div className="container mx-auto px-6">
-              <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+              <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.4 }}>
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                   <div>
                       <h2 className="text-4xl font-heading font-bold text-brand-brown uppercase mb-2">Installation Showcase</h2>
                       <p className="text-gray-500">Explore our footprint across the nation.</p>
@@ -126,7 +130,8 @@ export const CaseStudies: React.FC = () => {
                           </select>
                       </div>
                   </div>
-              </div>
+                </div>
+              </ScrollReveal>
 
               <div className="mb-6 text-sm font-bold text-gray-400 uppercase tracking-widest">
                   Showing {filteredProjects.length} of {projects.length} installations

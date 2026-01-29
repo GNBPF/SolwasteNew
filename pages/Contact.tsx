@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../components/ui/Button';
 import { MapPin, Phone, Mail, Clock, Send } from '../components/Icons';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 export const Contact: React.FC = () => {
   return (
@@ -34,9 +35,12 @@ export const Contact: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 md:gap-14 lg:gap-16 xl:gap-20">
             {/* Contact Info - Enhanced responsive design */}
             <div>
-              <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-brown mb-5 xs:mb-6 sm:mb-7 md:mb-8 lg:mb-10">Contact Information</h2>
-              <div className="space-y-5 xs:space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10">
-                <div className="flex items-start gap-4 xs:gap-5 sm:gap-6 p-4 xs:p-5 sm:p-6 rounded-xl hover:bg-brand-light/50 transition-colors">
+              <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
+                <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-brown mb-5 xs:mb-6 sm:mb-7 md:mb-8 lg:mb-10">Contact Information</h2>
+              </ScrollReveal>
+              <StaggerContainer className="space-y-5 xs:space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10" staggerDelay={0.1} viewport={{ once: true, amount: 0.2 }}>
+                <StaggerItem>
+                  <div className="flex items-start gap-4 xs:gap-5 sm:gap-6 p-4 xs:p-5 sm:p-6 rounded-xl hover:bg-brand-light/50 transition-colors">
                   <div className="bg-brand-light min-w-[48px] min-h-[48px] xs:min-w-[52px] xs:min-h-[52px] sm:min-w-[56px] sm:min-h-[56px] md:min-w-[60px] md:min-h-[60px] p-3 xs:p-3.5 sm:p-4 rounded-xl text-brand-gold flex items-center justify-center flex-shrink-0">
                     <MapPin size={22} className="xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                   </div>
@@ -49,8 +53,10 @@ export const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
+                </StaggerItem>
 
-                <div className="flex items-start gap-4 xs:gap-5 sm:gap-6 p-4 xs:p-5 sm:p-6 rounded-xl hover:bg-brand-light/50 transition-colors">
+                <StaggerItem>
+                  <div className="flex items-start gap-4 xs:gap-5 sm:gap-6 p-4 xs:p-5 sm:p-6 rounded-xl hover:bg-brand-light/50 transition-colors">
                   <div className="bg-brand-light min-w-[48px] min-h-[48px] xs:min-w-[52px] xs:min-h-[52px] sm:min-w-[56px] sm:min-h-[56px] md:min-w-[60px] md:min-h-[60px] p-3 xs:p-3.5 sm:p-4 rounded-xl text-brand-gold flex items-center justify-center flex-shrink-0">
                     <Phone size={22} className="xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                   </div>
@@ -60,8 +66,10 @@ export const Contact: React.FC = () => {
                     <p className="text-gray-600 text-xs xs:text-sm sm:text-base md:text-lg mt-1">Mon-Sat 9am to 6pm IST</p>
                   </div>
                 </div>
+                </StaggerItem>
 
-                <div className="flex items-start gap-4 xs:gap-5 sm:gap-6 p-4 xs:p-5 sm:p-6 rounded-xl hover:bg-brand-light/50 transition-colors">
+                <StaggerItem>
+                  <div className="flex items-start gap-4 xs:gap-5 sm:gap-6 p-4 xs:p-5 sm:p-6 rounded-xl hover:bg-brand-light/50 transition-colors">
                   <div className="bg-brand-light min-w-[48px] min-h-[48px] xs:min-w-[52px] xs:min-h-[52px] sm:min-w-[56px] sm:min-h-[56px] md:min-w-[60px] md:min-h-[60px] p-3 xs:p-3.5 sm:p-4 rounded-xl text-brand-gold flex items-center justify-center flex-shrink-0">
                     <Mail size={22} className="xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                   </div>
@@ -70,18 +78,22 @@ export const Contact: React.FC = () => {
                     <a href="mailto:hello@solwaste.co" className="block text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl hover:text-brand-gold transition-colors min-h-[44px] flex items-center touch-manipulation active:scale-98 break-all font-medium">hello@solwaste.co</a>
                   </div>
                 </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
 
-              <div className="mt-8 xs:mt-9 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16 p-5 xs:p-6 sm:p-7 md:p-8 lg:p-10 bg-gradient-to-br from-brand-light to-white border-2 border-gray-200 rounded-xl shadow-lg">
+              <ScrollReveal variant="scaleIn" delay={0.4} viewport={{ once: true, amount: 0.5 }}>
+                <div className="mt-8 xs:mt-9 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16 p-5 xs:p-6 sm:p-7 md:p-8 lg:p-10 bg-gradient-to-br from-brand-light to-white border-2 border-gray-200 rounded-xl shadow-lg">
                 <h4 className="font-bold text-brand-brown mb-3 xs:mb-3.5 sm:mb-4 text-sm xs:text-base sm:text-lg md:text-xl uppercase tracking-wider">Service Areas</h4>
                 <p className="text-gray-700 text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed">
                   We currently serve clients across major metropolitan areas in India including Delhi NCR, Mumbai, Bangalore, Pune, and Hyderabad.
                 </p>
               </div>
+              </ScrollReveal>
             </div>
 
             {/* Form - Production-level mobile optimization */}
-            <div className="bg-gradient-to-br from-brand-light/50 via-white to-brand-light/30 p-6 xs:p-7 sm:p-8 md:p-9 lg:p-10 xl:p-12 rounded-2xl shadow-2xl border-2 border-brand-gold/20 mt-6 lg:mt-0 hover:shadow-[0_0_40px_rgba(212,175,55,0.2)] transition-all duration-300">
+            <ScrollReveal variant="fadeInRight" delay={0.2} viewport={{ once: true, amount: 0.2 }}>
+              <div className="bg-gradient-to-br from-brand-light/50 via-white to-brand-light/30 p-6 xs:p-7 sm:p-8 md:p-9 lg:p-10 xl:p-12 rounded-2xl shadow-2xl border-2 border-brand-gold/20 mt-6 lg:mt-0 hover:shadow-[0_0_40px_rgba(212,175,55,0.2)] transition-all duration-300">
               <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-brand-brown mb-5 xs:mb-6 sm:mb-7 md:mb-8 flex items-center gap-3">
                 <span className="w-2 h-10 bg-brand-gold rounded-full"></span>
                 Request a Consultation
@@ -175,6 +187,7 @@ export const Contact: React.FC = () => {
                 </p>
               </form>
             </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

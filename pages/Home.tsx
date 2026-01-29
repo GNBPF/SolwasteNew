@@ -154,13 +154,14 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                Processing <span className="font-bold text-white">Food, Plastics, and Sanitary Waste</span> into sterile resources.
              </p>
              
-             <Link to="/fahaka">
+             <Link to="/fahaka" className="inline-block">
                <GlassButton 
                  variant="primary" 
                  size="xl" 
                  icon={Rocket}
                  glow={true}
                  className="w-full sm:w-auto"
+                 asChild
                >
                  Explore Fahaka
                </GlassButton>
@@ -176,12 +177,13 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                 <button
                   key={idx}
                   onClick={() => setCurrentImageIndex(idx)}
-                  className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 touch-manipulation ${
+                  className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 touch-manipulation cursor-pointer ${
                     idx === currentImageIndex 
                       ? 'w-6 sm:w-8 bg-brand-gold' 
                       : 'w-1.5 sm:w-2 bg-white/30 hover:bg-white/50'
                   }`}
                   aria-label={`View image ${idx + 1}`}
+                  type="button"
                 />
               ))}
             </div>
@@ -332,6 +334,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                   icon={ArrowRight}
                   glow={true}
                   className="w-full"
+                  asChild
                 >
                   Order Now
                 </GlassButton>
@@ -343,6 +346,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                   size="lg" 
                   icon={Settings}
                   className="w-full"
+                  asChild
                 >
                   Tech Specs
                 </GlassButton>
@@ -357,12 +361,13 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
               <button
                 key={idx}
                 onClick={() => setCurrentImageIndex(idx)}
-                className={`rounded-full transition-all duration-300 ease-in-out touch-manipulation min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 active:scale-90 ${
+                className={`rounded-full transition-all duration-300 ease-in-out touch-manipulation cursor-pointer min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 active:scale-90 ${
                   idx === currentImageIndex 
                     ? 'scale-110'
                     : 'scale-100 hover:scale-105'
                 }`}
                 aria-label={`View image ${idx + 1}`}
+                type="button"
               >
                 <span className={`block rounded-full transition-all duration-300 ${
                   idx === currentImageIndex
@@ -456,7 +461,7 @@ export const Home: React.FC = () => {
       
       {/* Sticky CTA Button - Enhanced with Glass Morphism */}
       <motion.div
-        className="fixed bottom-6 right-6 z-40"
+        className="fixed bottom-6 right-6 z-40 touch-manipulation"
         initial={{ opacity: 0, y: 100 }}
         animate={{ 
           opacity: scrollProgress > 10 ? 1 : 0,
@@ -464,9 +469,9 @@ export const Home: React.FC = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <Link to="/contact">
+        <Link to="/contact" className="block">
           <motion.div
-            className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-2xl shadow-brand-gold/40 flex items-center justify-center cursor-pointer overflow-hidden group"
+            className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-2xl shadow-brand-gold/40 flex items-center justify-center cursor-pointer overflow-hidden group touch-manipulation"
             whileHover={{ scale: 1.15, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -527,8 +532,9 @@ export const Home: React.FC = () => {
         <div className="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 md:left-6 lg:left-8 z-20 hidden sm:block">
             <button 
                 onClick={() => paginate(-1)} 
-                className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-white/10 touch-manipulation"
+                className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-white/10 touch-manipulation cursor-pointer"
                 aria-label="Previous slide"
+                type="button"
             >
                 <ChevronLeft size={28} className="md:w-8 md:h-8 lg:w-10 lg:h-10 group-hover:-translate-x-1 transition-transform duration-200" />
             </button>
@@ -536,8 +542,9 @@ export const Home: React.FC = () => {
         <div className="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 md:right-6 lg:right-8 z-20 hidden sm:block">
             <button 
                 onClick={() => paginate(1)} 
-                className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-white/10 touch-manipulation"
+                className="min-w-[56px] min-h-[56px] md:min-w-[64px] md:min-h-[64px] lg:min-w-[72px] lg:min-h-[72px] p-3 md:p-4 lg:p-5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white rounded-full backdrop-blur-lg border-2 border-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 group shadow-2xl shadow-white/10 touch-manipulation cursor-pointer"
                 aria-label="Next slide"
+                type="button"
             >
                 <ChevronRight size={28} className="md:w-8 md:h-8 lg:w-10 lg:h-10 group-hover:translate-x-1 transition-transform duration-200" />
             </button>
@@ -552,9 +559,10 @@ export const Home: React.FC = () => {
                         setDirection(idx > currentIndex ? 1 : -1);
                         setCurrentIndex(idx);
                     }}
-                    className={`min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 rounded-full transition-all duration-300 ease-in-out touch-manipulation active:scale-90 ${idx === currentIndex ? 'scale-110' : 'scale-100 hover:scale-105'}`}
+                    className={`min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center p-1.5 xs:p-2 rounded-full transition-all duration-300 ease-in-out touch-manipulation active:scale-90 cursor-pointer ${idx === currentIndex ? 'scale-110' : 'scale-100 hover:scale-105'}`}
                     aria-label={`Go to slide ${idx + 1}: ${slides[idx].title}`}
                     aria-current={idx === currentIndex ? 'true' : 'false'}
+                    type="button"
                  >
                     <span className={`block rounded-full transition-all duration-300 ${idx === currentIndex ? 'h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-10 xs:w-12 sm:w-14 md:w-18 lg:w-20 bg-brand-gold shadow-lg shadow-brand-gold/50' : 'h-1.5 xs:h-2 sm:h-2.5 md:h-3 w-1.5 xs:w-2 sm:w-2.5 md:w-3 bg-white/40 hover:bg-white/70 active:bg-white'}`}></span>
                  </button>
@@ -568,26 +576,56 @@ export const Home: React.FC = () => {
       {/* Our Expertise Section - Full Width */}
       <section className="py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-brand-light border-t border-gray-200">
         <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-1 w-12 bg-brand-gold"></div>
-              <span className="text-brand-gold font-bold uppercase tracking-widest text-sm">Our Expertise</span>
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-heading font-bold text-brand-dark mb-5 uppercase">German Engineering. <span className="text-brand-olive-dark">Indian Innovation.</span></h2>
-            <div className="space-y-3 text-brand-dark leading-relaxed">
-              <p>Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable technology.</p>
-              <p>Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability.</p>
-              <p>Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" mission.</p>
-            </div>
-            <div className="mt-6">
-              <Link to="/contact" className="inline-block">
-                <div className="relative overflow-hidden px-6 py-3.5 border-2 border-brand-gold-dark rounded-lg hover:shadow-lg">
-                  <div className="absolute inset-0 bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-                  <span className="relative z-10 text-sm font-bold uppercase">Read More</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-1 w-12 bg-brand-gold"></div>
+                <span className="text-brand-gold font-bold uppercase tracking-widest text-sm">Our Expertise</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-heading font-bold text-brand-dark mb-5 uppercase">German Engineering. <span className="text-brand-olive-dark">Indian Innovation.</span></h2>
+              <div className="space-y-3 text-brand-dark leading-relaxed">
+                <p>Solwaste was founded with a singular vision: to address the growing organic waste crisis in urban environments through reliable, scalable technology.</p>
+                <p>Leveraging <strong>German engineering</strong> principles, we developed a suite of Organic Waste Composters (OWC) that offer superior efficiency and durability.</p>
+                <p>Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" mission.</p>
+              </div>
+              <div className="mt-6">
+                <Link to="/contact" className="inline-block">
+                  <div className="relative overflow-hidden px-6 py-3.5 border-2 border-brand-gold-dark rounded-lg hover:shadow-lg">
+                    <div className="absolute inset-0 bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                    <span className="relative z-10 text-sm font-bold uppercase">Read More</span>
+                  </div>
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="hidden lg:block relative"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-200">
+                <img 
+                  src="/about.webp" 
+                  alt="German Engineering Indian Innovation"
+                  className="h-96 w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-light via-transparent to-transparent" />
+              </div>
+              
+              {/* Floating badge */}
+              <motion.div
+                className="absolute -bottom-6 -right-6 bg-white backdrop-blur-xl border-2 border-brand-gold/50 px-6 py-4 rounded-2xl shadow-xl"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <div className="text-brand-gold font-bold text-sm uppercase tracking-wider">
+                  500+ Installations
                 </div>
-              </Link>
-            </div>
-          </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

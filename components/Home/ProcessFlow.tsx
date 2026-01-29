@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Package2, Settings, Flame, Wind, CheckCircle, ArrowRight } from 'lucide-react';
 import { GlassCard } from '../ui/AnimatedComponents';
+import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const ProcessFlow: React.FC = () => {
   const steps = [
@@ -29,13 +30,7 @@ export const ProcessFlow: React.FC = () => {
       />
 
       <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 relative z-10">
-        <motion.div 
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
+        <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
           <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-sm mb-6 inline-block">The Process</span>
           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-black text-brand-dark mb-6 uppercase tracking-tight">
             How It <span className="text-brand-gold">Works</span>
@@ -43,7 +38,7 @@ export const ProcessFlow: React.FC = () => {
           <p className="text-gray-500 max-w-2xl mx-auto text-lg sm:text-xl font-light">
             Five stages. Zero complexity.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
         <div className="relative max-w-8xl mx-auto">
           {/* Simplified connecting line */}
@@ -64,8 +59,8 @@ export const ProcessFlow: React.FC = () => {
                 className="relative"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.6 }}
+                viewport={{ once: true, amount: 0.2 }}
               >
                 <div className="text-center group">
                   {/* Step number */}

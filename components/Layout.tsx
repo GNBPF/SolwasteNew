@@ -105,7 +105,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             />
             <div className="flex flex-col leading-none select-none">
               <span className="text-lg xs:text-xl sm:text-2xl md:text-2xl lg:text-3xl font-heading font-bold tracking-tighter transition-colors duration-500">
-                <span className={isNavTransparent ? 'text-white' : 'text-brand-brown'}>SOL</span><span className="text-brand-gold">WASTE</span>
+                <span className={(isNavTransparent && !isScrolled) ? 'text-white' : 'text-brand-brown'}>SOL</span><span className="text-brand-gold">WASTE</span>
               </span>
             </div>
           </Link>

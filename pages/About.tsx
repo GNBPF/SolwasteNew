@@ -2,13 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Globe, Award, Users, ChevronRight, Building2, Hospital, Building, Store } from '../components/Icons';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 const Card: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
-  <div className="bg-brand-light p-5 sm:p-6 md:p-7 lg:p-8 border-l-4 border-gray-200 hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300">
-    <div className="text-brand-gold mb-4 sm:mb-5 md:mb-6">{icon}</div>
-    <h3 className="text-xl sm:text-2xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 uppercase leading-tight">{title}</h3>
-    <p className="text-gray-700 leading-relaxed font-light text-sm sm:text-base">{text}</p>
-  </div>
+  <StaggerItem>
+    <div className="bg-brand-light p-5 sm:p-6 md:p-7 lg:p-8 border-l-4 border-gray-200 hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300">
+      <div className="text-brand-gold mb-4 sm:mb-5 md:mb-6">{icon}</div>
+      <h3 className="text-xl sm:text-2xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 uppercase leading-tight">{title}</h3>
+      <p className="text-gray-700 leading-relaxed font-light text-sm sm:text-base">{text}</p>
+    </div>
+  </StaggerItem>
 );
 
 export const About: React.FC = () => {
@@ -49,7 +52,7 @@ export const About: React.FC = () => {
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center mb-12 sm:mb-16 md:mb-20 lg:mb-24">
-            <div>
+            <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
               <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-heading font-bold text-brand-brown mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">Our Story & Expertise</h2>
               <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-brand-gold mb-5 sm:mb-6 md:mb-7 lg:mb-8"></div>
               <div className="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg">
@@ -63,8 +66,9 @@ export const About: React.FC = () => {
                   Today, with over <strong>500 installations</strong> across commercial, institutional, and residential sectors, we are a trusted partner in India's journey towards the "Waste to Wealth" and "Clean India" missions. Our on-site composting solutions reduce waste hauling costs, ensure compliance, and help organizations achieve their ESG and sustainability goals.
                 </p>
               </div>
-            </div>
-            <div className="relative mt-8 lg:mt-0">
+            </ScrollReveal>
+            <ScrollReveal variant="scaleIn" delay={0.3} viewport={{ once: true, amount: 0.2 }}>
+              <div className="relative mt-8 lg:mt-0">
                 <div className="absolute top-0 right-0 -mr-4 sm:-mr-6 md:-mr-8 -mt-4 sm:-mt-6 md:-mt-8 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-brand-gold/10 z-0"></div>
                 <img 
                     src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" 
@@ -72,11 +76,12 @@ export const About: React.FC = () => {
                     className="shadow-2xl relative z-10 w-full grayscale hover:grayscale-0 transition-all duration-500"
                 />
                <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -left-4 sm:-left-6 md:-left-8 w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 border-2 sm:border-4 border-brand-brown z-20 hidden md:block"></div>
-            </div>
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Mission/Vision Grid - Migrated from Home - Mobile Optimized */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 md:gap-7 lg:gap-8">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 md:gap-7 lg:gap-8" staggerDelay={0.12} viewport={{ once: true, amount: 0.15 }}>
             <Card 
               icon={<Target size={36} className="sm:w-10 sm:h-10 md:w-12 md:h-12" />}
               title="Our Mission"
@@ -92,32 +97,36 @@ export const About: React.FC = () => {
               title="Quality Promise"
               text="We commit to German-engineered precision, ensuring our machines deliver maximum uptime, minimal maintenance, and optimal output quality."
             />
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Clients / Who We Serve - Mobile Optimized */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-brand-light border-t border-gray-200">
         <div className="container mx-auto px-4 sm:px-6">
-           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14 lg:mb-16">
+           <ScrollReveal variant="fadeInDown" delay={0.1} viewport={{ once: true, amount: 0.5 }}>
+             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14 lg:mb-16">
                 <h2 className="text-2xl xs:text-3xl sm:text-4xl font-heading font-bold text-brand-brown mb-3 sm:mb-4 uppercase leading-tight">Who We Serve</h2>
                 <div className="w-12 sm:w-14 md:w-16 h-0.5 sm:h-1 bg-brand-gold mx-auto"></div>
-           </div>
+             </div>
+           </ScrollReveal>
            
-           <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+           <StaggerContainer className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6" staggerDelay={0.08} viewport={{ once: true, amount: 0.1 }}>
              {[
                { icon: <Building2 size={32} className="sm:w-9 sm:h-9" />, label: "Hotels & Resorts", desc: "Hospitality Industry" },
                { icon: <Building size={32} className="sm:w-9 sm:h-9" />, label: "Corporate & IT Parks", desc: "Tech Parks & SEZs" },
                { icon: <Hospital size={32} className="sm:w-9 sm:h-9" />, label: "Hospitals & Institutions", desc: "Healthcare & Education" },
                { icon: <Store size={32} className="sm:w-9 sm:h-9" />, label: "Malls & Municipalities", desc: "Commercial & Government" },
              ].map((client, idx) => (
-               <div key={idx} className="p-5 sm:p-6 md:p-7 lg:p-8 bg-white border-b-4 border-transparent hover:border-brand-gold shadow-sm hover:shadow-xl transition-all group">
-                 <div className="mb-4 sm:mb-5 md:mb-6 text-brand-brown group-hover:text-brand-gold transition-colors flex justify-center items-center mx-auto">{client.icon}</div>
-                 <h4 className="font-heading font-bold text-base sm:text-lg md:text-xl text-brand-brown text-center mb-1.5 sm:mb-2 uppercase leading-tight">{client.label}</h4>
-                 <p className="text-center text-gray-600 text-xs sm:text-sm">{client.desc}</p>
-               </div>
+               <StaggerItem key={idx}>
+                 <div className="p-5 sm:p-6 md:p-7 lg:p-8 bg-white border-b-4 border-transparent hover:border-brand-gold shadow-sm hover:shadow-xl transition-all group">
+                   <div className="mb-4 sm:mb-5 md:mb-6 text-brand-brown group-hover:text-brand-gold transition-colors flex justify-center items-center mx-auto">{client.icon}</div>
+                   <h4 className="font-heading font-bold text-base sm:text-lg md:text-xl text-brand-brown text-center mb-1.5 sm:mb-2 uppercase leading-tight">{client.label}</h4>
+                   <p className="text-center text-gray-600 text-xs sm:text-sm">{client.desc}</p>
+                 </div>
+               </StaggerItem>
              ))}
-           </div>
+           </StaggerContainer>
         </div>
       </section>
     </div>

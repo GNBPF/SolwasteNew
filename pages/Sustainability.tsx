@@ -2,35 +2,27 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Eye, Leaf, Scale, Building2, Truck, Lightbulb, Users, FileText, RefreshCw, Mail, Phone, MapPin } from '../components/Icons';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 const Section: React.FC<{ number: string; title: string; children: React.ReactNode; icon: React.ReactNode }> = ({ number, title, children, icon }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20, backgroundColor: "rgba(255,255,255,1)" }}
-    whileInView={{ opacity: 1, y: 0, backgroundColor: "rgba(240,253,244,0.3)" }}
-    viewport={{ once: true, margin: "-50px" }}
-    transition={{ duration: 0.6, backgroundColor: { duration: 0.8 } }}
-    className="flex flex-col md:flex-row gap-6 md:gap-10 border-t border-green-100 py-12 first:border-t-0 rounded-lg px-4 md:px-6"
-  >
-    <div className="md:w-1/4 flex-shrink-0">
-        <motion.div 
-          className="flex items-center space-x-3 mb-3"
-          initial={{ color: "#b59b5b" }}
-          whileInView={{ color: "#22c55e" }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+  <ScrollReveal variant="fadeInUp">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-10 border-t border-green-100 py-12 first:border-t-0 rounded-lg px-4 md:px-6 hover:bg-green-50/30 transition-colors duration-500">
+      <div className="md:w-1/4 flex-shrink-0">
+        <div className="flex items-center space-x-3 mb-3 text-green-500">
             {icon}
-            <span className="font-heading font-bold text-4xl opacity-20 text-green-500">{number}</span>
-        </motion.div>
+            <span className="font-heading font-bold text-4xl opacity-20">{number}</span>
+        </div>
         <h3 className="text-2xl font-heading font-bold text-brand-brown uppercase leading-tight pr-4">
             {title}
         </h3>
-    </div>
-    <div className="md:w-3/4">
+      </div>
+      <div className="md:w-3/4">
         <div className="text-lg text-gray-700 leading-relaxed font-light space-y-4">
             {children}
         </div>
+      </div>
     </div>
-  </motion.div>
+  </ScrollReveal>
 );
 
 export const Sustainability: React.FC = () => {
@@ -45,11 +37,7 @@ export const Sustainability: React.FC = () => {
       {/* Header */}
       <div className="bg-gray-50 min-h-screen flex items-center border-b border-gray-200">
         <div className="container mx-auto px-6">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-            >
+            <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
                 <div className="inline-block border border-brand-gold px-3 py-1 text-xs font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white">
                     Our Commitment
                 </div>
@@ -72,7 +60,7 @@ export const Sustainability: React.FC = () => {
                         </p>
                     </div>
                 </div>
-            </motion.div>
+            </ScrollReveal>
         </div>
       </div>
 

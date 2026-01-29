@@ -4,16 +4,12 @@ import { Flag, AlertTriangle, CloudFog, Droplets, Skull, Settings, ChevronDown, 
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 const FadeIn: React.FC<{ children: React.ReactNode, delay?: number }> = ({ children, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.8, delay, ease: "easeOut" }}
-  >
+  <ScrollReveal variant="fadeInUp" delay={delay}>
     {children}
-  </motion.div>
+  </ScrollReveal>
 );
 
 export const Vision2047: React.FC = () => {
@@ -102,29 +98,29 @@ export const Vision2047: React.FC = () => {
                 </div>
             </FadeIn>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7 lg:gap-8">
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7 lg:gap-8" staggerDelay={0.08} viewport={{ once: true, amount: 0.15 }}>
                 {[
                     { icon: <Skull size={32} className="sm:w-9 sm:h-9 md:w-10 md:h-10" />, title: "Disease Vector", desc: "Becomes a breeding ground for mosquitoes, flies, and dangerous pathogens." },
                     { icon: <CloudFog size={32} className="sm:w-9 sm:h-9 md:w-10 md:h-10" />, title: "Methane Gas", desc: "Releases methane, a greenhouse gas 25x more potent than CO2." },
                     { icon: <Droplets size={32} className="sm:w-9 sm:h-9 md:w-10 md:h-10" />, title: "Toxic Leachate", desc: "Contaminates soil and groundwater, poisoning our water tables." },
                     { icon: <AlertTriangle size={32} className="sm:w-9 sm:h-9 md:w-10 md:h-10" />, title: "Unlivable Spaces", desc: "Creates persistent foul odours and reduces quality of life." },
                 ].map((item, i) => (
-                    <FadeIn delay={i * 0.1} key={i}>
+                    <StaggerItem key={i}>
                         <div className="bg-gray-900/50 border border-gray-800 p-5 sm:p-6 md:p-7 lg:p-8 hover:bg-brand-gold/10 hover:border-brand-gold transition-all duration-300 group h-full">
                             <div className="text-gray-500 group-hover:text-brand-gold mb-4 sm:mb-5 md:mb-6 transition-colors">{item.icon}</div>
                             <h3 className="text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3 uppercase leading-tight">{item.title}</h3>
                             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
                         </div>
-                    </FadeIn>
+                    </StaggerItem>
                 ))}
-            </div>
+            </StaggerContainer>
          </div>
       </section>
 
       {/* THE FAILURE OF INTENTION */}
       <section className="py-32 bg-gray-50">
         <div className="container mx-auto px-6">
-            <FadeIn>
+            <FadeIn delay={0.2}>
                 <h2 className="text-5xl md:text-7xl font-heading font-bold text-center text-brand-brown mb-24 uppercase">
                     Segregation is not a habit.<br/>
                     <span className="text-brand-gold">It is Infrastructure.</span>

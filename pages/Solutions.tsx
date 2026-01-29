@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ specs }) => (
   <div className="grid grid-cols-2 gap-y-4 sm:gap-y-5 gap-x-6 sm:gap-x-8 mt-4 sm:mt-5 md:mt-6 text-base">
@@ -39,7 +40,8 @@ const ProductDetail: React.FC<{
   }, [images.length]);
 
   return (
-    <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 border-b border-gray-200 last:border-0`}>
+    <ScrollReveal variant={reversed ? "fadeInRight" : "fadeInLeft"} viewport={{ once: true, amount: 0.2 }}>
+      <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 border-b border-gray-200 last:border-0`}>
       <div className="lg:w-1/2 w-full">
         <div className="relative group overflow-hidden bg-gray-100 rounded-sm shadow-xl">
           <AnimatePresence mode="wait">
@@ -130,6 +132,7 @@ const ProductDetail: React.FC<{
       </div>
     </div>
     </div>
+    </ScrollReveal>
   );
 };
 
@@ -144,10 +147,12 @@ export const Solutions: React.FC = () => {
       />
       {/* Header - Mobile Optimized */}
       <div className="bg-brand-dark text-white min-h-screen flex items-center justify-center">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">Product Catalog</h1>
-          <p className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl font-light">German Engineering. Indian Tenacity. World Class Results.</p>
-        </div>
+        <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
+          <div className="container mx-auto px-4 sm:px-6 text-center">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-4 sm:mb-5 md:mb-6 uppercase leading-tight">Product Catalog</h1>
+            <p className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl font-light">German Engineering. Indian Tenacity. World Class Results.</p>
+          </div>
+        </ScrollReveal>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6">

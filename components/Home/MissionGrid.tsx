@@ -51,7 +51,7 @@ export const MissionGrid: React.FC = () => {
           className="text-center mb-12 sm:mb-16 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
           <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-xs sm:text-sm mb-4 sm:mb-6 inline-block">Core Values</span>
@@ -70,8 +70,8 @@ export const MissionGrid: React.FC = () => {
               key={i}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: card.delay * 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
+              transition={{ delay: card.delay * 0.15, duration: 0.6 }}
+              viewport={{ once: true, amount: 0.2 }}
             >
               <div className="text-center group">
 
