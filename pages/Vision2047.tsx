@@ -58,15 +58,6 @@ export const Vision2047: React.FC = () => {
             </motion.div>
          </div>
 
-         <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
-         >
-            <span className="text-[10px] sm:text-xs uppercase tracking-widest">Explore the Crisis</span>
-            <ChevronDown size={20} className="sm:w-6 sm:h-6 animate-bounce" />
-         </motion.div>
       </section>
 
       {/* THE MIRROR - Mobile Optimized */}
@@ -142,8 +133,8 @@ export const Vision2047: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <FadeIn>
-                    <div className="bg-white p-10 shadow-lg border-t-4 border-gray-300 h-full">
-                        <h3 className="text-3xl font-heading font-bold text-gray-400 mb-6 uppercase">The Old Way <br/><span className="text-brand-brown text-xl">(Vermicompost Pits)</span></h3>
+                    <div className="bg-white p-10 shadow-lg border-t-4 border-gray-300 h-full hover:shadow-2xl hover:scale-105 transition-all duration-500 group cursor-pointer">
+                        <h3 className="text-3xl font-heading font-bold text-gray-400 mb-6 uppercase group-hover:text-gray-600 transition-colors">The Old Way <br/><span className="text-brand-brown text-xl">(Vermicompost Pits)</span></h3>
                         <p className="text-lg text-gray-600 mb-6 font-medium">Why it fails at scale:</p>
                         <ul className="space-y-4">
                             {[
@@ -153,8 +144,8 @@ export const Vision2047: React.FC = () => {
                                 "Often turns into odour hotspots",
                                 "Good intentions collapse under bad systems"
                             ].map((text, i) => (
-                                <li key={i} className="flex items-start text-gray-500">
-                                    <span className="text-red-400 mr-3 text-xl">×</span> {text}
+                                <li key={i} className="flex items-start text-gray-500 group-hover:text-gray-700 transition-colors">
+                                    <span className="text-red-400 mr-3 text-xl group-hover:scale-125 transition-transform inline-block">×</span> {text}
                                 </li>
                             ))}
                         </ul>
@@ -162,10 +153,10 @@ export const Vision2047: React.FC = () => {
                 </FadeIn>
 
                 <FadeIn delay={0.2}>
-                    <div className="bg-white p-10 shadow-2xl border-t-4 border-brand-gold h-full transform md:-translate-y-4">
+                    <div className="bg-white p-10 shadow-2xl border-t-4 border-brand-gold h-full transform md:-translate-y-4 hover:shadow-3xl hover:scale-105 hover:border-t-8 transition-all duration-500 group cursor-pointer">
                         <div className="flex justify-between items-start mb-6">
-                            <h3 className="text-3xl font-heading font-bold text-brand-gold mb-0 uppercase">The Future <br/><span className="text-brand-brown text-xl">(Machine Composting)</span></h3>
-                            <Settings className="text-brand-gold animate-spin-slow" size={32} />
+                            <h3 className="text-3xl font-heading font-bold text-brand-gold mb-0 uppercase group-hover:text-brand-gold-dark transition-colors">The Future <br/><span className="text-brand-brown text-xl">(Machine Composting)</span></h3>
+                            <Settings className="text-brand-gold group-hover:rotate-180 transition-transform duration-700" size={32} />
                         </div>
                         <p className="text-lg text-gray-600 mb-6 font-medium">Why it is essential infrastructure:</p>
                         <ul className="space-y-4">
@@ -176,8 +167,8 @@ export const Vision2047: React.FC = () => {
                                 "Convert waste to safe compost in hours",
                                 "Minimize human handling & health risks"
                             ].map((text, i) => (
-                                <li key={i} className="flex items-start text-brand-brown font-medium">
-                                    <span className="text-brand-gold mr-3 text-xl">✓</span> {text}
+                                <li key={i} className="flex items-start text-brand-brown font-medium group-hover:text-brand-dark transition-colors">
+                                    <span className="text-brand-gold mr-3 text-xl group-hover:scale-125 transition-transform inline-block">✓</span> {text}
                                 </li>
                             ))}
                         </ul>
@@ -244,17 +235,20 @@ export const Vision2047: React.FC = () => {
                       Because the future will not forgive us for the problems we had the technology to solve—but chose not to.
                   </p>
                   <Link to="/contact" className="inline-block group">
-                    <div className="relative overflow-hidden min-h-[64px] xs:min-h-[68px] sm:min-h-[72px] flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_50px_rgba(255,215,0,0.7)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation">
-                      {/* Shine effect */}
-                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
+                    <div className="relative overflow-hidden min-h-[68px] xs:min-h-[72px] sm:min-h-[76px] md:min-h-[80px] flex items-center justify-center rounded-2xl bg-gradient-to-r from-brand-dark via-[#2d3e1f] to-brand-dark border-2 border-brand-gold/30 hover:border-brand-gold shadow-[0_0_40px_rgba(212,175,55,0.3),0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_0_60px_rgba(212,175,55,0.6),0_15px_40px_rgba(0,0,0,0.4)] active:scale-[0.97] hover:scale-[1.05] transition-all duration-500 touch-manipulation group-hover:from-[#2d3e1f] group-hover:via-brand-dark group-hover:to-[#2d3e1f]">
+                      {/* Animated border glow */}
+                      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-transparent via-brand-gold/20 to-transparent animate-pulse"></div>
                       
-                      {/* Glow pulse */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
+                      {/* Shine effect */}
+                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1200 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                       
                       {/* Button content */}
-                      <div className="relative flex items-center justify-center gap-3 xs:gap-3.5 sm:gap-4 px-12 xs:px-14 sm:px-16 md:px-20 text-white">
-                        <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Start Your Waste-Free Journey</span>
-                        <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" />
+                      <div className="relative flex items-center justify-center gap-3 xs:gap-4 sm:gap-5 px-10 xs:px-12 sm:px-14 md:px-16 text-white">
+                        <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-black uppercase tracking-widest group-hover:tracking-[0.25em] transition-all duration-500 leading-none whitespace-nowrap drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] group-hover:drop-shadow-[0_2px_12px_rgba(212,175,55,0.8)]">Start Your Waste-Free Journey</span>
+                        <div className="relative">
+                          <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 flex-shrink-0 group-hover:translate-x-2 transition-transform duration-500 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]" strokeWidth={2.5} />
+                          <div className="absolute inset-0 bg-brand-gold/40 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
                       </div>
                     </div>
                   </Link>

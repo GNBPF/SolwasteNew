@@ -66,8 +66,9 @@ const PressMedia = () => {
           </motion.div>
 
           {/* Press Items */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-            {pressItems.map((item, index) => (
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-md mx-auto md:max-w-none">
+              {pressItems.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -104,6 +105,7 @@ const PressMedia = () => {
                 </div>
               </motion.div>
             ))}
+            </div>
           </div>
 
           {/* Coming Soon Message */}

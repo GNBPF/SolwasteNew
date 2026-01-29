@@ -35,7 +35,23 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    window.scrollTo(0, 0);
+    
+    // Check if there's a hash in the URL
+    const hash = location.hash.replace('#', '');
+    
+    if (hash) {
+      // If there's a hash, scroll to that element after a short delay
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // No hash, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
     // Reset to dark nav (white text) by default when leaving home
     if (!isHomePage) {
         setIsSlideDark(false); 
@@ -123,6 +139,17 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-gold group-hover:w-full transition-all duration-300"></span>
                 </span>
             </Link>
+            
+            {/* Partner Link */}
+            <Link
+                to="/partner"
+                className={`font-heading font-bold text-sm lg:text-base uppercase tracking-[0.15em] hover:text-brand-gold active:text-brand-gold transition-all duration-300 relative group ${
+                  isNavTransparent ? 'text-white' : 'text-brand-brown'
+                }`}
+            >
+                Partner
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-gold group-hover:w-full transition-all duration-300"></span>
+            </Link>
 
             {/* Get Quote Button */}
             <Link to="/contact">
@@ -178,6 +205,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             >
               Fahaka 
               <span className="text-[10px] xs:text-xs bg-[#FF0000] text-white px-2 py-1 rounded ml-2 badge-blink font-bold absolute -top-1 -right-1">NEW</span>
+            </Link>
+            <Link 
+              to="/partner" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="min-h-[48px] flex items-center justify-center text-base xs:text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-brand-brown hover:text-brand-gold active:text-brand-gold transition-all duration-200 py-3 xs:py-3.5 px-4 rounded-lg hover:bg-brand-light/50 active:bg-brand-light active:scale-98 touch-manipulation"
+            >
+              Partner with Us
             </Link>
             <div className="pt-2">
               <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block">

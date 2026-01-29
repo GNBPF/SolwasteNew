@@ -5,17 +5,22 @@ import { SEO } from '../components/SEO';
 
 const Section: React.FC<{ number: string; title: string; children: React.ReactNode; icon: React.ReactNode }> = ({ number, title, children, icon }) => (
   <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, y: 20, backgroundColor: "rgba(255,255,255,1)" }}
+    whileInView={{ opacity: 1, y: 0, backgroundColor: "rgba(240,253,244,0.3)" }}
     viewport={{ once: true, margin: "-50px" }}
-    transition={{ duration: 0.5 }}
-    className="flex flex-col md:flex-row gap-6 md:gap-10 border-t border-gray-200 py-12 first:border-t-0"
+    transition={{ duration: 0.6, backgroundColor: { duration: 0.8 } }}
+    className="flex flex-col md:flex-row gap-6 md:gap-10 border-t border-green-100 py-12 first:border-t-0 rounded-lg px-4 md:px-6"
   >
     <div className="md:w-1/4 flex-shrink-0">
-        <div className="flex items-center space-x-3 text-brand-gold mb-3">
+        <motion.div 
+          className="flex items-center space-x-3 mb-3"
+          initial={{ color: "#b59b5b" }}
+          whileInView={{ color: "#22c55e" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
             {icon}
-            <span className="font-heading font-bold text-4xl opacity-20">{number}</span>
-        </div>
+            <span className="font-heading font-bold text-4xl opacity-20 text-green-500">{number}</span>
+        </motion.div>
         <h3 className="text-2xl font-heading font-bold text-brand-brown uppercase leading-tight pr-4">
             {title}
         </h3>

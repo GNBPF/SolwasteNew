@@ -69,13 +69,9 @@ const PartnersSection = () => {
               viewport={{ once: true }}
               className="text-center mb-8 sm:mb-10 md:mb-12"
           >
-              <span className="text-brand-gold uppercase tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-[10px] sm:text-xs font-bold">Trusted By</span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mt-3 sm:mt-4 mb-3 sm:mb-4 text-brand-dark px-2">
-                Our Clients and Partners
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-brand-dark">
+                Trusted By Leading Organizations
               </h2>
-              <p className="text-sm sm:text-base md:text-lg text-brand-dark/70 mb-6 sm:mb-8 max-w-xl md:max-w-2xl mx-auto px-4">
-                Working with leading organizations across India to build a sustainable future
-              </p>
           </motion.div>
           
           {/* Three-Row Infinite Scrolling Marquee */}
@@ -115,19 +111,13 @@ const PartnersSection = () => {
                           return (
                               <div
                                   key={`row1-${partner.name}-${index}`}
-                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer relative partner-card"
+                                  className="flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
                               >
-                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-40 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 glass-card glass-logo">
-                                      <img
-                                          src={partner.logo}
-                                          alt={partner.name}
-                                          className={`${sizeClass} object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out`}
-                                      />
-
-                                      <div className="partner-info-bar">
-                                          <span className="text-xs text-[var(--text,#fff)]">{partner.location} • {partner.type} • <strong className="text-[var(--accent,#b78b2b)]">{partner.capacity}</strong></span>
-                                      </div>
-                                  </div>
+                                  <img
+                                      src={partner.logo}
+                                      alt={partner.name}
+                                      className={`${sizeClass} object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-110`}
+                                  />
                                   <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
                                       {partner.name}
                                   </span>
@@ -169,22 +159,13 @@ const PartnersSection = () => {
                           return (
                               <div
                                   key={`row2-${partner.name}-${index}`}
-                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer relative partner-card"
+                                  className="flex items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
                               >
-                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-40 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6 glass-card glass-logo">
-                                      <img
-                                          src={partner.logo}
-                                          alt={partner.name}
-                                          className={`${sizeClass} object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out`}
-                                      />
-
-                                      <div className="partner-info-bar">
-                                          <span className="text-xs text-[var(--text,#fff)]">{partner.location} • {partner.type} • <strong className="text-[var(--accent,#b78b2b)]">{partner.capacity}</strong></span>
-                                      </div>
-                                  </div>
-                                  <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
-                                      {partner.name}
-                                  </span>
+                                  <img
+                                      src={partner.logo}
+                                      alt={partner.name}
+                                      className={`${sizeClass} object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-110`}
+                                  />
                               </div>
                           );
                       })}

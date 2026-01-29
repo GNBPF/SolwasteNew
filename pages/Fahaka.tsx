@@ -36,18 +36,34 @@ export const Fahaka: React.FC = () => {
                key={fahakaImages[currentImageIndex]}
                src={fahakaImages[currentImageIndex]} 
                alt="Fahaka Machine" 
-               className="w-full h-full object-cover object-center"
+               className="w-full h-full object-cover"
                style={{
-                 objectPosition: 'center center'
+                 objectPosition: 'center'
                }}
-               initial={{ opacity: 0, scale: 0.95 }}
+               initial={{ opacity: 0, scale: 1.05 }}
                animate={{ opacity: 1, scale: 1 }}
                exit={{ opacity: 0 }}
                transition={{ duration: 0.8 }}
              />
            </AnimatePresence>
            {/* Premium white fade overlay */}
-           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/30"></div>
+           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/35"></div>
+         </div>
+         
+         {/* Image indicators */}
+         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-30">
+           {fahakaImages.map((_, idx) => (
+             <button
+               key={idx}
+               onClick={() => setCurrentImageIndex(idx)}
+               className={`rounded-full transition-all duration-300 ${
+                 idx === currentImageIndex
+                   ? 'h-2.5 w-10 bg-brand-gold shadow-lg shadow-brand-gold/50'
+                   : 'h-2.5 w-2.5 bg-white/60 hover:bg-white/80'
+               }`}
+               aria-label={`View image ${idx + 1}`}
+             />
+           ))}
          </div>
          
          <div className="relative z-20 max-w-5xl px-3 xs:px-4">
@@ -357,12 +373,12 @@ export const Fahaka: React.FC = () => {
                       </div>
                       
                       <h4 className="text-lg font-bold text-white mb-2">Thermal Break</h4>
-                      <p className="text-xs text-gray-400 leading-relaxed mb-3">High-temperature molecular decomposition</p>
+                      <p className="text-xs text-gray-400 leading-relaxed mb-3">High-temperature molecular decomposition at <span className="text-orange-400 font-bold">150°C - 300°C</span></p>
                       
                       {/* Temp Display */}
                       <div className="p-2 rounded-lg bg-orange-500/10 text-center border border-orange-500/20">
-                        <div className="text-2xl font-bold text-orange-400">150-300°C</div>
-                        <div className="text-[10px] text-gray-400">Controlled Heat</div>
+                        <div className="text-xl font-bold text-orange-400">Controlled Heat</div>
+                        <div className="text-[10px] text-gray-400">Auto-Regulated</div>
                       </div>
                     </div>
                     
@@ -485,7 +501,7 @@ export const Fahaka: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-8">
                   {[
                       { icon: <Layers size={28} className="xs:w-8 xs:h-8 sm:w-9 sm:h-9 md:w-10 md:h-10"/>, label: "Capacity", value: "Customizable", sub: "50kg - 5Ton" },
-                      { icon: <Flame size={28} className="xs:w-8 xs:h-8 sm:w-9 sm:h-9 md:w-10 md:h-10"/>, label: "Process Temp", value: "150°C - 300°C", sub: "Auto-Regulated" },
+                      { icon: <Flame size={28} className="xs:w-8 xs:h-8 sm:w-9 sm:h-9 md:w-10 md:h-10"/>, label: "Process Temp", value: "150°C - 300°C (Auto-Regulated)", sub: "" },
                       { icon: <ShieldCheck size={28} className="xs:w-8 xs:h-8 sm:w-9 sm:h-9 md:w-10 md:h-10"/>, label: "Sterilization", value: "Log 6", sub: "Medical Grade" },
                       { icon: <Recycle size={28} className="xs:w-8 xs:h-8 sm:w-9 sm:h-9 md:w-10 md:h-10"/>, label: "Residue", value: "< 5%", sub: "Of Input Volume" }
                   ].map((spec, idx) => (
@@ -495,7 +511,7 @@ export const Fahaka: React.FC = () => {
                           </div>
                           <h3 className="text-gray-300 font-bold uppercase tracking-widest text-[10px] xs:text-xs sm:text-sm mb-1.5 xs:mb-2 sm:mb-3">{spec.label}</h3>
                           <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-white mb-1.5 xs:mb-2">{spec.value}</div>
-                          <div className="text-gray-400 text-xs xs:text-sm sm:text-base">{spec.sub}</div>
+                          {spec.sub && <div className="text-gray-400 text-xs xs:text-sm sm:text-base">{spec.sub}</div>}
                       </div>
                   ))}
               </div>

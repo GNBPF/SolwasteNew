@@ -78,7 +78,25 @@ const Gallery = () => {
       
       {/* Header */}
       <div className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-olive-dark to-brand-dark opacity-90"></div>
+        {/* Background image grid */}
+        <div className="absolute inset-0 grid grid-cols-5 gap-1 opacity-20">
+          {galleryImages.map((img, idx) => (
+            <motion.div
+              key={idx}
+              className="relative overflow-hidden"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.1, duration: 0.6 }}
+            >
+              <img 
+                src={img.src} 
+                alt={img.title}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/95 via-brand-olive-dark/90 to-brand-dark/95"></div>
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl text-center relative z-10 py-16 sm:py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

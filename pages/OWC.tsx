@@ -61,15 +61,15 @@ const ProductDetail: React.FC<{
   }, [images.length]);
 
   return (
-    <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 border-b border-gray-200 last:border-0`}>
+    <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 border-b border-gray-200 last:border-0 px-4 sm:px-6 lg:px-8`}>
       <div className="lg:w-1/2 w-full">
-        <div className="relative group overflow-hidden bg-gray-100 rounded-sm shadow-xl">
+        <div className="relative group overflow-hidden bg-gray-100 rounded-sm shadow-xl aspect-[4/3]">
           <AnimatePresence mode="wait">
             <motion.img
               key={currentImageIndex}
               src={images[currentImageIndex]}
               alt={`${name} - Image ${currentImageIndex + 1}`}
-              className="w-full h-full"
+              className="w-full h-full object-cover"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -147,6 +147,19 @@ const ProductDetail: React.FC<{
 };
 
 export const OWC: React.FC = () => {
+  useEffect(() => {
+    // Scroll to section if hash is present
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="pt-20">
       <SEO 
@@ -176,6 +189,7 @@ export const OWC: React.FC = () => {
       <div className="container mx-auto px-6">
 
         {/* CyberSoil */}
+        <div id="cybersoil">
         <ProductDetail 
           name="CyberSoil™"
           tagline="Residential & VP Cabins"
@@ -194,8 +208,10 @@ export const OWC: React.FC = () => {
             { label: "Noise", value: "Silent" }
           ]}
         />
+        </div>
         
         {/* EcoLoop */}
+        <div id="ecoloop">
         <ProductDetail 
           name="EcoLoop™"
           tagline="Societies & Hotels"
@@ -215,8 +231,10 @@ export const OWC: React.FC = () => {
             { label: "Output", value: "Soil Enricher" }
           ]}
         />
+        </div>
 
         {/* CompoGen */}
+        <div id="compogen">
         <ProductDetail 
           name="CompoGen™"
           tagline="Industrial & Municipal"
@@ -235,6 +253,7 @@ export const OWC: React.FC = () => {
             { label: "Process", value: "Aerobic Digestion" }
           ]}
         />
+        </div>
       </div>
     </div>
   );

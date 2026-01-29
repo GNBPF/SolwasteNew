@@ -141,28 +141,29 @@ export const CaseStudies: React.FC = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.9 }}
                             key={project.id}
-                            className="bg-white border border-gray-200 p-6 hover:shadow-lg hover:border-brand-gold transition-all duration-300 group"
+                            whileHover={{ scale: 1.05, y: -5 }}
+                            className="bg-white border border-gray-200 p-6 hover:shadow-2xl hover:border-brand-gold transition-all duration-300 group cursor-pointer"
                         >
                             <div className="flex justify-between items-start mb-4">
-                                <span className="font-heading font-bold text-3xl text-gray-200 group-hover:text-brand-gold/20 transition-colors">#{project.id}</span>
-                                <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm ${project.status === 'Installed' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                                <span className="font-heading font-bold text-3xl text-gray-200 group-hover:text-brand-gold/40 transition-colors">#{project.id}</span>
+                                <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm transition-all duration-300 ${project.status === 'Installed' ? 'bg-green-100 text-green-700 group-hover:bg-green-600 group-hover:text-white' : 'bg-yellow-100 text-yellow-700 group-hover:bg-yellow-600 group-hover:text-white'}`}>
                                     {project.status === 'Installed' ? 'Installed' : 'In Progress'}
                                 </span>
                             </div>
-                            <h3 className="font-heading font-bold text-brand-brown text-lg leading-tight mb-3 min-h-[3rem]">
+                            <h3 className="font-heading font-bold text-brand-brown text-lg leading-tight mb-3 min-h-[3rem] group-hover:text-brand-gold transition-colors">
                                 {project.client}
                             </h3>
                             <div className="space-y-2 text-sm text-gray-700">
-                                <div className="flex items-center">
-                                    <MapPin size={16} className="text-brand-gold mr-2" />
+                                <div className="flex items-center group-hover:translate-x-1 transition-transform">
+                                    <MapPin size={16} className="text-brand-gold mr-2 group-hover:scale-125 transition-transform" />
                                     {project.location}
                                 </div>
-                                <div className="flex items-center">
-                                    <BarChart size={16} className="text-brand-gold mr-2" />
+                                <div className="flex items-center group-hover:translate-x-1 transition-transform">
+                                    <BarChart size={16} className="text-brand-gold mr-2 group-hover:scale-125 transition-transform" />
                                     Capacity: <span className="font-bold text-gray-900 ml-1">{project.capacity}</span>
                                 </div>
-                                <div className="flex items-center">
-                                    <Factory size={16} className="text-brand-gold mr-2" />
+                                <div className="flex items-center group-hover:translate-x-1 transition-transform">
+                                    <Factory size={16} className="text-brand-gold mr-2 group-hover:scale-125 transition-transform" />
                                     Type: <span className="font-bold text-gray-900 ml-1">{project.type}</span>
                                 </div>
                             </div>

@@ -143,13 +143,13 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
              transition={{ delay: 0.3 }}
            >
              {/* badge removed from slides */}
-             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-heading font-black text-white mb-2 tracking-tighter leading-none drop-shadow-2xl">
+             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-black text-white mb-2 tracking-tighter leading-none drop-shadow-2xl">
                {slide.title}
              </h1>
-             <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-200 mb-6 sm:mb-8 uppercase tracking-widest drop-shadow-lg">
+             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-gray-200 mb-6 sm:mb-8 uppercase tracking-widest drop-shadow-lg">
                {slide.subtitle}
              </p>
-             <p className="text-gray-200 text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal px-4 drop-shadow-md">
+             <p className="text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal px-4 drop-shadow-md">
                Breaking the barriers of organic waste. <br className="hidden sm:block"/>
                Processing <span className="font-bold text-white">Food, Plastics, and Sanitary Waste</span> into sterile resources.
              </p>
@@ -302,11 +302,11 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
       <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pb-8 xs:pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 xs:gap-7 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           {/* Visual Proof Blocks - Premium Glass Morphism Cards */}
-          <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 w-full lg:flex-1 ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
+          <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-6 w-full lg:flex-1 ${hasBackgroundImage ? 'text-white' : (isDark ? 'text-white' : 'text-brand-brown')}`}>
             {slide.specs?.map((spec, idx) => (
               <motion.div 
                 key={idx} 
-                className="relative flex flex-col bg-white/5 backdrop-blur-2xl rounded-2xl p-4 xs:p-5 border-2 border-white/10 hover:border-brand-gold/60 hover:bg-white/10 transition-all duration-500 group overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-brand-gold/20"
+                className="relative flex flex-col bg-white/5 backdrop-blur-2xl rounded-xl p-3 xs:p-4 border border-white/10 hover:border-brand-gold/60 hover:bg-white/10 transition-all duration-500 group overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-gold/20"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.15, type: 'spring', stiffness: 100 }}
@@ -335,7 +335,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                 
                 {/* Icon with pulse animation */}
                 <motion.div 
-                  className="text-3xl xs:text-4xl sm:text-5xl mb-3 relative z-10 text-brand-gold"
+                  className="text-2xl xs:text-3xl sm:text-4xl mb-2 relative z-10 text-brand-gold"
                   whileHover={{ 
                     scale: 1.2,
                     rotate: [0, -10, 10, 0],
@@ -346,9 +346,9 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                 </motion.div>
                 
                 {/* Value */}
-                <div className="flex items-baseline gap-1 relative z-10 mb-2" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 3px 15px rgba(0,0,0,0.2)' }}>
-                   <span className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-heading font-black leading-none group-hover:text-brand-gold transition-colors duration-300">{spec.value}</span>
-                   {spec.unit && <span className="text-sm xs:text-base font-bold text-brand-gold/80 group-hover:text-brand-gold">{spec.unit}</span>}
+                <div className="flex items-baseline gap-1 relative z-10 mb-1" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 3px 15px rgba(0,0,0,0.2)' }}>
+                   <span className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-heading font-black leading-none group-hover:text-brand-gold transition-colors duration-300">{spec.value}</span>
+                   {spec.unit && <span className="text-xs xs:text-sm font-bold text-brand-gold/80 group-hover:text-brand-gold">{spec.unit}</span>}
                 </div>
                 
                 {/* Label */}
@@ -374,7 +374,7 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
                 </GlassButton>
             </Link>
             
-            <Link to="/owc" className="w-full xs:flex-1 lg:w-auto">
+            <Link to={`/owc#${slide.id}`} className="w-full xs:flex-1 lg:w-auto">
                 <GlassButton 
                   variant="glass" 
                   size="lg" 

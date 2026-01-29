@@ -48,11 +48,11 @@ export const GovernmentMandate: React.FC = () => {
                   Legal Authority
                 </span>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-black mb-6 uppercase leading-tight">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 uppercase leading-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.3)]">
                 Government <br/>
-                <span className="text-brand-gold">Mandate Ready</span>
+                <span className="text-brand-gold drop-shadow-[0_2px_15px_rgba(212,175,55,0.5)]">Mandate Ready</span>
               </h2>
-              <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">
+              <p className="text-white text-lg max-w-2xl leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(255,255,255,0.2)]">
                 100% Compliant with SWM Rules 2016 & NGT Orders. Don't risk penalties. Install a Solwaste system today.
               </p>
             </motion.div>

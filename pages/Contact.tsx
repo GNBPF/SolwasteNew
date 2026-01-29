@@ -12,15 +12,25 @@ export const Contact: React.FC = () => {
         keywords="contact solwaste, waste management quote, composter price, OWC enquiry, waste management consultation, composting machine dealers, India waste solutions"
         type="website"
       />
-       <div className="bg-brand-dark text-white min-h-screen flex items-center justify-center">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
+       <div className="relative bg-brand-dark text-white min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600&q=80" 
+            alt="Contact background" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-olive-dark/80 to-brand-dark/95"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight">GET IN TOUCH</h1>
           <p className="text-gray-300 mt-4 sm:mt-6 text-base sm:text-lg md:text-xl px-4">Start your journey towards zero waste today.</p>
         </div>
       </div>
 
       <section className="py-10 xs:py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 md:gap-14 lg:gap-16 xl:gap-20">
             {/* Contact Info - Enhanced responsive design */}
             <div>
@@ -71,8 +81,11 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Form - Production-level mobile optimization */}
-            <div className="bg-white p-5 xs:p-6 sm:p-7 md:p-8 lg:p-10 xl:p-12 rounded-xl shadow-2xl border-2 border-gray-100 mt-6 lg:mt-0">
-              <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-brand-brown mb-5 xs:mb-6 sm:mb-7 md:mb-8">Request a Consultation</h3>
+            <div className="bg-gradient-to-br from-brand-light/50 via-white to-brand-light/30 p-6 xs:p-7 sm:p-8 md:p-9 lg:p-10 xl:p-12 rounded-2xl shadow-2xl border-2 border-brand-gold/20 mt-6 lg:mt-0 hover:shadow-[0_0_40px_rgba(212,175,55,0.2)] transition-all duration-300">
+              <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-brand-brown mb-5 xs:mb-6 sm:mb-7 md:mb-8 flex items-center gap-3">
+                <span className="w-2 h-10 bg-brand-gold rounded-full"></span>
+                Request a Consultation
+              </h3>
               <form className="space-y-5 xs:space-y-6 sm:space-y-7 md:space-y-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 xs:gap-5.5 sm:gap-6 md:gap-7 lg:gap-8">
                   <div>
