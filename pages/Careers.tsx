@@ -56,9 +56,6 @@ export const Careers: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="max-w-4xl"
             >
-                <div className="inline-block border border-brand-gold px-4 py-1 text-sm font-bold text-brand-gold uppercase tracking-widest mb-4 bg-white/10 backdrop-blur-md rounded-full">
-                    We Are Hiring
-                </div>
                 <h1 className="text-4xl md:text-6xl font-heading font-black mb-4 uppercase leading-none">
                     Join Solwaste
                 </h1>

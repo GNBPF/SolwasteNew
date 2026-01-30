@@ -495,7 +495,7 @@ export const Home: React.FC = () => {
       </motion.div>
       
       {/* FULL SCREEN SLIDER SECTION */}
-      <section className="relative h-screen overflow-hidden bg-black">
+      <section className="relative h-screen overflow-hidden bg-black" data-hero-section>
         {/* Ambient animated blobs + subtle noise for premium background */}
         <div className="ambient-blobs" aria-hidden="true" />
         <div className="noise-overlay" aria-hidden="true" />

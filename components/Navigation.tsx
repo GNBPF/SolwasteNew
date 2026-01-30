@@ -24,7 +24,7 @@ export const Navigation: React.FC<NavigationProps> = ({
         "fixed w-full z-50 transition-all duration-500 ease-in-out",
         isNavTransparent
           ? "bg-transparent py-4 sm:py-5 md:py-6 lg:py-8" 
-          : "bg-white/95 backdrop-blur-md shadow-sm py-3 sm:py-4 border-b border-gray-200"
+          : "bg-white backdrop-blur-md shadow-sm py-3 sm:py-4 border-b border-gray-200"
       ].join(" ")}
     >
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 flex justify-between items-center">
@@ -37,7 +37,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           />
           <div className="flex flex-col leading-none select-none">
             <span className="text-lg xs:text-xl sm:text-2xl md:text-2xl lg:text-3xl font-heading font-bold tracking-tighter transition-colors duration-500">
-              <span className={(isNavTransparent && !isScrolled) ? 'text-white' : 'text-brand-brown'}>SOL</span>
+              <span className={isNavTransparent ? 'text-white' : 'text-brand-brown'}>SOL</span>
               <span className="text-brand-gold">WASTE</span>
             </span>
           </div>

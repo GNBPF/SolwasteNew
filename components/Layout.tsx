@@ -8,13 +8,14 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSlideDark, setIsSlideDark] = useState(true);
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
   const location = useLocation();
   
   const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 10);
     };
 
     const handleSlideChange = (e: Event) => {
@@ -33,20 +34,56 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     };
   }, []);
 
+  // IntersectionObserver to detect hero section visibility
+  useEffect(() => {
+    if (!isHomePage) {
+      setIsHeroVisible(false);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Hero is visible if more than 20% of it is in viewport
+        setIsHeroVisible(entry.isIntersecting && entry.intersectionRatio > 0.2);
+      },
+      {
+        threshold: [0, 0.2, 0.5, 1],
+        rootMargin: '-80px 0px 0px 0px' // Account for header height
+      }
+    );
+
+    // Find hero section - it should have an id or specific class
+    const heroSection = document.querySelector('[data-hero-section]') || 
+                        document.querySelector('.hero-section') ||
+                        document.querySelector('main > div:first-child');
+    
+    if (heroSection) {
+      observer.observe(heroSection);
+    }
+
+    return () => {
+      if (heroSection) {
+        observer.unobserve(heroSection);
+      }
+    };
+  }, [isHomePage, location]);
+
   useEffect(() => {
     setIsMobileMenuOpen(false);
     
     const hash = location.hash.replace('#', '');
     
     if (hash) {
+      // Scroll to hash element after content loads
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 100);
+      }, 300);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Immediately scroll to top for new pages
+      window.scrollTo(0, 0);
     }
     
     if (!isHomePage) {
@@ -54,7 +91,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     }
   }, [location, isHomePage]);
 
-  const isNavTransparent = isHomePage && !isScrolled;
+  const isNavTransparent = isHomePage && isHeroVisible;
   
   const textColorClass = isNavTransparent 
     ? (isSlideDark ? 'text-white' : 'text-brand-brown') 
