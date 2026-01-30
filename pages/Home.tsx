@@ -115,19 +115,22 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
         {/* Background Image Slideshow - Optimized for Mobile */}
         <div className="absolute inset-0 z-0">
           {currentImage && (
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               <motion.img 
                 key={currentImage}
                 src={currentImage} 
                 alt={slide.title} 
-                className="w-full h-full object-cover object-center md:object-contain lg:object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-center md:object-contain lg:object-cover"
                 style={{
-                  objectPosition: 'center center'
+                  objectPosition: 'center center',
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden'
                 }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
               />
             </AnimatePresence>
           )}
@@ -231,30 +234,28 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
        {/* Background Image with Slideshow + Parallax - Mobile Optimized */}
        <div className="absolute inset-0 z-0">
         {currentImage && (
-          <AnimatePresence mode="wait">
-            <motion.div className="w-full h-full overflow-hidden">
-              <motion.img 
-                key={currentImage}
-                src={currentImage} 
-                alt={slide.title} 
-                loading="eager"
-                className="w-full h-full object-cover object-center will-change-transform"
-                style={{
-                  objectPosition: 'center center',
-                  transform: 'translateZ(0)' // Force GPU acceleration
-                }}
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ 
-                  opacity: 1, 
-                  scale: 1
-                }}
-                exit={{ opacity: 0, scale: 1.05 }}
-                transition={{ 
-                  opacity: { duration: 0.5 },
-                  scale: { duration: 0.7 }
-                }}
-              />
-            </motion.div>
+          <AnimatePresence>
+            <motion.img 
+              key={currentImage}
+              src={currentImage} 
+              alt={slide.title} 
+              loading="eager"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              style={{
+                objectPosition: 'center center',
+                transform: 'translateZ(0)', // Force GPU acceleration
+                backfaceVisibility: 'hidden',
+                WebkitBackfaceVisibility: 'hidden'
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: 1
+              }}
+              exit={{ opacity: 0 }}
+              transition={{ 
+                opacity: { duration: 0.6, ease: "easeInOut" }
+              }}
+            />
           </AnimatePresence>
         )}
         {/* Static ambient glow effect - performance optimized */}
@@ -413,18 +414,18 @@ export const Home: React.FC = () => {
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? '100%' : '-100%',
-      opacity: 0,
-      zIndex: 1 // Entering slide on top
+      opacity: 1,
+      zIndex: 10 // Entering slide on top
     }),
     center: {
-      zIndex: 1,
+      zIndex: 10,
       x: 0,
       opacity: 1
     },
     exit: (direction: number) => ({
-      zIndex: 0, // Exiting slide below
+      zIndex: 5, // Exiting slide below but still visible
       x: direction < 0 ? '100%' : '-100%',
-      opacity: 0
+      opacity: 1
     })
   };
 
@@ -495,11 +496,11 @@ export const Home: React.FC = () => {
       </motion.div>
       
       {/* FULL SCREEN SLIDER SECTION */}
-      <section className="relative h-screen overflow-hidden bg-black" data-hero-section>
+      <section className="relative h-screen overflow-hidden" data-hero-section>
         {/* Ambient animated blobs + subtle noise for premium background */}
         <div className="ambient-blobs" aria-hidden="true" />
         <div className="noise-overlay" aria-hidden="true" />
-        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+        <AnimatePresence initial={false} custom={direction} mode="sync">
           <motion.div
             key={currentIndex}
             custom={direction}
@@ -508,8 +509,8 @@ export const Home: React.FC = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "tween", duration: 0.4, ease: "easeInOut" },
-              opacity: { duration: 0.3 }
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0 }
             }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
