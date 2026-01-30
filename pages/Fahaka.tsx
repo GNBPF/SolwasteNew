@@ -1,6 +1,6 @@
 import React from 'react';
 import { SEO } from '../components/SEO';
-import { FahakaHero, ProblemSolution, ProcessFlow, TechSpecs, FahakaCTA } from '../components/Fahaka';
+import { FahakaHero, ProblemSolution, ProcessFlow, TechSpecs } from '../components/Fahaka';
 
 export const Fahaka: React.FC = () => {
   return (
@@ -16,7 +16,6 @@ export const Fahaka: React.FC = () => {
       <ProblemSolution />
       <ProcessFlow />
       <TechSpecs />
-      <FahakaCTA />
     </div>
   );
 };

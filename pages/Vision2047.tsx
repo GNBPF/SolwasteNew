@@ -28,7 +28,7 @@ export const Vision2047: React.FC = () => {
             <img 
                 src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=2076&auto=format&fit=crop" 
                 alt="India Skyline" 
-                className="w-full h-full object-cover grayscale"
+                className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
          </div>
@@ -77,7 +77,7 @@ export const Vision2047: React.FC = () => {
                         <img 
                             src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?q=80&w=1974&auto=format&fit=crop" 
                             alt="Waste Crisis" 
-                            className="relative z-10 w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover grayscale contrast-125"
+                            className="relative z-10 w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover contrast-125"
                         />
                     </div>
                 </FadeIn>
@@ -213,7 +213,7 @@ export const Vision2047: React.FC = () => {
                        <img 
                             src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?q=80&w=2072&auto=format&fit=crop" 
                             alt="Child playing near clean environment" 
-                            className="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-1000 opacity-80"
+                            className="w-full h-[600px] object-cover transition-all duration-1000 opacity-80"
                         />
                   </FadeIn>
               </div>
