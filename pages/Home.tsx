@@ -611,7 +611,7 @@ export const Home: React.FC = () => {
                   alt="German Engineering Indian Innovation"
                   className="h-96 w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-light via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               </div>
               
               {/* Floating badge */}

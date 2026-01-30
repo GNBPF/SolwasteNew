@@ -6,7 +6,7 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 
 const Section: React.FC<{ number: string; title: string; children: React.ReactNode; icon: React.ReactNode }> = ({ number, title, children, icon }) => (
   <ScrollReveal variant="fadeInUp">
-    <div className="flex flex-col md:flex-row gap-6 md:gap-10 border-t border-green-100 py-12 first:border-t-0 rounded-lg px-4 md:px-6 hover:bg-green-50/30 transition-colors duration-500">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-10 border-t border-brand-olive/20 py-12 first:border-t-0 rounded-lg px-4 md:px-6 hover:bg-brand-light/50 transition-colors duration-500">
       <div className="md:w-1/4 flex-shrink-0">
         <div className="flex items-center space-x-3 mb-3 text-green-500">
             {icon}

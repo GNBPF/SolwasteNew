@@ -159,13 +159,16 @@ const PartnersSection = () => {
                           return (
                               <div
                                   key={`row2-${partner.name}-${index}`}
-                                  className="flex items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
+                                  className="flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
                               >
                                   <img
                                       src={partner.logo}
                                       alt={partner.name}
                                       className={`${sizeClass} object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-110`}
                                   />
+                                  <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
+                                      {partner.name}
+                                  </span>
                               </div>
                           );
                       })}

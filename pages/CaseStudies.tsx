@@ -151,7 +151,7 @@ export const CaseStudies: React.FC = () => {
                         >
                             <div className="flex justify-between items-start mb-4">
                                 <span className="font-heading font-bold text-3xl text-gray-200 group-hover:text-brand-gold/40 transition-colors">#{project.id}</span>
-                                <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm transition-all duration-300 ${project.status === 'Installed' ? 'bg-green-100 text-green-700 group-hover:bg-green-600 group-hover:text-white' : 'bg-yellow-100 text-yellow-700 group-hover:bg-yellow-600 group-hover:text-white'}`}>
+                                <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm transition-all duration-300 ${project.status === 'Installed' ? 'bg-brand-olive/20 text-brand-olive-dark group-hover:bg-brand-olive group-hover:text-white' : 'bg-brand-gold/20 text-brand-dark group-hover:bg-brand-gold group-hover:text-brand-dark'}`}>
                                     {project.status === 'Installed' ? 'Installed' : 'In Progress'}
                                 </span>
                             </div>

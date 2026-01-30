@@ -36,7 +36,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isMobileMenuOpen, setIsM
             className="min-h-[48px] flex items-center justify-center text-base xs:text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-brand-gold bg-brand-light hover:bg-brand-gold hover:text-white active:bg-brand-gold/90 transition-all duration-200 py-3 xs:py-3.5 px-4 rounded-lg active:scale-98 touch-manipulation relative"
           >
             Fahaka 
-            <span className="text-[10px] xs:text-xs bg-[#FF0000] text-white px-2 py-1 rounded ml-2 badge-blink font-bold absolute -top-1 -right-1">NEW</span>
+            <span className="text-[10px] xs:text-xs bg-brand-gold text-brand-dark px-2 py-1 rounded ml-2 badge-blink font-bold absolute -top-1 -right-1">NEW</span>
           </Link>
           <div className="pt-2">
             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block">

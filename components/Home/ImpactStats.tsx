@@ -13,25 +13,25 @@ export const ImpactStats: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-brand-light relative overflow-hidden">
+    <section className="py-8 sm:py-10 md:py-12 lg:py-14 bg-brand-light relative overflow-hidden">
       {/* Subtle pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: 'radial-gradient(circle at 2px 2px, #000 1px, transparent 1px)',
         backgroundSize: '32px 32px'
       }}></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.4 }}>
-          <h2 className="text-4xl font-heading font-bold text-brand-dark mb-4 uppercase">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-brand-dark mb-3 sm:mb-4 uppercase text-center">
             Our <span className="text-brand-gold">Impact</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-8 text-center">
             Real results from our installations across India
           </p>
         </ScrollReveal>
         
         <motion.div 
-          className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-6xl mx-auto" 
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 max-w-6xl mx-auto" 
           initial={{ opacity: 0 }} 
           whileInView={{ opacity: 1 }} 
           viewport={{ once: true }}
@@ -44,7 +44,7 @@ export const ImpactStats: React.FC = () => {
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <GlassCard className="text-center p-6 bg-white hover:-translate-y-3 transition-all duration-500 relative group">
+              <GlassCard className="text-center p-3 sm:p-4 md:p-5 lg:p-6 bg-white hover:-translate-y-3 transition-all duration-500 relative group">
                 {/* Gradient orb */}
                 <motion.div 
                   className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500 rounded-2xl`}
@@ -52,19 +52,19 @@ export const ImpactStats: React.FC = () => {
                 
                 {/* Animated icon */}
                 <motion.div 
-                  className="inline-block text-brand-gold mb-4"
+                  className="inline-block text-brand-gold mb-2 sm:mb-3"
                   whileHover={{ 
                     scale: 1.2,
                     rotate: 360,
                     transition: { duration: 0.6 }
                   }}
                 >
-                  <stat.icon size={48} strokeWidth={2} />
+                  <stat.icon size={32} className="sm:w-10 sm:h-10 md:w-12 md:h-12" strokeWidth={2} />
                 </motion.div>
                 
                 {/* Value with counter animation */}
                 <motion.div 
-                  className="text-5xl font-heading font-black text-brand-dark mb-2 group-hover:text-brand-gold transition-colors"
+                  className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-brand-dark mb-1 sm:mb-2 group-hover:text-brand-gold transition-colors"
                   initial={{ scale: 0.5, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ delay: i * 0.1 + 0.2, type: 'spring', stiffness: 200 }}
@@ -74,7 +74,7 @@ export const ImpactStats: React.FC = () => {
                 </motion.div>
                 
                 {/* Label */}
-                <div className="text-sm font-bold text-gray-600 uppercase tracking-wider group-hover:text-brand-dark transition-colors">
+                <div className="text-xs sm:text-sm font-bold text-gray-600 uppercase tracking-wider group-hover:text-brand-dark transition-colors">
                   {stat.label}
                 </div>
                 

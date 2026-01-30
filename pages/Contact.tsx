@@ -13,7 +13,7 @@ export const Contact: React.FC = () => {
         keywords="contact solwaste, waste management quote, composter price, OWC enquiry, waste management consultation, composting machine dealers, India waste solutions"
         type="website"
       />
-       <div className="relative bg-brand-dark text-white min-h-screen flex items-center justify-center overflow-hidden">
+       <div className="relative bg-brand-dark text-white h-[50vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -167,17 +167,29 @@ export const Contact: React.FC = () => {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="relative overflow-hidden w-full min-h-[52px] xs:min-h-[56px] sm:min-h-[60px] md:min-h-[64px] flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
-                  
-                  {/* Glow pulse */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
-                  
-                  {/* Button content */}
-                  <div className="relative flex items-center justify-center gap-2.5 xs:gap-3 sm:gap-3.5 px-6 xs:px-7 sm:px-8 text-white">
-                    <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none">Send Message</span>
-                    <Send className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
+                <button type="submit" className="relative overflow-hidden w-full group">
+                  {/* Main button with glass morphism */}
+                  <div className="relative min-h-[56px] xs:min-h-[60px] sm:min-h-[64px] md:min-h-[68px] flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand-gold/90 to-brand-olive/90 backdrop-blur-md border-2 border-brand-gold/40 hover:border-brand-gold shadow-2xl shadow-brand-gold/20 hover:shadow-brand-gold/40 active:scale-[0.97] hover:scale-[1.02] transition-all duration-300 touch-manipulation">
+                    
+                    {/* Animated gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-brand-gold via-brand-olive to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                    
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-2xl"></div>
+                    
+                    {/* Corner accents */}
+                    <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-white/40 rounded-tr-lg group-hover:border-white/60 transition-colors"></div>
+                    <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-white/40 rounded-bl-lg group-hover:border-white/60 transition-colors"></div>
+                    
+                    {/* Button content */}
+                    <div className="relative flex items-center justify-center gap-3 xs:gap-3.5 sm:gap-4 px-6 xs:px-7 sm:px-8 z-10">
+                      <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-heading font-black uppercase tracking-wide group-hover:tracking-wider text-brand-dark drop-shadow-sm transition-all duration-300 leading-none">Send Message</span>
+                      <div className="relative">
+                        <Send className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 text-brand-dark flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
+                        {/* Icon glow */}
+                        <div className="absolute inset-0 bg-brand-dark/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                    </div>
                   </div>
                 </button>
                 <p className="text-xs xs:text-sm sm:text-base text-center text-gray-500 mt-3 xs:mt-4 sm:mt-5">

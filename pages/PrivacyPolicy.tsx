@@ -2,7 +2,6 @@ import React from 'react';
 import { SEO } from '../components/SEO';
 
 const PrivacyPolicy = () => {
-  console.log('PrivacyPolicy component rendering');
   return (
     <div className="pt-20">
       <SEO 

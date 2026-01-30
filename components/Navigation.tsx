@@ -65,7 +65,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               isNavTransparent ? "text-white" : "text-brand-brown"
             ].join(" ")}
           >
-            <span className="relative px-2.5 py-1 text-[10px] font-bold rounded-md bg-[#FF0000] text-white badge-blink shadow-md shadow-[#FF0000]/30">
+            <span className="relative px-2.5 py-1 text-[10px] font-bold rounded-md bg-brand-gold text-brand-dark badge-blink shadow-md shadow-brand-gold/30">
               NEW
             </span>
             <span className="group-hover:text-brand-gold transition-colors relative">

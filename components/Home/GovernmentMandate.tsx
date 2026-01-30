@@ -86,7 +86,7 @@ export const GovernmentMandate: React.FC = () => {
                     >
                       <badge.icon size={36} strokeWidth={2} />
                     </motion.div>
-                    <span className="text-gray-800 font-bold text-xs uppercase tracking-wider">{badge.label}</span>
+                    <span className="text-gray-800 font-bold text-base uppercase tracking-wider">{badge.label}</span>
                     
                     {/* Corner accents */}
                     <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-brand-gold/40" />
