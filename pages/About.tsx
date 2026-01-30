@@ -25,7 +25,7 @@ export const About: React.FC = () => {
       />
       {/* Header - Mobile Optimized */}
       <div className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

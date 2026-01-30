@@ -37,7 +37,7 @@ export const Careers: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white pt-20">
+    <div className="bg-white">
       <SEO 
         title="Careers at Solwaste - Join India's Leading Waste Management Team"
         description="Join Solwaste's mission to transform India's waste management. Open positions in sustainability research, operations, sales, marketing, technology & more. Build a cleaner future with us. Apply now!"
@@ -45,11 +45,11 @@ export const Careers: React.FC = () => {
         type="website"
       />
       {/* Hero */}
-      <section className="bg-brand-dark text-white min-h-[50vh] flex items-center relative overflow-hidden">
+      <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/25 to-transparent"></div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}

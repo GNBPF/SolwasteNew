@@ -36,7 +36,7 @@ const Step: React.FC<{ number: string; title: string; text: string }> = ({ numbe
 
 export const PartnerWithUs: React.FC = () => {
   return (
-    <div className="pt-20 bg-white">
+    <div className="bg-white">
       <SEO 
         title="Partner with Us - Become a Solwaste Authorized Dealer"
         description="Join Solwaste's partner network. Become authorized dealer for organic waste composters. Attractive margins, marketing support, training programs. Expand your green business with India's leading waste management brand."
@@ -45,11 +45,11 @@ export const PartnerWithUs: React.FC = () => {
       />
       
       {/* Hero Section */}
-      <section className="bg-brand-dark text-white min-h-[50vh] flex items-center relative overflow-hidden">
+      <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
             <ScrollReveal variant="fadeInLeft" viewport={{ once: true, amount: 0.3 }}>
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black mb-3 sm:mb-4 md:mb-5 uppercase leading-[0.95] max-w-5xl">
                     Partner With Us

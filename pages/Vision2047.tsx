@@ -23,7 +23,7 @@ export const Vision2047: React.FC = () => {
       />
       
       {/* HERO SECTION - Mobile Optimized */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center bg-brand-dark text-white text-center px-4 sm:px-6 py-20">
+      <section className="relative min-h-screen flex flex-col items-center justify-center bg-brand-dark text-white text-center overflow-hidden">
          <div className="absolute inset-0 z-0 opacity-30 sm:opacity-40">
             <img 
                 src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=2076&auto=format&fit=crop" 
@@ -33,7 +33,7 @@ export const Vision2047: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/25 to-white/30"></div>
          </div>
 
-         <div className="relative z-10 max-w-5xl px-2 sm:px-4">
+         <div className="relative z-10 max-w-5xl px-4 sm:px-6 py-24 sm:py-28 md:py-32 lg:py-36">
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}

@@ -15,7 +15,7 @@ export const FahakaHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-3 xs:px-4 sm:px-6">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
       {/* Background Image Slideshow - Mobile Optimized */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -53,7 +53,7 @@ export const FahakaHero: React.FC = () => {
         ))}
       </div>
       
-      <div className="relative z-20 max-w-5xl px-3 xs:px-4">
+      <div className="relative z-20 max-w-5xl px-4 sm:px-6 py-24 sm:py-28 md:py-32 lg:py-36">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}

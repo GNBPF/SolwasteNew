@@ -17,7 +17,7 @@ const PressMedia = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       <SEO 
         title="Press & Media - Solwaste Innovations"
         description="Latest news, press releases, and media coverage of Solwaste's innovative waste management solutions and successful installations."
@@ -26,9 +26,9 @@ const PressMedia = () => {
       />
       
       {/* Header */}
-      <div className="bg-brand-dark text-white min-h-[50vh] flex items-center relative overflow-hidden">
+      <div className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-olive-dark to-brand-dark opacity-90"></div>
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl text-center relative z-10 py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl text-center relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
           <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
             <span className="inline-block py-2 px-6 mb-4 sm:mb-6 text-xs sm:text-sm font-bold uppercase tracking-widest border-2 border-brand-gold text-brand-gold bg-brand-dark/70 backdrop-blur-md rounded-lg">
               Press & Media

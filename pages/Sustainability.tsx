@@ -36,7 +36,7 @@ export const Sustainability: React.FC = () => {
       />
       {/* Header */}
       <div className="bg-gray-50 min-h-screen flex items-center border-b border-gray-200">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 py-24 sm:py-28 md:py-32 lg:py-36">
             <ScrollReveal variant="fadeInUp" viewport={{ once: true, amount: 0.3 }}>
                 <div className="inline-block border border-brand-gold px-3 py-1 text-xs font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white">
                     Our Commitment

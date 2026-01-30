@@ -6,14 +6,14 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 
 export const Contact: React.FC = () => {
   return (
-    <div className="pt-16 sm:pt-20">
+    <div>
       <SEO 
         title="Contact Us - Get Quote for Waste Management Solutions"
         description="Contact Solwaste for organic waste management solutions. Request consultation for EcoLoop, CompoGen, CyberSoil or Fahaka. Serving Delhi NCR, Mumbai, Bangalore, Pune, Hyderabad. Call +91-987-654-3210"
         keywords="contact solwaste, waste management quote, composter price, OWC enquiry, waste management consultation, composting machine dealers, India waste solutions"
         type="website"
       />
-       <div className="relative bg-brand-dark text-white h-[50vh] flex items-center justify-center overflow-hidden">
+       <div className="relative bg-brand-dark text-white min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -24,7 +24,7 @@ export const Contact: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-olive-dark/80 to-brand-dark/95"></div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase leading-tight max-w-6xl mx-auto">GET IN TOUCH</h1>
           <p className="text-gray-300 mt-3 xs:mt-4 sm:mt-5 md:mt-6 lg:mt-8 text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl px-4 sm:px-6 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed">Start your journey towards zero waste today.</p>
         </div>

@@ -55,7 +55,7 @@ export const CaseStudies: React.FC = () => {
   }, [searchTerm, statusFilter]);
 
   return (
-    <div className="pt-20 bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen">
       <SEO 
         title="Case Studies - 500+ Successful Waste Management Installations"
         description="Explore Solwaste's case studies across India. 500+ installations in ONGC, Adani, government municipalities, hospitals, hotels & societies. View project details, capacity & impact. Real results from real clients."
@@ -64,20 +64,17 @@ export const CaseStudies: React.FC = () => {
       />
       
       {/* Header */}
-      <section className="bg-brand-dark text-white min-h-[50vh] flex items-center relative overflow-hidden">
+      <section className="bg-brand-dark text-white min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/about.webp')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-white/25 to-transparent"></div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 py-24 sm:py-28 md:py-32 lg:py-36">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className="inline-block border border-brand-gold px-4 py-1 text-sm font-bold text-brand-gold uppercase tracking-widest mb-6 bg-white/10 backdrop-blur-md rounded-full">
-                        Proven Solutions
-                    </div>
                     <h1 className="text-5xl md:text-7xl font-heading font-black mb-6 uppercase leading-none">
                         Real Impact
                     </h1>
