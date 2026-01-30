@@ -24,7 +24,7 @@ const PersonaTag: React.FC<{ label: string }> = ({ label }) => (
 
 const Step: React.FC<{ number: string; title: string; text: string }> = ({ number, title, text }) => (
     <div className="flex items-start space-x-6 relative">
-        <div className="flex-shrink-0 w-12 h-12 bg-brand-dark text-white flex items-center justify-center font-heading font-bold text-xl rounded-full shadow-lg z-10">
+        <div className="flex-shrink-0 w-12 h-12 bg-brand-gold text-brand-dark flex items-center justify-center font-heading font-bold text-xl rounded-full shadow-lg z-10">
             {number}
         </div>
         <div className="pt-1">
@@ -157,13 +157,14 @@ export const PartnerWithUs: React.FC = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-gray-900 text-white relative overflow-hidden">
-         <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-brand-gold rounded-full opacity-10 blur-[100px]"></div>
+      <section className="py-24 bg-gray-50 text-brand-dark relative overflow-hidden">
+         <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-brand-gold rounded-full opacity-10 blur-[120px]"></div>
+         <div className="absolute -right-32 -top-32 w-96 h-96 bg-brand-olive rounded-full opacity-10 blur-[120px]"></div>
           <div className="container mx-auto px-6 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                   <div>
-                      <h2 className="text-4xl md:text-5xl font-heading font-bold mb-10 uppercase">What happens after you apply?</h2>
-                      <div className="space-y-12 pl-4 border-l-2 border-gray-700">
+                      <h2 className="text-4xl md:text-5xl font-heading font-bold mb-10 uppercase text-brand-dark">What happens after you apply?</h2>
+                      <div className="space-y-12 pl-4 border-l-4 border-brand-gold/60">
                           <Step 
                             number="1" 
                             title="We review your application" 
@@ -190,21 +191,25 @@ export const PartnerWithUs: React.FC = () => {
                         <p className="text-gray-700 text-lg mb-8">
                             Join a network of changemakers who are turning waste management into a movement.
                         </p>
-                        <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280d786f1f62594f9327f?pvs=105', '_blank')} className="relative overflow-hidden w-full min-h-[60px] xs:min-h-[64px] sm:min-h-[68px] flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-dark via-brand-olive to-brand-dark hover:from-brand-olive hover:via-brand-dark hover:to-brand-olive shadow-[0_0_25px_rgba(255,215,0,0.3)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
-                          {/* Shine effect */}
-                          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent"></div>
+                        <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280d786f1f62594f9327f?pvs=105', '_blank')} className="relative overflow-hidden w-full min-h-[64px] flex items-center justify-center rounded-xl bg-gradient-to-br from-brand-gold/90 to-brand-olive/90 backdrop-blur-md border-2 border-brand-gold/40 hover:border-brand-gold shadow-2xl shadow-brand-gold/20 hover:shadow-brand-gold/40 active:scale-[0.98] hover:scale-[1.02] transition-all duration-300 touch-manipulation group">
+                          {/* Corner accents */}
+                          <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-brand-gold opacity-60"></div>
+                          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-brand-gold opacity-60"></div>
                           
-                          {/* Glow pulse */}
-                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
+                          {/* Animated gradient overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-brand-gold via-brand-olive opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          
+                          {/* Shine effect */}
+                          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                           
                           {/* Button content */}
-                          <div className="relative flex items-center justify-center gap-2.5 px-8 text-white">
-                            <span className="text-lg xs:text-xl sm:text-2xl font-bold uppercase tracking-widest group-hover:tracking-[0.3em] transition-all duration-300 leading-none">Apply Now</span>
-                            <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
+                          <div className="relative flex items-center justify-center gap-3 px-8 text-brand-dark">
+                            <span className="text-xl sm:text-2xl font-bold uppercase tracking-wider transition-all duration-300 leading-none">Apply Now</span>
+                            <ArrowRight className="w-6 h-6 flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
                           </div>
                         </button>
                         <p className="text-center text-sm text-gray-500 mt-4">
-                            Questions? <a href="mailto:partners@solwaste.co" className="underline hover:text-brand-gold">Email us directly</a>
+                            Questions? <a href="mailto:hello@solwaste.co" className="underline hover:text-brand-gold">Email us directly</a>
                         </p>
                   </div>
               </div>
