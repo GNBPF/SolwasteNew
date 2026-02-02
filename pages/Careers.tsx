@@ -8,7 +8,7 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
   <StaggerItem>
     <div className="bg-gray-50 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300 group">
-      <div className="text-gray-400 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
+      <div className="text-gray-600 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
       <h3 className="text-xl font-heading font-bold text-brand-brown mb-3 uppercase">{title}</h3>
       <p className="text-gray-700 text-base leading-relaxed">{text}</p>
     </div>
@@ -154,7 +154,7 @@ export const Careers: React.FC = () => {
                  <div className="mt-12 p-8 bg-brand-dark text-white rounded-sm flex flex-col md:flex-row items-center justify-between shadow-xl">
                   <div className="mb-6 md:mb-0">
                       <h3 className="text-2xl font-heading font-bold mb-2">Don't see your role?</h3>
-                      <p className="text-gray-400">We are always looking for exceptional talent. Pitch us your role.</p>
+                      <p className="text-gray-600">We are always looking for exceptional talent. Pitch us your role.</p>
                   </div>
                   <button onClick={() => window.open('https://quark-cornflower-fe8.notion.site/2cc84662572280318ff3ff2d5f2f0fee?pvs=105', '_blank')} className="relative overflow-hidden min-h-[52px] xs:min-h-[56px] flex items-center justify-center rounded-xl bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] active:scale-[0.98] hover:scale-[1.03] transition-all duration-300 touch-manipulation group">
                     {/* Shine effect */}

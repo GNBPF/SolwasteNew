@@ -115,6 +115,8 @@ const PartnersSection = () => {
                                   <img
                                       src={partner.logo}
                                       alt={partner.name}
+                                      width="200"
+                                      height="100"
                                       className={`${sizeClass} object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-110`}
                                   />
                                   <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
@@ -163,6 +165,8 @@ const PartnersSection = () => {
                                   <img
                                       src={partner.logo}
                                       alt={partner.name}
+                                      width="200"
+                                      height="100"
                                       className={`${sizeClass} object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:scale-110`}
                                   />
                                   <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-brand-dark transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">

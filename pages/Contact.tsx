@@ -193,9 +193,7 @@ export const Contact: React.FC = () => {
                   </div>
                 </button>
                 <p className="text-xs xs:text-sm sm:text-base text-center text-gray-500 mt-3 xs:mt-4 sm:mt-5">
-                  <span className="inline-flex items-center gap-2">
-                    🔒 We respect your privacy. No spam.
-                  </span>
+                  We respect your privacy. No spam.
                 </p>
               </form>
             </div>

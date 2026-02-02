@@ -105,7 +105,7 @@ export const CaseStudies: React.FC = () => {
                   
                   <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
                       <div className="relative">
-                          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600" size={20} />
                           <input 
                             type="text" 
                             placeholder="Search by name or location..." 
@@ -115,7 +115,7 @@ export const CaseStudies: React.FC = () => {
                           />
                       </div>
                       <div className="relative">
-                          <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                          <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600" size={20} />
                           <select 
                              className="pl-12 pr-10 py-3 bg-white border border-gray-200 rounded-sm appearance-none focus:outline-none focus:border-brand-gold transition-colors cursor-pointer"
                              value={statusFilter}
@@ -130,7 +130,7 @@ export const CaseStudies: React.FC = () => {
                 </div>
               </ScrollReveal>
 
-              <div className="mb-6 text-sm font-bold text-gray-400 uppercase tracking-widest">
+              <div className="mb-6 text-sm font-bold text-gray-600 uppercase tracking-widest">
                   Showing {filteredProjects.length} of {projects.length} installations
               </div>
 

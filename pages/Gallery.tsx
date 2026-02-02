@@ -247,7 +247,7 @@ const Gallery = () => {
                 <p className="text-gray-300 text-sm sm:text-base">
                   {galleryImages[selectedImage].description}
                 </p>
-                <p className="text-gray-400 text-xs sm:text-sm mt-2">
+                <p className="text-gray-600 text-xs sm:text-sm mt-2">
                   {selectedImage + 1} / {galleryImages.length}
                 </p>
               </div>

@@ -8,7 +8,7 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/Sc
 const BenefitCard: React.FC<{ title: string; text: string; icon: React.ReactNode }> = ({ title, text, icon }) => (
   <StaggerItem>
     <div className="bg-gray-50 p-8 border-l-4 border-transparent hover:border-brand-gold hover:bg-white hover:shadow-xl transition-all duration-300 group">
-      <div className="text-gray-400 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
+      <div className="text-gray-600 group-hover:text-brand-gold mb-4 transition-colors">{icon}</div>
       <h3 className="text-xl font-heading font-bold text-brand-brown mb-3 uppercase">{title}</h3>
       <p className="text-gray-700 text-base leading-relaxed">{text}</p>
     </div>

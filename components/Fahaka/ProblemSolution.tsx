@@ -109,7 +109,7 @@ export const ProblemSolution: React.FC = () => {
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <div className="text-3xl font-heading font-black text-brand-olive mb-2">{stat.value}</div>
-                      <div className="text-xs text-gray-400 uppercase tracking-wide font-semibold">{stat.label}</div>
+                      <div className="text-xs text-gray-600 uppercase tracking-wide font-semibold">{stat.label}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -124,7 +124,7 @@ export const ProblemSolution: React.FC = () => {
                   ].map((item, i) => (
                     <motion.li 
                       key={i} 
-                      className="flex items-start text-sm text-gray-400 list-none"
+                      className="flex items-start text-sm text-gray-600 list-none"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -188,7 +188,7 @@ export const ProblemSolution: React.FC = () => {
                         <item.icon className="w-8 h-8 text-brand-gold mb-3 group-hover/card:drop-shadow-[0_0_8px_rgba(190,215,84,0.6)]" />
                       </motion.div>
                       <div className="text-sm font-bold text-white mb-1 font-heading uppercase tracking-wide">{item.label}</div>
-                      <div className="text-xs text-gray-400">{item.sub}</div>
+                      <div className="text-xs text-gray-600">{item.sub}</div>
                     </motion.div>
                   ))}
                 </div>

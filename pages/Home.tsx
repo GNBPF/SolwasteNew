@@ -6,7 +6,7 @@ import { FloatingCard, AnimatedIcon, GlassCard } from '../components/ui/Animated
 import { ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon, Zap, ShieldCheck, Recycle, Target, Globe, Award, Box as BoxIcon, Clock, Settings, Battery, Leaf, Check, X, Building2, Scale, Flame, Layers, CloudFog, RefreshCw, FileText, TrendingUp, CheckCircle, Factory, Briefcase, Rocket, ArrowRight, Mail, Sparkles, Package, Timer, Shield, Gauge } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PartnersSection from '../components/PartnersSection';
-import { SEO } from '../components/SEO';
+import { SEO, addSchemaToPage, generateFAQSchema } from '../components/SEO';
 import { GovernmentMandate, BWGInfo, ImpactStats, ProcessFlow, MissionGrid } from '../components/Home';
 
 // Re-export some icons for backwards compatibility
@@ -434,6 +434,39 @@ export const Home: React.FC = () => {
       return newIndices;
     });
   };
+
+  // Add FAQ schema for SEO
+  useEffect(() => {
+    const faqSchema = generateFAQSchema([
+      {
+        question: "What is a Bulk Waste Generator (BWG) under SWM Rules 2026?",
+        answer: "Under SWM Rules 2026 effective from April 1, 2026, Bulk Waste Generators (BWGs) include facilities with built-up area of 20,000 sq.m or more, OR water consumption of 40,000 litres/day or more, OR waste generation of 100 kg/day or more. BWGs must process organic waste on-site."
+      },
+      {
+        question: "What composting solutions does Solwaste offer?",
+        answer: "Solwaste offers four main composting solutions: EcoLoop (50-1000kg/day for hotels and societies), CompoGen (1.5-50 tons/day for industrial and municipal sectors), CyberSoil (2-10kg/day for offices), and Fahaka (large-scale industrial wet waste processing)."
+      },
+      {
+        question: "How does on-site composting help with SWM Rules 2026 compliance?",
+        answer: "On-site composting helps bulk waste generators comply with SWM Rules 2026 by processing organic waste at source, reducing landfill dependency, and meeting regulatory requirements. This prevents penalties and regulatory action while supporting ESG goals."
+      },
+      {
+        question: "What industries can benefit from Solwaste composting solutions?",
+        answer: "Hotels, gated communities, shopping malls, IT parks, hospitals, educational institutions, corporate offices, industrial facilities, and municipal corporations can all benefit from Solwaste's composting solutions tailored to their waste generation capacity."
+      },
+      {
+        question: "What are the benefits of choosing Solwaste composting machines?",
+        answer: "Solwaste composting machines offer zero odor with HEPA filtration, German engineering quality, IoT monitoring for real-time tracking, reduced waste management costs, SWM Rules 2026 compliance, ESG sustainability achievements, and proven ROI across 500+ installations."
+      }
+    ]);
+    
+    const schemaScript = addSchemaToPage(faqSchema);
+    return () => {
+      if (schemaScript && schemaScript.parentNode) {
+        schemaScript.parentNode.removeChild(schemaScript);
+      }
+    };
+  }, []);
 
   return (
     <>

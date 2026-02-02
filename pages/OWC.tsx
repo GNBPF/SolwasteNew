@@ -3,7 +3,7 @@ import { Check, Download } from '../components/Icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
-import { SEO } from '../components/SEO';
+import { SEO, addSchemaToPage, generateProductSchema } from '../components/SEO';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '../components/ui/ScrollReveal';
 
 const SpecTable: React.FC<{ specs: {label: string, value: string}[] }> = ({ specs }) => (
@@ -160,6 +160,37 @@ export const OWC: React.FC = () => {
         }
       }, 100);
     }
+    
+    // Add product schemas for SEO
+    const ecoloopSchema = addSchemaToPage(generateProductSchema({
+      name: 'EcoLoop - Organic Waste Composter for Hotels & Societies',
+      description: 'On-site composting solution handling 50-1000kg/day with HEPA filtration, zero odor, and German engineering. Perfect for hotels, gated communities, and bulk waste generators.',
+      image: 'https://solwaste.co/ecoloop.webp',
+      sku: 'ECOLOOP-50-1000',
+      brand: 'Solwaste'
+    }));
+    
+    const compogenSchema = addSchemaToPage(generateProductSchema({
+      name: 'CompoGen - Industrial Composting System',
+      description: 'Enterprise-grade composting solution processing 1.5-50 tons/day for industrial and municipal sectors. PLC-controlled with cloud monitoring and 24/7 operation capability.',
+      image: 'https://solwaste.co/compogen.webp',
+      sku: 'COMPOGEN-1.5-50T',
+      brand: 'Solwaste'
+    }));
+    
+    const cybersoilSchema = addSchemaToPage(generateProductSchema({
+      name: 'CyberSoil - Smart Office Composter',
+      description: 'Compact IoT-enabled composter for offices handling 2-10kg/day. Ultra-quiet operation, cloud monitoring, and sleek design perfect for corporate environments.',
+      image: 'https://solwaste.co/cybersoil.webp',
+      sku: 'CYBERSOIL-2-10',
+      brand: 'Solwaste'
+    }));
+    
+    return () => {
+      if (ecoloopSchema?.parentNode) ecoloopSchema.parentNode.removeChild(ecoloopSchema);
+      if (compogenSchema?.parentNode) compogenSchema.parentNode.removeChild(compogenSchema);
+      if (cybersoilSchema?.parentNode) cybersoilSchema.parentNode.removeChild(cybersoilSchema);
+    };
   }, []);
 
   return (

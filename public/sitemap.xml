@@ -5,44 +5,49 @@
   <!-- Home Page -->
   <url>
     <loc>https://solwaste.co/</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://solwaste.co/logo.png</image:loc>
-      <image:title>Solwaste Logo</image:title>
+      <image:title>Solwaste - Sustainable Waste Management Solutions</image:title>
+      <image:caption>Leading composting solutions for bulk waste generators in India</image:caption>
     </image:image>
   </url>
 
   <!-- OWC Products Page -->
   <url>
     <loc>https://solwaste.co/#/owc</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://solwaste.co/ecoloop.webp</image:loc>
       <image:title>EcoLoop Organic Waste Composter</image:title>
+      <image:caption>50-1000kg/day composting solution for hotels and societies</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://solwaste.co/compogen.webp</image:loc>
       <image:title>CompoGen Industrial Composter</image:title>
+      <image:caption>1.5-50 tons/day enterprise composting system</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://solwaste.co/cybersoil.webp</image:loc>
-      <image:title>CyberSoil Residential Composter</image:title>
+      <image:title>CyberSoil Smart Office Composter</image:title>
+      <image:caption>2-10kg/day IoT-enabled composter for offices</image:caption>
     </image:image>
   </url>
 
   <!-- Fahaka Page -->
   <url>
     <loc>https://solwaste.co/#/fahaka</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://solwaste.co/fahaka.webp</image:loc>
-      <image:title>Fahaka Universal Waste Decomposer</image:title>
+      <image:title>Fahaka Industrial Waste Processing System</image:title>
+      <image:caption>Large-scale wet waste biodigestion for bulk generators</image:caption>
     </image:image>
   </url>
 

@@ -109,7 +109,7 @@ export const Vision2047: React.FC = () => {
                         <div className="bg-gray-900/50 border border-gray-800 p-5 sm:p-6 md:p-7 lg:p-8 hover:bg-brand-gold/10 hover:border-brand-gold transition-all duration-300 group h-full">
                             <div className="text-gray-500 group-hover:text-brand-gold mb-4 sm:mb-5 md:mb-6 transition-colors">{item.icon}</div>
                             <h3 className="text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3 uppercase leading-tight">{item.title}</h3>
-                            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
+                            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
                         </div>
                     </StaggerItem>
                 ))}
@@ -199,7 +199,7 @@ export const Vision2047: React.FC = () => {
                       <h2 className="text-5xl font-heading font-bold uppercase mb-8">What are we <br/>really losing?</h2>
                       <div className="space-y-6 text-xl text-gray-300">
                           <p>When organic waste is ignored, we lose more than just aesthetics.</p>
-                          <ul className="space-y-4 list-disc pl-6 text-gray-400">
+                          <ul className="space-y-4 list-disc pl-6 text-gray-600">
                               <li><span className="text-white">Public Health</span> to preventable diseases.</li>
                               <li><span className="text-white">Children's Safety</span> to vector-borne infections.</li>
                               <li><span className="text-white">Soil Fertility</span> by discarding what could regenerate it.</li>

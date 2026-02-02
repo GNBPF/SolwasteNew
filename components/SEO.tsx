@@ -91,6 +91,12 @@ export const SEO: React.FC<SEOProps> = ({
     updateMetaTag('application-name', 'Solwaste');
     updateMetaTag('theme-color', '#BED754');
     updateMetaTag('msapplication-TileColor', '#BED754');
+    
+    // Geo tags for local SEO
+    updateMetaTag('geo.region', 'IN');
+    updateMetaTag('geo.placename', 'Mumbai');
+    updateMetaTag('geo.position', '18.9894;72.8217');
+    updateMetaTag('ICBM', '18.9894, 72.8217');
 
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
@@ -100,15 +106,37 @@ export const SEO: React.FC<SEOProps> = ({
       document.head.appendChild(canonical);
     }
     canonical.href = currentUrl;
+    
+    // Add hreflang for international SEO
+    let hreflang = document.querySelector('link[rel="alternate"][hreflang="en"]') as HTMLLinkElement;
+    if (!hreflang) {
+      hreflang = document.createElement('link');
+      hreflang.rel = 'alternate';
+      hreflang.hreflang = 'en';
+      document.head.appendChild(hreflang);
+    }
+    hreflang.href = currentUrl;
+    
+    let hreflangXDefault = document.querySelector('link[rel="alternate"][hreflang="x-default"]') as HTMLLinkElement;
+    if (!hreflangXDefault) {
+      hreflangXDefault = document.createElement('link');
+      hreflangXDefault.rel = 'alternate';
+      hreflangXDefault.hreflang = 'x-default';
+      document.head.appendChild(hreflangXDefault);
+    }
+    hreflangXDefault.href = currentUrl;
 
     // Add structured data (JSON-LD)
     const structuredData = {
       '@context': 'https://schema.org',
-      '@type': 'Organization',
+      '@type': ['Organization', 'LocalBusiness'],
       name: 'Solwaste',
+      alternateName: 'Solwaste - Sustainable Waste Management Solutions',
       url: siteUrl,
       logo: `${siteUrl}/logo.png`,
-      description: 'Leading sustainable waste management solutions provider in India. Offering organic waste composters, industrial composting machines, and innovative waste processing technology.',
+      image: `${siteUrl}/logo.png`,
+      description: 'Leading sustainable waste management solutions provider in India. Offering organic waste composters for bulk waste generators (BWGs), industrial composting machines, and innovative waste processing technology. Serving hotels, malls, IT parks, hospitals, and institutions across India.',
+      foundingDate: '2015',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Worli, 1st floor, 264-265, Dr. Annie Besant Road',
@@ -117,18 +145,86 @@ export const SEO: React.FC<SEOProps> = ({
         postalCode: '400025',
         addressCountry: 'IN'
       },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: '18.9894',
+        longitude: '72.8217'
+      },
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: '+91-9429691308',
         contactType: 'Customer Service',
         email: 'hello@solwaste.co',
-        availableLanguage: ['English', 'Hindi']
+        availableLanguage: ['English', 'Hindi'],
+        areaServed: 'IN'
+      },
+      areaServed: [
+        {
+          '@type': 'Country',
+          name: 'India'
+        }
+      ],
+      serviceArea: {
+        '@type': 'GeoCircle',
+        geoMidpoint: {
+          '@type': 'GeoCoordinates',
+          latitude: '20.5937',
+          longitude: '78.9629'
+        },
+        geoRadius: '3000000'
+      },
+      priceRange: '₹₹₹',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.8',
+        reviewCount: '500',
+        bestRating: '5',
+        worstRating: '1'
       },
       sameAs: [
         'https://www.linkedin.com/company/solwaste/',
         'https://www.instagram.com/solwaste',
         'https://x.com/SolwasteCo'
-      ]
+      ],
+      slogan: 'Sustainable Waste Management Solutions for a Zero-Waste Future',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Composting Solutions',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'EcoLoop - Composting Solutions for Hotels & Societies',
+              description: 'On-site organic waste composters handling 50-1000kg/day with HEPA filtration'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'CompoGen - Industrial Composting Systems',
+              description: 'Enterprise composting solutions processing 1.5-50 tons/day for industrial and municipal sectors'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'CyberSoil - Office Composters',
+              description: 'Compact composters for offices handling 2-10kg/day with IoT monitoring'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Fahaka - Industrial Scale Processing',
+              description: 'Large-scale wet waste biodigestion systems for bulk waste generators'
+            }
+          }
+        ]
+      }
     };
 
     let scriptTag = document.querySelector('script[type="application/ld+json"]');
@@ -173,4 +269,43 @@ export const generateProductSchema = (product: {
       url: 'https://solwaste.co/contact'
     }
   };
+};
+
+// Helper function to generate FAQ structured data
+export const generateFAQSchema = (faqs: Array<{ question: string; answer: string }>) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  };
+};
+
+// Helper function to generate breadcrumb structured data
+export const generateBreadcrumbSchema = (items: Array<{ name: string; url: string }>) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url
+    }))
+  };
+};
+
+// Helper function to add additional schema to page
+export const addSchemaToPage = (schema: object) => {
+  const scriptTag = document.createElement('script');
+  scriptTag.type = 'application/ld+json';
+  scriptTag.textContent = JSON.stringify(schema);
+  document.head.appendChild(scriptTag);
+  return scriptTag;
 };
