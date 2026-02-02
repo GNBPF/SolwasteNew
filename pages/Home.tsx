@@ -134,8 +134,8 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
               />
             </AnimatePresence>
           )}
-          {/* Strong dark overlay for text visibility on all devices */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/65"></div>
+          {/* Dark overlay for text visibility on all devices */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/45"></div>
         </div>
 
         {/* Content - Better mobile spacing */}
@@ -265,8 +265,8 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
             background: 'radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 50%)'
           }}
         />
-        {/* Strong dark overlay for text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/65"></div>
+        {/* Dark overlay for text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/45"></div>
       </div>
 
       {/* Header Content - Mobile Optimized Spacing */}
@@ -276,15 +276,21 @@ const SlideContent = ({ slide, currentImageIndex, setCurrentImageIndex }: {
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
            className="max-w-6xl mx-auto"
+           style={{ 
+             WebkitFontSmoothing: 'antialiased',
+             WebkitTextSizeAdjust: '100%',
+             transform: 'translateZ(0)',
+             willChange: 'auto'
+           }}
         >
             {/* badge removed from slides */}
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.1] xs:leading-[1.15] sm:leading-tight px-1 xs:px-2 md:px-4" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.6)' }}>
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-heading font-bold text-white mb-2 xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-[1.1] xs:leading-[1.15] sm:leading-tight px-1 xs:px-2 md:px-4" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.6)', WebkitFontSmoothing: 'antialiased', WebkitTextSizeAdjust: '100%' }}>
             {slide.title}
           </h1>
-          <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 px-1 xs:px-2 md:px-4 leading-snug" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}>
+          <h2 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wide sm:tracking-wider md:tracking-widest text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-7 px-1 xs:px-2 md:px-4 leading-snug" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)', WebkitFontSmoothing: 'antialiased', WebkitTextSizeAdjust: '100%' }}>
             {slide.subtitle}
           </h2>
-          <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold px-3 xs:px-4 sm:px-6 md:px-8" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
+          <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-5xl mx-auto leading-relaxed md:leading-loose font-semibold px-3 xs:px-4 sm:px-6 md:px-8" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)', WebkitFontSmoothing: 'antialiased', WebkitTextSizeAdjust: '100%' }}>
             {slide.description}
           </p>
         </motion.div>
