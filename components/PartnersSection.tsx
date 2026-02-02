@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 const partners = [
   { name: "Government of Kerala", logo: "/partnerLogo/kerela.png", location: "Kerala", type: "Government", capacity: "500kg/day" },
   { name: "LuLu Group", logo: "/partnerLogo/mall.png", location: "Pan India", type: "Retail", capacity: "1.5T/day" },
-  { name: "EAK", logo: "/partnerLogo/eak.svg", location: "Mumbai", type: "Corporate", capacity: "250kg/day" },
   { name: "ONGC", logo: "/partnerLogo/ongc.png", location: "Multiple Sites", type: "PSU", capacity: "2T/day" },
   { name: "Petronet LNG", logo: "/partnerLogo/petronet.png", location: "Kochi", type: "Industrial", capacity: "800kg/day" },
   { name: "Adani, Ports and Logistics", logo: "/partnerLogo/adani.png", location: "Gujarat", type: "Infrastructure", capacity: "3T/day" },
