@@ -148,8 +148,9 @@ export const SWMPopup: React.FC = () => {
                       }, 100);
                     }}
                     className="flex-1 bg-white border border-gray-300 text-gray-700 font-semibold uppercase text-sm py-3.5 rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] text-center"
+                    aria-label="Read more about SWM Rules 2026 and compliance requirements"
                   >
-                    Read More
+                    Learn About SWM Rules 2026
                   </a>
 
                   {/* Primary Button - Talk to Expert */}
