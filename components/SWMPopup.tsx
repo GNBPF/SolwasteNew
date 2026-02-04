@@ -136,7 +136,7 @@ export const SWMPopup: React.FC = () => {
                   <a
                     href="/contact"
                     onClick={handleClose}
-                    className="flex-1 bg-green-600 dark:bg-green-700 text-white font-semibold uppercase text-xs sm:text-sm py-2.5 sm:py-3.5 rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] text-center shadow-lg shadow-green-600/20"
+                    className="flex-1 bg-green-600 dark:bg-green-700 text-gray-900 dark:text-gray-900 font-semibold uppercase text-xs sm:text-sm py-2.5 sm:py-3.5 rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] text-center shadow-lg shadow-green-600/20"
                   >
                     Talk to Expert
                   </a>

@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
   const size = 'px-4 py-2 sm:px-5 sm:py-3 text-sm sm:text-base';
 
   const variants: Record<string, string> = {
-    primary: 'bg-[var(--accent,#d4af37)] text-white border-transparent hover:bg-opacity-95 shadow-sm',
+    primary: 'bg-[var(--accent,#d4af37)] border-transparent hover:bg-opacity-95 shadow-sm',
     outline: 'bg-transparent text-[var(--accent,#111827)] border border-gray-200 hover:bg-gray-50',
     white: 'bg-white text-[var(--text,#111827)] border border-gray-100 hover:bg-gray-50',
   };

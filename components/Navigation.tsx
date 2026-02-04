@@ -106,8 +106,8 @@ export const Navigation: React.FC<NavigationProps> = ({
               "transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0",
               "touch-manipulation",
               isNavTransparent 
-                ? "bg-brand-gold text-white border-brand-gold hover:bg-white hover:text-brand-gold hover:border-white" 
-                : "bg-brand-gold text-white border-brand-gold hover:bg-brand-dark hover:text-white hover:border-brand-dark"
+                ? "bg-brand-gold text-black border-brand-gold hover:bg-white hover:text-black hover:border-white" 
+                : "bg-brand-gold text-black border-brand-gold hover:bg-brand-dark hover:text-black hover:border-brand-dark"
             ].join(" ")}>
               Get Quote
             </Button>

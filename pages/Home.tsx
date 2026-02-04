@@ -43,7 +43,6 @@ const slides: Slide[] = [
       { label: "Capacity", value: "50-1k", unit: "KG" },
       { label: "Cycle Time", value: "24", unit: "HRS" },
       { label: "Material", value: "SS", unit: "304" },
-      { label: "Filtration", value: "HEPA", unit: "+" }
     ]
   },
   {

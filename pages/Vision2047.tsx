@@ -245,9 +245,9 @@ export const Vision2047: React.FC = () => {
                       
                       {/* Button content */}
                       <div className="relative flex items-center justify-center gap-3 xs:gap-4 sm:gap-5 px-10 xs:px-12 sm:px-14 md:px-16 z-10">
-                        <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-heading font-black uppercase tracking-wide group-hover:tracking-wider text-brand-dark drop-shadow-sm transition-all duration-300 leading-none">Start Your Waste-Free Journey</span>
+                        <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-heading font-black uppercase tracking-wide group-hover:tracking-wider text-gray-900 drop-shadow-sm transition-all duration-300 leading-none">Start Your Waste-Free Journey</span>
                         <div className="relative">
-                          <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 text-brand-dark flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
+                          <ArrowRight className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 text-gray-900 flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
                           {/* Icon glow */}
                           <div className="absolute inset-0 bg-brand-dark/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>

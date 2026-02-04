@@ -134,7 +134,7 @@ const PressMedia = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a 
                   href="mailto:hello@solwaste.co" 
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-brand-gold dark:bg-brand-gold text-brand-dark dark:text-gray-900 font-bold rounded-lg hover:bg-brand-olive dark:hover:bg-yellow-400 transition-all hover:scale-105 active:scale-95"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-brand-gold dark:bg-brand-gold text-gray-900 dark:text-gray-900 font-bold rounded-lg hover:bg-brand-olive dark:hover:bg-yellow-400 transition-all hover:scale-105 active:scale-95"
                 >
                   <Mail size={20} />
                   hello@solwaste.co

@@ -110,7 +110,7 @@ const ProductDetail: React.FC<{
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-gold/10 animate-pulse"></div>
               
               {/* Button content */}
-              <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 px-6 xs:px-7 sm:px-8 md:px-10 text-white">
+              <div className="relative flex items-center justify-center gap-2 xs:gap-2.5 px-6 xs:px-7 sm:px-8 md:px-10 text-gray-900">
                 <span className="text-sm xs:text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider group-hover:tracking-widest transition-all duration-300 leading-none whitespace-nowrap">Get Quote</span>
                 <FileText className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
               </div>

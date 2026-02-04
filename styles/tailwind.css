@@ -51,7 +51,7 @@
     color: var(--text-secondary) !important;
   }
 
-  .dark span {
+  .dark span:not(button span, a span) {
     color: var(--text-secondary) !important;
   }
 
@@ -79,9 +79,14 @@
 
   .dark .text-gray-600,
   .dark .text-gray-700,
-  .dark .text-gray-800,
-  .dark .text-gray-900 {
+  .dark .text-gray-800 {
     color: var(--text-secondary) !important;
+  }
+
+  /* Keep text-gray-900 (black) as black in buttons */
+  .dark button .text-gray-900,
+  .dark a .text-gray-900 {
+    color: #111827 !important;
   }
 
   .dark .text-gray-500,
