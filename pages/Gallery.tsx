@@ -8,31 +8,12 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const galleryImages = [
-    {
-      src: "/gallery/img1.webp",
-      title: "Installation 1",
-      description: "Solwaste waste management solution in action"
-    },
-    {
-      src: "/gallery/img2.webp",
-      title: "Installation 2",
-      description: "Advanced composting technology deployed"
-    },
-    {
-      src: "/gallery/img3.webp",
-      title: "Installation 3",
-      description: "Sustainable waste processing facility"
-    },
-    {
-      src: "/gallery/img4.webp",
-      title: "Installation 4",
-      description: "Industrial-scale waste management"
-    },
-    {
-      src: "/gallery/img5.webp",
-      title: "Installation 5",
-      description: "Innovative waste solutions implementation"
-    }
+    "/gallery/img1.webp",
+    "/gallery/img2.webp",
+    "/gallery/img3.webp",
+    "/gallery/img4.webp",
+    "/gallery/img5.webp",
+    "/gallery/img6.webp",
   ];
 
   const openLightbox = (index: number) => {
@@ -90,8 +71,8 @@ const Gallery = () => {
               transition={{ delay: idx * 0.1, duration: 0.6 }}
             >
               <img 
-                src={img.src} 
-                alt={img.title}
+                src={img} 
+                alt={`Background ${idx + 1}`}
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -142,20 +123,13 @@ const Gallery = () => {
                 onClick={() => openLightbox(index)}
               >
                 <img 
-                  src={image.src} 
-                  alt={image.title}
+                  src={image} 
+                  alt={`Gallery image ${index + 1}`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 sm:p-6">
-                  <h3 className="text-white text-lg sm:text-xl font-heading font-bold mb-1 sm:mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    {image.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm sm:text-base transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                    {image.description}
-                  </p>
-                </div>
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Click hint */}
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -234,20 +208,14 @@ const Gallery = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img 
-                src={galleryImages[selectedImage].src}
-                alt={galleryImages[selectedImage].title}
+                src={galleryImages[selectedImage]}
+                alt={`Gallery image ${selectedImage + 1}`}
                 className="w-full h-full object-contain rounded-lg"
               />
               
-              {/* Image Info */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
-                <h3 className="text-white text-xl sm:text-2xl font-heading font-bold mb-2">
-                  {galleryImages[selectedImage].title}
-                </h3>
-                <p className="text-gray-300 text-sm sm:text-base">
-                  {galleryImages[selectedImage].description}
-                </p>
-                <p className="text-gray-600 text-xs sm:text-sm mt-2">
+              {/* Image Counter */}
+              <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg">
+                <p className="text-white text-sm font-semibold">
                   {selectedImage + 1} / {galleryImages.length}
                 </p>
               </div>
